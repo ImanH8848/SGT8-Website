@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEB1201_Assignment",
+		"java.project.sourcePaths": [
+			"Additional Practice",
+			""
+		]
+	}
+}
