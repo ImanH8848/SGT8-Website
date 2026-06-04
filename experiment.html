@@ -2055,25 +2055,25 @@
       white-space: nowrap;
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
-      padding: 12px 0;
+      padding: 9px 0;
       background: var(--blue);
       width: 100%;
     }
 
     .oa-ticker-inner {
       display: inline-block;
-      animation: ticker-scroll 22s linear infinite;
+      animation: ticker-scroll 30s linear infinite;
       font-family: var(--font-vhs);
-      font-size: clamp(16px, 1.6vw, 20px);
+      font-size: clamp(13px, 1.3vw, 17px);
       letter-spacing: 0.2em;
       color: var(--blue-light);
     }
 
     .oa-ticker-inner-rtl {
       display: inline-block;
-      animation: ticker-scroll 22s linear infinite;
+      animation: ticker-scroll 30s linear infinite;
       font-family: var(--font-vhs);
-      font-size: clamp(16px, 1.6vw, 20px);
+      font-size: clamp(13px, 1.3vw, 17px);
       letter-spacing: 0.2em;
       color: var(--blue-light);
     }
@@ -2424,18 +2424,24 @@
     .sf-ticker-wrap {
       overflow: hidden;
       white-space: nowrap;
-      padding: 8px 0;
+      padding: 9px 0;
       background: #020202;
       width: 100%;
+      display: flex;
+      align-items: center;
+      line-height: 1;
     }
 
     .sf-ticker-inner {
       display: inline-block;
       animation: sf-tkr 22s linear infinite;
       font-family: var(--font-vhs);
-      font-size: clamp(11px, 1.2vw, 15px);
+      font-size: clamp(13px, 1.3vw, 17px);
       letter-spacing: 0.2em;
       color: rgba(255, 255, 255, 0.45);
+      line-height: 1;
+      vertical-align: middle;
+      padding-top: 4px;
     }
 
     .sf-ticker-inner span {
@@ -2445,11 +2451,11 @@
 
     @keyframes sf-tkr {
       0% {
-        transform: translateX(0)
+        transform: translateX(-50%)
       }
 
       100% {
-        transform: translateX(-50%)
+        transform: translateX(0)
       }
     }
 
@@ -2832,7 +2838,7 @@
     .sf-bottom-ticker {
       background: #F5F1F2;
       border-top: 1px dashed var(--rule);
-      padding: 8px 0;
+      padding: 9px 0;
       overflow: hidden;
       white-space: nowrap;
     }
@@ -2841,7 +2847,7 @@
       display: inline-block;
       animation: sf-tkr2 28s linear infinite;
       font-family: var(--font-vhs);
-      font-size: clamp(8px, 0.85vw, 11px);
+      font-size: clamp(10px, 1vw, 13px);
       color: #C0BCB8;
       letter-spacing: 0.2em;
     }
@@ -2853,11 +2859,11 @@
 
     @keyframes sf-tkr2 {
       0% {
-        transform: translateX(0)
+        transform: translateX(-50%)
       }
 
       100% {
-        transform: translateX(-50%)
+        transform: translateX(0)
       }
     }
 
@@ -4804,13 +4810,73 @@
       const now = new Date(), diff = OA_END - now;
 
       if (diff <= 0) {
-        document.getElementById('timer-body').innerHTML = `
-      <div style="text-align:center; padding: 60px 0 80px;">
-        <div style="font-family:var(--font-vhs); font-size:clamp(56px,9vw,120px); color:var(--ink); letter-spacing:0.06em; line-height:1;">OA CLOSED</div>
-        <div style="font-family:var(--font-vhs); font-size:clamp(14px,1.8vw,22px); color:var(--blue); letter-spacing:0.22em; margin-top:20px;">ONLINE AUDITIONS HAVE ENDED — STAY TUNED FOR TOP 30</div>
-      </div>`;
+        // Freeze the digits at 00
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-mins').textContent = '00';
+        document.getElementById('cd-secs').textContent = '00';
 
-        // The line trying to update #prog-fill has been deleted!
+        // Fill progress to 100%
+        const pf = document.getElementById('prog-fill');
+        const pp = document.getElementById('prog-pct');
+        if (pf) pf.style.width = '100%';
+        if (pp) pp.textContent = '100%';
+
+        // Inject the overlay on top of the existing timer boxes
+        const timerBody = document.getElementById('timer-body');
+        if (!document.getElementById('oa-closed-overlay')) {
+          const overlay = document.createElement('div');
+          overlay.id = 'oa-closed-overlay';
+          overlay.style.cssText = `
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        z-index: 10;
+        pointer-events: none;
+      `;
+          overlay.innerHTML = `
+        <div style="
+          font-family: var(--font-vhs);
+          font-size: clamp(48px, 9vw, 110px);
+          color: var(--ink);
+          letter-spacing: 0.06em;
+          line-height: 1;
+          text-shadow:
+            -3px -3px 0 var(--bg),
+             3px -3px 0 var(--bg),
+            -3px  3px 0 var(--bg),
+             3px  3px 0 var(--bg),
+            -6px  0   0 var(--bg),
+             6px  0   0 var(--bg),
+             0   -6px 0 var(--bg),
+             0    6px 0 var(--bg);
+        ">OA CLOSED</div>
+        <div style="
+          font-family: var(--font-vhs);
+          font-size: clamp(9px, 1vw, 13px);
+          color: var(--blue);
+          letter-spacing: 0.22em;
+          text-align: center;
+          text-shadow:
+            -2px -2px 0 var(--bg),
+             2px -2px 0 var(--bg),
+            -2px  2px 0 var(--bg),
+             2px  2px 0 var(--bg);
+        ">ONLINE AUDITIONS HAVE ENDED — STAY TUNED FOR TOP 30</div>
+      `;
+          timerBody.style.position = 'relative';
+          timerBody.appendChild(overlay);
+
+          // Dim the timer boxes behind the overlay
+          const grid = timerBody.querySelector('.cw-units-grid');
+          if (grid) grid.style.opacity = '0.18';
+          const bar = timerBody.querySelector('.cw-bottom-bar');
+          if (bar) bar.style.opacity = '0.18';
+        }
         return;
       }
 
