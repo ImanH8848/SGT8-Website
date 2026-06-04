@@ -3544,6 +3544,44 @@
     /* ════════════════════════════════════════════════════════════════════ */
     /* RESPONSIVE                                                          */
     /* ════════════════════════════════════════════════════════════════════ */
+    /* ════════════════════════════════════════════════════════════════════ */
+    /* PARTICIPANTS GRID — IN PROGRESS BLUR OVERLAY                        */
+    /* ════════════════════════════════════════════════════════════════════ */
+    .sf-grid-wrap {
+      position: relative;
+    }
+
+    .sf-inprogress-overlay {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      background: rgba(245, 241, 242, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .sf-inprogress-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(18px, 3vw, 36px);
+      letter-spacing: 0.22em;
+      color: #020202;
+      text-align: center;
+    }
+
+    .sf-inprogress-sub {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.2em;
+      color: #555;
+      text-align: center;
+    }
+
     @media(max-width:700px) {
 
       .about-flex-row,
@@ -4158,7 +4196,7 @@
     <div class="cw-wrap">
       <div style="max-width: 87vw; margin: 0 auto; padding: 0 clamp(20px, 4vw, 52px); position: relative;">
         <div class="cw-top-bar">
-          <span class="cw-top-label">// 05 — OA CLOSING COUNTDOWN</span>
+          <span class="cw-top-label">// 05 — ONLINE AUDITIONS CLOSING COUNTDOWN</span>
           <span
             style="font-family:var(--font-vhs); font-size:clamp(7px,0.75vw,10px); color:var(--rule); letter-spacing:0.1em; margin-left:auto; padding-left:24px;">BOOT:05</span>
         </div>
@@ -4181,7 +4219,7 @@
           <div class="cw-bottom-bar">
             <div class="cw-deadline-text">
               <strong id="end-display">15 MAY 2026 — 18:00:00</strong>
-              OA REGISTRATION CLOSES
+              ONLINE AUDITIONS REGISTRATION CLOSES
             </div>
             <div class="cw-progress-wrap">
               <div class="cw-progress-label">
@@ -4258,6 +4296,11 @@
         <div class="sf-dayblock-title">DAY 1 <span style="color:#FB092F;">·</span> 8 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4340,6 +4383,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day1 -->
       <div class="sf-soon-banner" style="background:#0000ae">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4354,6 +4398,11 @@
         <div class="sf-dayblock-title">DAY 2 <span style="color:#FB092F;">·</span> 9 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4436,6 +4485,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day2 -->
       <div class="sf-soon-banner" style="background: #47E42E">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4450,6 +4500,11 @@
         <div class="sf-dayblock-title">DAY 3 <span style="color:#FB092F;">·</span> 10 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4532,6 +4587,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day3 -->
       <div class="sf-soon-banner" style="background:#FB092F">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4543,9 +4599,9 @@
 
     <div class="sf-bottom-ticker">
       <div class="sf-bottom-ticker-inner">
-        RE:BOOT COMPLETE <span>·</span> OA PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
+        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
         SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT TALENT <span>·</span> SEASON 8
-        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> OA PHASE ENDED <span>·</span> NOW
+        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW
         ENTERING RE:FORM <span>·</span> TOP 30 SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT
         TALENT <span>·</span> SEASON 8 <span>·</span> RE:VELATION <span>·</span>
       </div>
@@ -4569,7 +4625,7 @@
       <div class="brand-reveal-shadow-text" aria-hidden="true">RE:VELATION</div>
       <div class="s4-layout">
         <div>
-          <div class="theme-title">RE:<span>VELATION</span></div>
+          <div class="theme-title">RE:<span>VELATION</span><span>.</span></div>
           <div class="theme-sub">SGT SEASON 8 — 2025 / 2026</div>
           <div class="theme-body">In a world of digital noise, true talent is often hidden behind the static — a file
             waiting to be found, a signal waiting to be heard. RE:VELATION is the moment the screen clears.<br><br>It is
@@ -4854,7 +4910,7 @@
              6px  0   0 var(--bg),
              0   -6px 0 var(--bg),
              0    6px 0 var(--bg);
-        ">OA CLOSED</div>
+        ">CLOSED</div>
         <div style="
           font-family: var(--font-vhs);
           font-size: clamp(9px, 1vw, 13px);
