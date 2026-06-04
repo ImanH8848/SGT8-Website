@@ -2645,9 +2645,21 @@
     }
 
     .sf-daybtn.active {
-      background: #FB092F;
       color: #F5F1F2;
       font-weight: 700;
+    }
+
+    .sf-daybtn.active.day1 {
+      background: #FB092F;
+    }
+
+    .sf-daybtn.active.day2 {
+      background: #47E42E;
+      color: #020202;
+    }
+
+    .sf-daybtn.active.day3 {
+      background: #0000AE;
     }
 
     .sf-daybtn:hover:not(.active) {
@@ -3608,7 +3620,8 @@
 
   <!-- ══ NAV ═════════════════════════════════════════════════════════════════ -->
   <header id="site-header">
-    <div id="nav-logo"><img id="nav-logo-img" src="../SGT8-Website/SGTS8Web_pictures/SGT8 short logo (1).png" alt="SGT S8 Short Logo">
+    <div id="nav-logo"><img id="nav-logo-img" src="../SGT8-Website/SGTS8Web_pictures/SGT8 short logo (1).png"
+        alt="SGT S8 Short Logo">
     </div>
     <nav id="site-nav">
       <a href="#hero" class="active">HOME</a>
@@ -3671,7 +3684,8 @@
             <div class="dash-fill"></div><span class="c-dim">— — — —</span>
             <div class="dash-fill"></div>
           </div>
-          <div id="logo-space"><img id="logo-img" src="../SGT8-Website/SGTS8Web_pictures/SGT 8 BIG LOGO (1).png" alt="SGT S8 Logo"></div>
+          <div id="logo-space"><img id="logo-img" src="../SGT8-Website/SGTS8Web_pictures/SGT 8 BIG LOGO (1).png"
+              alt="SGT S8 Logo"></div>
           <div id="hero-btns">
             <a class="hero-btn hero-btn-secondary" href="#about">[ ABOUT ]</a>
             <a class="hero-btn hero-btn-primary" href="https://ssa.plus/SGTS8_OARegistration" target="_blank">[ REGISTER
@@ -3693,21 +3707,21 @@
             <span class="typed dots">. . . . . . . . .</span>
             <span class="typed dots">. . . . . . . . .</span>
             <span class="typed dots">. . . . . . . . .</span>
-            <span class="typed c-blue-light">— — — AUDITION OPEN</span>
-            <span class="typed c-blue-light">— — — OA PASSWORD</span>
+            <span class="typed c-blue-light">— — — SEMI-FINALS INCOMING</span>
+            <span class="typed c-blue-light">— — — SF PASSWORD</span>
           </div>
           <div>
             <span class="typed c-blue-light">&lt; TALENT &gt; &lt; COMMUNITY &gt;</span>
             <span class="typed c-blue-light">&lt; APPLY NOW &gt;</span>
-            <span class="typed c-blue-light">◇ END RE:BOOT</span>
+            <span class="typed c-blue-light">◇ END RE:FORM</span>
             <span class="typed">&nbsp;</span>
             <span class="typed c-silver">§ 2026</span>
           </div>
         </div>
         <div id="bottom">
           <div id="bottom-left">
-            <span class="typed c-silver">REGISTER_ _ _NOW</span>
-            <span class="typed c-blue-light">— — — — — — — — — — — OA OPEN</span>
+            <span class="typed c-silver">STAY_ _ _TUNE</span>
+            <span class="typed c-blue-light">— — — — — — — — — — — SF PENDING</span>
             <span class="typed">&nbsp;</span>
             <span class="typed c-blue-light">-</span>
             <span class="typed c-blue-light">-— — — — —</span>
@@ -4178,19 +4192,6 @@
       </div>
     </div>
 
-    <!-- Bottom ticker -->
-    <div class="oa-ticker-wrap-bottom">
-      <div class="oa-ticker-inner-rtl">/// RE:VELATION <span>///</span> GRAND FINALE <span>///</span> 7 JUL 2026
-        <span>///</span> SEASON 8 <span>///</span> RE:NDER <span>///</span> RE:FORM <span>///</span> TOP 30 SEMI-FINAL
-        <span>///</span> SUNWAY STUDENT AMBASSADORS <span>///</span> BEST EVENT OF THE YEAR <span>///</span> OWN THE
-        STAGE <span>///</span> ALL TALENT WELCOME <span>///</span> 1000+ AUDIENCES <span>///</span> 50+ BRANDS
-        <span>///</span> RE:VELATION <span>///</span> GRAND FINALE <span>///</span> 7 JUL 2026 <span>///</span> SEASON 8
-        <span>///</span> RE:NDER <span>///</span> RE:FORM <span>///</span> TOP 30 SEMI-FINAL <span>///</span> SUNWAY
-        STUDENT AMBASSADORS <span>///</span> BEST EVENT OF THE YEAR <span>///</span> OWN THE STAGE <span>///</span> ALL
-        TALENT WELCOME <span>///</span> 1000+ AUDIENCES <span>///</span> 50+ BRANDS <span>///</span>
-      </div>
-    </div>
-
   </section>
 
   <!-- ══ SEMI-FINALS ════════════════════════════════════════════════════════ -->
@@ -4241,9 +4242,9 @@
     </div>
 
     <div class="sf-daybar">
-      <button class="sf-daybtn active" id="sf-btn-d1" onclick="sfShowDay(1)">DAY 1 · 8 JUN</button>
-      <button class="sf-daybtn" id="sf-btn-d2" onclick="sfShowDay(2)">DAY 2 · 9 JUN</button>
-      <button class="sf-daybtn" id="sf-btn-d3" onclick="sfShowDay(3)">DAY 3 · 10 JUN</button>
+      <button class="sf-daybtn active day1" id="sf-btn-d1" onclick="sfShowDay(1)">DAY 1 · 8 JUN</button>
+      <button class="sf-daybtn day2" id="sf-btn-d2" onclick="sfShowDay(2)">DAY 2 · 9 JUN</button>
+      <button class="sf-daybtn day3" id="sf-btn-d3" onclick="sfShowDay(3)">DAY 3 · 10 JUN</button>
     </div>
 
     <div id="sf-day1" class="sf-dayblock">
@@ -4280,6 +4281,54 @@
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 04 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 10 · TBC</span>
             <span class="sf-performer-name">PARTICIPANT NAME</span>
             <span class="sf-performer-cat">CATEGORY</span>
           </div>
@@ -4332,6 +4381,54 @@
             <span class="sf-performer-cat">CATEGORY</span>
           </div>
         </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 10 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
       </div>
       <div class="sf-soon-banner">
         <div class="sf-soon-left">
@@ -4376,6 +4473,54 @@
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 04 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · TBC</span>
+            <span class="sf-performer-name">PARTICIPANT NAME</span>
+            <span class="sf-performer-cat">CATEGORY</span>
+          </div>
+        </div>
+        <div class="sf-performer coming">
+          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 10 · TBC</span>
             <span class="sf-performer-name">PARTICIPANT NAME</span>
             <span class="sf-performer-cat">CATEGORY</span>
           </div>
@@ -4451,7 +4596,8 @@
               <div class="ff-slot ff-page" data-slot="0">
                 <div class="ff-video-col">
                   <div class="ff-video-box">
-                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REBOOT.mp4" autoplay muted loop playsinline
+                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REBOOT.mp4" autoplay muted loop
+                      playsinline
                       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"></video>
                   </div>
                 </div>
@@ -4469,7 +4615,8 @@
               <div class="ff-slot ff-page" data-slot="1">
                 <div class="ff-video-col">
                   <div class="ff-video-box">
-                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REFORM.mp4" autoplay muted loop playsinline
+                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REFORM.mp4" autoplay muted loop
+                      playsinline
                       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"></video>
                   </div>
                 </div>
@@ -4487,7 +4634,8 @@
               <div class="ff-slot ff-page" data-slot="2">
                 <div class="ff-video-col">
                   <div class="ff-video-box">
-                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/RENDER.mp4" autoplay muted loop playsinline
+                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/RENDER.mp4" autoplay muted loop
+                      playsinline
                       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"></video>
                   </div>
                 </div>
@@ -4505,7 +4653,8 @@
               <div class="ff-slot ff-page" data-slot="3">
                 <div class="ff-video-col">
                   <div class="ff-video-box">
-                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REVIEW.mp4" autoplay muted loop playsinline
+                    <video src="../SGT8-Website/SGTS8Web_videos/BrandReveal_Vid/REVIEW.mp4" autoplay muted loop
+                      playsinline
                       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"></video>
                   </div>
                 </div>
