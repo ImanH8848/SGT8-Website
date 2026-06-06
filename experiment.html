@@ -521,6 +521,94 @@
       width: 100%;
     }
 
+    /* ── HAMBURGER BUTTON ─────────────────────────────────────────────── */
+    #hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      flex-shrink: 0;
+      z-index: 10000;
+    }
+
+    #hamburger-btn .hb-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #c4c4c4;
+      border-radius: 0;
+      transition: transform 0.25s ease, opacity 0.2s ease, width 0.2s ease;
+      transform-origin: center;
+    }
+
+    #hamburger-btn.open .hb-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    #hamburger-btn.open .hb-bar:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+
+    #hamburger-btn.open .hb-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── MOBILE NAV PANEL ─────────────────────────────────────────────── */
+    #mobile-nav-panel {
+      display: none;
+      position: fixed;
+      top: clamp(40px, 9vh, 70px);
+      left: 0;
+      width: 100%;
+      background: #0606d7;
+      border-bottom: 2px solid #000099;
+      box-shadow: 0 8px 24px rgba(30, 30, 255, 0.4);
+      z-index: 9998;
+      flex-direction: column;
+      padding: 12px 0;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.22s ease, opacity 0.22s ease;
+      pointer-events: none;
+    }
+
+    #mobile-nav-panel.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #mobile-nav-panel a {
+      display: block;
+      text-decoration: none;
+      color: #c4c4c4;
+      font-family: var(--font-vhs);
+      font-size: clamp(11px, 3vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 14px 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    #mobile-nav-panel a:last-child {
+      border-bottom: none;
+    }
+
+    #mobile-nav-panel a:hover,
+    #mobile-nav-panel a.active {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
     /* ════════════════════════════════════════════════════════════════════ */
     /* SHARED UTILITIES                                                    */
     /* ════════════════════════════════════════════════════════════════════ */
@@ -1820,20 +1908,96 @@
 
     @media(max-width: 700px) {
       .ytdp-mag-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .ytdp-mag-col {
-        border-right: none;
-        border-bottom: 1px solid var(--rule);
-      }
-
-      .ytdp-mag-col:last-child {
-        border-bottom: none;
+        display: none; /* hidden on mobile — carousel takes over */
       }
 
       .ytdp-desc-block {
         grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── SCHOLARS CAROUSEL (mobile only) ─────────────────────────────── */
+    .ytdp-carousel-wrap {
+      display: none;
+      position: relative;
+    }
+
+    @media(max-width: 700px) {
+      .ytdp-carousel-wrap {
+        display: block;
+      }
+
+      .ytdp-carousel-arrows {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 10;
+        padding: 0 4px;
+      }
+
+      .ytdp-arr {
+        pointer-events: all;
+        width: 32px;
+        height: 32px;
+        background: rgba(0, 0, 174, 0.85);
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        line-height: 1;
+        user-select: none;
+      }
+
+      .ytdp-carousel-scroll {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        gap: 16px;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .ytdp-carousel-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .ytdp-carousel-scroll .ytdp-mag-col {
+        scroll-snap-align: start;
+        flex: 0 0 85vw;
+        max-width: 85vw;
+        border-right: 1px solid var(--rule);
+      }
+
+      .ytdp-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .ytdp-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--rule);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.15s;
+      }
+
+      .ytdp-dot.active {
+        background: var(--blue);
       }
     }
 
@@ -3544,6 +3708,125 @@
     /* ════════════════════════════════════════════════════════════════════ */
     /* RESPONSIVE                                                          */
     /* ════════════════════════════════════════════════════════════════════ */
+    /* ════════════════════════════════════════════════════════════════════ */
+    /* PARTICIPANTS GRID — IN PROGRESS BLUR OVERLAY                        */
+    /* ════════════════════════════════════════════════════════════════════ */
+    .sf-grid-wrap {
+      position: relative;
+    }
+
+    .sf-inprogress-overlay {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      background: rgba(245, 241, 242, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .sf-inprogress-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(18px, 3vw, 36px);
+      letter-spacing: 0.22em;
+      color: #020202;
+      text-align: center;
+    }
+
+    .sf-inprogress-sub {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.2em;
+      color: #555;
+      text-align: center;
+    }
+
+    /* ── TABLET (≤ 900px) ────────────────────────────────────────────── */
+    @media(max-width:900px) {
+      /* Nav — hide desktop nav, show hamburger */
+      #site-nav {
+        display: none;
+      }
+      #hamburger-btn {
+        display: flex;
+      }
+      #mobile-nav-panel {
+        display: flex;
+      }
+
+      /* Hero side columns — hide decorative text */
+      #top-left, #top-right,
+      #mid-left, #mid-right {
+        display: none;
+      }
+      #screen {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        justify-items: center;
+      }
+      #center {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      #bottom {
+        grid-column: 1;
+        grid-row: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+      }
+
+      /* Stats bar — stack */
+      .stats-bar-row {
+        flex-direction: column;
+        min-height: unset;
+      }
+      .stats-bar-side {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 8px 20px;
+      }
+      .stats-bar-stat {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.15);
+      }
+      .stats-bar-divider { display: none; }
+
+      /* Brand reveal file folder */
+      .ff-page {
+        grid-template-columns: 1fr;
+      }
+      .ff-video-col {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 14px;
+      }
+      .ff-video-box {
+        aspect-ratio: 16/9;
+        max-height: 200px;
+      }
+
+      /* Giving back photos */
+      .gb-title-block { margin-top: 8px; }
+
+      /* Semi-finals infobar */
+      .sf-infobar {
+        grid-template-columns: 1fr;
+      }
+      .sf-info-cell {
+        border-right: none;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .sf-info-cell:last-child { border-bottom: none; }
+    }
+
+    /* ── MOBILE (≤ 700px) ────────────────────────────────────────────── */
     @media(max-width:700px) {
 
       .about-flex-row,
@@ -3563,7 +3846,19 @@
       }
 
       .five-t-bento {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      .five-t-text-cell {
+        display: none;
+      }
+
+      .five-t-bento-cell {
+        min-height: clamp(100px, 30vw, 180px);
+      }
+
+      .five-t-shadow {
+        font-size: clamp(40px, 10vw, 90px);
       }
 
       .oa-win-shadow-1,
@@ -3591,14 +3886,159 @@
         width: 100%;
         height: clamp(200px, 60vw, 320px);
       }
+
+      /* Header padding on mobile */
+      #site-header {
+        padding: 0 3%;
+      }
+
+      /* Hero — reduce height */
+      #hero { height: 100svh; }
+      #logo-img { width: 90%; }
+
+      /* About section max-width */
+      .about-inner { max-width: 100%; }
+
+      /* Bento — full bleed */
+      .five-t-fullbleed { padding: 0; }
+
+      /* Stats bar */
+      .stats-bar-row {
+        flex-direction: column;
+        min-height: unset;
+      }
+      .stats-bar-side {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 8px 20px;
+      }
+      .stats-bar-stat {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        padding: clamp(14px, 2vw, 24px) clamp(16px, 3vw, 36px);
+      }
+      .stats-bar-divider { display: none; }
+
+      /* Giving back popup */
+      .gb-popup { margin: clamp(12px, 2vw, 20px) 16px 0; }
+
+      /* YTDP mag grid — already handled at 700px */
+      .ytdp-mag-grid { max-width: 100%; }
+
+      /* Countdown bottom bar — stack */
+      .cw-bottom-bar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .cw-progress-wrap { width: 100%; margin: 0; }
+
+      /* Semi-finals */
+      .sf-performer-grid { grid-template-columns: 1fr; }
+      .sf-infobar { grid-template-columns: 1fr; }
+      .sf-info-cell {
+        border-right: none;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .sf-info-cell:last-child { border-bottom: none; }
+      .sf-daybar { overflow-x: auto; }
+      .sf-soon-banner { flex-direction: column; gap: 10px; }
+      .sf-footer-bar { flex-direction: column; gap: 8px; }
+
+      /* Brand reveal file folder */
+      .ff-wrap { flex-direction: column; }
+      .ff-rail {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        padding: 0 8px;
+        height: 48px;
+        gap: 4px;
+      }
+      .ff-rail::-webkit-scrollbar { display: none; }
+      .ff-tab {
+        clip-path: none;
+        flex-direction: row;
+        flex: 0 0 auto;
+        padding: 6px 12px;
+        border-right: none;
+        border-bottom: none;
+        width: auto;
+        height: 100%;
+      }
+      .ff-tab-code {
+        writing-mode: horizontal-tb;
+        transform: none;
+      }
+      .ff-page {
+        grid-template-columns: 1fr;
+      }
+      .ff-video-col {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 12px;
+      }
+      .ff-video-box {
+        aspect-ratio: 16/9;
+        max-height: 200px;
+      }
+      .ff-info-col {
+        padding: 16px;
+      }
+      .ff-cover {
+        min-height: 200px;
+      }
+      .ff-body { min-height: unset; }
+      #brand-reveal .section-block {
+        padding-bottom: clamp(24px, 5vw, 48px);
+      }
+
+      /* Timeline — horizontal scroll */
+      #timeline-svg {
+        min-width: 640px;
+      }
+      .section-block:has(#timeline-svg) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      #timeline .section-block {
+        overflow-x: auto;
+      }
+
+      /* Footer */
+      .ft-social-row { flex-wrap: wrap; }
+
+      /* ── CHANGE 5: General mobile polish ─────────────────────────── */
+      .section-block {
+        padding: clamp(16px, 3vw, 48px);
+      }
+
+      .gb-title-word {
+        font-size: clamp(48px, 14vw, 180px);
+      }
+
+      .oa-headline-title {
+        font-size: clamp(32px, 9vw, 96px);
+        letter-spacing: -2px;
+      }
+
+      .ytdp-big-title {
+        font-size: clamp(36px, 10vw, 120px);
+      }
+
+      .sf-title {
+        font-size: clamp(36px, 10vw, 100px);
+      }
+
+      .cw-top-bar {
+        flex-wrap: wrap;
+        gap: 4px;
+        letter-spacing: 0.12em;
+      }
     }
 
     @media(max-width:420px) {
       .cw-units-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .five-t-bento {
         grid-template-columns: 1fr;
       }
 
@@ -3609,6 +4049,24 @@
       .about-title-word {
         font-size: clamp(40px, 14vw, 70px);
       }
+
+      /* Giving back title */
+      .gb-title-word {
+        font-size: clamp(56px, 18vw, 100px);
+      }
+
+      /* Stats bar num */
+      .stats-bar-num {
+        font-size: clamp(36px, 12vw, 64px);
+      }
+
+      /* Countdown units */
+      .cw-unit-num {
+        font-size: clamp(32px, 12vw, 64px);
+      }
+
+      /* SF performer grid */
+      .sf-performer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -3637,7 +4095,22 @@
       <a href="#brand-reveal">BRAND REVEAL</a>
       <a href="#timeline">TIMELINE</a>
     </nav>
+    <button id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hb-bar"></span>
+      <span class="hb-bar"></span>
+      <span class="hb-bar"></span>
+    </button>
   </header>
+
+  <!-- ══ MOBILE NAV PANEL ══════════════════════════════════════════════════ -->
+  <nav id="mobile-nav-panel" aria-hidden="true">
+    <a href="#hero">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#online-auditions">ONLINE AUDITIONS</a>
+    <a href="#semi-finals">SEMI-FINALS</a>
+    <a href="#brand-reveal">BRAND REVEAL</a>
+    <a href="#timeline">TIMELINE</a>
+  </nav>
 
   <!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
   <section id="hero">
@@ -4077,6 +4550,7 @@
 
           <div class="ytdp-inner" style="padding: 0; position: relative; z-index: 1;">
 
+            <!-- DESKTOP: 3-col grid -->
             <div class="ytdp-mag-grid">
 
               <!-- ZHI XUAN -->
@@ -4123,6 +4597,60 @@
 
             </div>
 
+            <!-- MOBILE: snap carousel -->
+            <div class="ytdp-carousel-wrap">
+              <div class="ytdp-carousel-arrows">
+                <button class="ytdp-arr" id="ytdp-arr-prev" aria-label="Previous">&#8249;</button>
+                <button class="ytdp-arr" id="ytdp-arr-next" aria-label="Next">&#8250;</button>
+              </div>
+              <div class="ytdp-carousel-scroll" id="ytdp-carousel-scroll">
+                <!-- ZHI XUAN -->
+                <div class="ytdp-mag-col">
+                  <div class="ytdp-mag-photo-wrap">
+                    <img src="../SGT8-Website/SGTS8Web_pictures/Eng Zhi Xuan (copy).jpeg" alt="Eng Zhi Xuan">
+                    <div class="ytdp-mag-photo-scan"></div>
+                    <div class="ytdp-mag-corner-tr"></div>
+                  </div>
+                  <div class="ytdp-mag-info">
+                    <div class="ytdp-mag-badge">CULINARY ARTS</div>
+                    <div class="ytdp-mag-name">ZHI XUAN</div>
+                    <div class="ytdp-mag-fullname">ENG ZHI XUAN</div>
+                  </div>
+                </div>
+                <!-- KEE WEI LIM -->
+                <div class="ytdp-mag-col">
+                  <div class="ytdp-mag-photo-wrap">
+                    <img src="../SGT8-Website/SGTS8Web_pictures/Kee Wei Lim.jpeg" alt="Kee Wei Lim">
+                    <div class="ytdp-mag-photo-scan"></div>
+                    <div class="ytdp-mag-corner-tr"></div>
+                  </div>
+                  <div class="ytdp-mag-info">
+                    <div class="ytdp-mag-badge">ARTS & DESIGN</div>
+                    <div class="ytdp-mag-name">WEI LIM</div>
+                    <div class="ytdp-mag-fullname">KEE WEI LIM</div>
+                  </div>
+                </div>
+                <!-- JOHN THIEN -->
+                <div class="ytdp-mag-col">
+                  <div class="ytdp-mag-photo-wrap">
+                    <img src="../SGT8-Website/SGTS8Web_pictures/John Thien (copy).jpeg" alt="John Thien">
+                    <div class="ytdp-mag-photo-scan"></div>
+                    <div class="ytdp-mag-corner-tr"></div>
+                  </div>
+                  <div class="ytdp-mag-info">
+                    <div class="ytdp-mag-badge">MUSIC</div>
+                    <div class="ytdp-mag-name">JOHN THIEN</div>
+                    <div class="ytdp-mag-fullname">JOHN THIEN</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ytdp-carousel-dots">
+                <button class="ytdp-dot active" data-idx="0" aria-label="Card 1"></button>
+                <button class="ytdp-dot" data-idx="1" aria-label="Card 2"></button>
+                <button class="ytdp-dot" data-idx="2" aria-label="Card 3"></button>
+              </div>
+            </div>
+
             <div class="ytdp-bottom-bar">
               <span class="ytdp-bottom-txt"><span
                   style="display:inline-block;width:4px;height:4px;background:var(--blue);margin-right:5px;animation:pulse 1.2s step-end infinite;vertical-align:middle;"></span>SIGNAL
@@ -4158,7 +4686,7 @@
     <div class="cw-wrap">
       <div style="max-width: 87vw; margin: 0 auto; padding: 0 clamp(20px, 4vw, 52px); position: relative;">
         <div class="cw-top-bar">
-          <span class="cw-top-label">// 05 — OA CLOSING COUNTDOWN</span>
+          <span class="cw-top-label">// 05 — ONLINE AUDITIONS CLOSING COUNTDOWN</span>
           <span
             style="font-family:var(--font-vhs); font-size:clamp(7px,0.75vw,10px); color:var(--rule); letter-spacing:0.1em; margin-left:auto; padding-left:24px;">BOOT:05</span>
         </div>
@@ -4181,7 +4709,7 @@
           <div class="cw-bottom-bar">
             <div class="cw-deadline-text">
               <strong id="end-display">15 MAY 2026 — 18:00:00</strong>
-              OA REGISTRATION CLOSES
+              ONLINE AUDITIONS REGISTRATION CLOSES
             </div>
             <div class="cw-progress-wrap">
               <div class="cw-progress-label">
@@ -4258,6 +4786,11 @@
         <div class="sf-dayblock-title">DAY 1 <span style="color:#FB092F;">·</span> 8 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4340,6 +4873,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day1 -->
       <div class="sf-soon-banner" style="background:#0000ae">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4354,6 +4888,11 @@
         <div class="sf-dayblock-title">DAY 2 <span style="color:#FB092F;">·</span> 9 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4436,6 +4975,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day2 -->
       <div class="sf-soon-banner" style="background: #47E42E">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4450,6 +4990,11 @@
         <div class="sf-dayblock-title">DAY 3 <span style="color:#FB092F;">·</span> 10 JUNE</div>
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
+      <div class="sf-grid-wrap">
+      <div class="sf-inprogress-overlay">
+        <div class="sf-inprogress-label">IN PROGRESS</div>
+        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+      </div>
       <div class="sf-performer-grid">
         <div class="sf-performer coming">
           <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
@@ -4532,6 +5077,7 @@
           </div>
         </div>
       </div>
+      </div><!-- /.sf-grid-wrap day3 -->
       <div class="sf-soon-banner" style="background:#FB092F">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
@@ -4543,9 +5089,9 @@
 
     <div class="sf-bottom-ticker">
       <div class="sf-bottom-ticker-inner">
-        RE:BOOT COMPLETE <span>·</span> OA PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
+        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
         SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT TALENT <span>·</span> SEASON 8
-        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> OA PHASE ENDED <span>·</span> NOW
+        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW
         ENTERING RE:FORM <span>·</span> TOP 30 SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT
         TALENT <span>·</span> SEASON 8 <span>·</span> RE:VELATION <span>·</span>
       </div>
@@ -4569,7 +5115,7 @@
       <div class="brand-reveal-shadow-text" aria-hidden="true">RE:VELATION</div>
       <div class="s4-layout">
         <div>
-          <div class="theme-title">RE:<span>VELATION</span></div>
+          <div class="theme-title">RE:<span>VELATION</span><span>.</span></div>
           <div class="theme-sub">SGT SEASON 8 — 2025 / 2026</div>
           <div class="theme-body">In a world of digital noise, true talent is often hidden behind the static — a file
             waiting to be found, a signal waiting to be heard. RE:VELATION is the moment the screen clears.<br><br>It is
@@ -4854,7 +5400,7 @@
              6px  0   0 var(--bg),
              0   -6px 0 var(--bg),
              0    6px 0 var(--bg);
-        ">OA CLOSED</div>
+        ">CLOSED</div>
         <div style="
           font-family: var(--font-vhs);
           font-size: clamp(9px, 1vw, 13px);
@@ -5012,6 +5558,104 @@
     // ── SCROLL NUDGE ────────────────────────────────────────────────────────
     const nudge = document.getElementById('scroll-nudge');
     window.addEventListener('scroll', () => { nudge.style.opacity = window.scrollY > 60 ? '0' : '1'; }, { passive: true });
+
+    // ── HAMBURGER MENU ──────────────────────────────────────────────────────
+    (function () {
+      const btn = document.getElementById('hamburger-btn');
+      const panel = document.getElementById('mobile-nav-panel');
+      if (!btn || !panel) return;
+
+      function closeMenu() {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+      }
+
+      btn.addEventListener('click', function () {
+        const isOpen = btn.classList.contains('open');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          panel.classList.add('open');
+          panel.setAttribute('aria-hidden', 'false');
+        }
+      });
+
+      // Close when a nav link is clicked
+      panel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          closeMenu();
+          // Sync active state with desktop nav
+          const href = link.getAttribute('href');
+          document.querySelectorAll('#mobile-nav-panel a').forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function (e) {
+        if (!btn.contains(e.target) && !panel.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      // Keep mobile nav active state in sync with desktop nav observer
+      const mobileLinks = panel.querySelectorAll('a');
+      const desktopLinks = document.querySelectorAll('#site-nav a');
+      const observer = new MutationObserver(function () {
+        desktopLinks.forEach(function (dl) {
+          if (dl.classList.contains('active')) {
+            const href = dl.getAttribute('href');
+            mobileLinks.forEach(function (ml) {
+              ml.classList.toggle('active', ml.getAttribute('href') === href);
+            });
+          }
+        });
+      });
+      desktopLinks.forEach(function (dl) { observer.observe(dl, { attributes: true, attributeFilter: ['class'] }); });
+    })();
+
+    // ── SCHOLARS CAROUSEL ───────────────────────────────────────────────────
+    (function () {
+      const scroll = document.getElementById('ytdp-carousel-scroll');
+      const dots = document.querySelectorAll('.ytdp-dot');
+      const prevBtn = document.getElementById('ytdp-arr-prev');
+      const nextBtn = document.getElementById('ytdp-arr-next');
+      if (!scroll) return;
+
+      const cards = scroll.querySelectorAll('.ytdp-mag-col');
+      let current = 0;
+
+      function scrollToCard(idx) {
+        if (idx < 0) idx = 0;
+        if (idx >= cards.length) idx = cards.length - 1;
+        current = idx;
+        cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          scrollToCard(parseInt(dot.dataset.idx, 10));
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { scrollToCard(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { scrollToCard(current + 1); });
+
+      // Update dots on scroll
+      scroll.addEventListener('scroll', function () {
+        const cardWidth = cards[0] ? cards[0].offsetWidth : 1;
+        const idx = Math.round(scroll.scrollLeft / (cardWidth + 16));
+        if (idx !== current) {
+          current = idx;
+          dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+        }
+      }, { passive: true });
+    })();
   </script>
 </body>
 
