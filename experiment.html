@@ -1908,7 +1908,8 @@
 
     @media(max-width: 700px) {
       .ytdp-mag-grid {
-        display: none; /* hidden on mobile — carousel takes over */
+        display: none;
+        /* hidden on mobile — carousel takes over */
       }
 
       .ytdp-desc-block {
@@ -3748,31 +3749,39 @@
 
     /* ── TABLET (≤ 900px) ────────────────────────────────────────────── */
     @media(max-width:900px) {
+
       /* Nav — hide desktop nav, show hamburger */
       #site-nav {
         display: none;
       }
+
       #hamburger-btn {
         display: flex;
       }
+
       #mobile-nav-panel {
         display: flex;
       }
 
       /* Hero side columns — hide decorative text */
-      #top-left, #top-right,
-      #mid-left, #mid-right {
+      #top-left,
+      #top-right,
+      #mid-left,
+      #mid-right {
         display: none;
       }
+
       #screen {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         justify-items: center;
       }
+
       #center {
         grid-column: 1;
         grid-row: 1;
       }
+
       #bottom {
         grid-column: 1;
         grid-row: 2;
@@ -3787,43 +3796,56 @@
         flex-direction: column;
         min-height: unset;
       }
+
       .stats-bar-side {
         writing-mode: horizontal-tb;
         transform: none;
         padding: 8px 20px;
       }
+
       .stats-bar-stat {
         border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
       }
-      .stats-bar-divider { display: none; }
+
+      .stats-bar-divider {
+        display: none;
+      }
 
       /* Brand reveal file folder */
       .ff-page {
         grid-template-columns: 1fr;
       }
+
       .ff-video-col {
         border-right: none;
         border-bottom: 1px solid var(--rule);
         padding: 14px;
       }
+
       .ff-video-box {
         aspect-ratio: 16/9;
         max-height: 200px;
       }
 
       /* Giving back photos */
-      .gb-title-block { margin-top: 8px; }
+      .gb-title-block {
+        margin-top: 8px;
+      }
 
       /* Semi-finals infobar */
       .sf-infobar {
         grid-template-columns: 1fr;
       }
+
       .sf-info-cell {
         border-right: none;
         border-bottom: 1px solid #1a1a1a;
       }
-      .sf-info-cell:last-child { border-bottom: none; }
+
+      .sf-info-cell:last-child {
+        border-bottom: none;
+      }
     }
 
     /* ── MOBILE (≤ 700px) ────────────────────────────────────────────── */
@@ -3893,37 +3915,55 @@
       }
 
       /* Hero — reduce height */
-      #hero { height: 100svh; }
-      #logo-img { width: 90%; }
+      #hero {
+        height: 100svh;
+      }
+
+      #logo-img {
+        width: 90%;
+      }
 
       /* About section max-width */
-      .about-inner { max-width: 100%; }
+      .about-inner {
+        max-width: 100%;
+      }
 
       /* Bento — full bleed */
-      .five-t-fullbleed { padding: 0; }
+      .five-t-fullbleed {
+        padding: 0;
+      }
 
       /* Stats bar */
       .stats-bar-row {
         flex-direction: column;
         min-height: unset;
       }
+
       .stats-bar-side {
         writing-mode: horizontal-tb;
         transform: none;
         padding: 8px 20px;
       }
+
       .stats-bar-stat {
         border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
         padding: clamp(14px, 2vw, 24px) clamp(16px, 3vw, 36px);
       }
-      .stats-bar-divider { display: none; }
+
+      .stats-bar-divider {
+        display: none;
+      }
 
       /* Giving back popup */
-      .gb-popup { margin: clamp(12px, 2vw, 20px) 16px 0; }
+      .gb-popup {
+        margin: clamp(12px, 2vw, 20px) 16px 0;
+      }
 
       /* YTDP mag grid — already handled at 700px */
-      .ytdp-mag-grid { max-width: 100%; }
+      .ytdp-mag-grid {
+        max-width: 100%;
+      }
 
       /* Countdown bottom bar — stack */
       .cw-bottom-bar {
@@ -3931,22 +3971,49 @@
         gap: 12px;
         align-items: flex-start;
       }
-      .cw-progress-wrap { width: 100%; margin: 0; }
+
+      .cw-progress-wrap {
+        width: 100%;
+        margin: 0;
+      }
 
       /* Semi-finals */
-      .sf-performer-grid { grid-template-columns: 1fr; }
-      .sf-infobar { grid-template-columns: 1fr; }
+      .sf-performer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sf-infobar {
+        grid-template-columns: 1fr;
+      }
+
       .sf-info-cell {
         border-right: none;
         border-bottom: 1px solid #1a1a1a;
       }
-      .sf-info-cell:last-child { border-bottom: none; }
-      .sf-daybar { overflow-x: auto; }
-      .sf-soon-banner { flex-direction: column; gap: 10px; }
-      .sf-footer-bar { flex-direction: column; gap: 8px; }
+
+      .sf-info-cell:last-child {
+        border-bottom: none;
+      }
+
+      .sf-daybar {
+        overflow-x: auto;
+      }
+
+      .sf-soon-banner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .sf-footer-bar {
+        flex-direction: column;
+        gap: 8px;
+      }
 
       /* Brand reveal file folder */
-      .ff-wrap { flex-direction: column; }
+      .ff-wrap {
+        flex-direction: column;
+      }
+
       .ff-rail {
         flex-direction: row;
         width: 100%;
@@ -3955,7 +4022,11 @@
         height: 48px;
         gap: 4px;
       }
-      .ff-rail::-webkit-scrollbar { display: none; }
+
+      .ff-rail::-webkit-scrollbar {
+        display: none;
+      }
+
       .ff-tab {
         clip-path: none;
         flex-direction: row;
@@ -3966,29 +4037,39 @@
         width: auto;
         height: 100%;
       }
+
       .ff-tab-code {
         writing-mode: horizontal-tb;
         transform: none;
       }
+
       .ff-page {
         grid-template-columns: 1fr;
       }
+
       .ff-video-col {
         border-right: none;
         border-bottom: 1px solid var(--rule);
         padding: 12px;
       }
+
       .ff-video-box {
         aspect-ratio: 16/9;
         max-height: 200px;
       }
+
       .ff-info-col {
         padding: 16px;
       }
+
       .ff-cover {
         min-height: 200px;
       }
-      .ff-body { min-height: unset; }
+
+      .ff-body {
+        min-height: unset;
+      }
+
       #brand-reveal .section-block {
         padding-bottom: clamp(24px, 5vw, 48px);
       }
@@ -3997,16 +4078,20 @@
       #timeline-svg {
         min-width: 640px;
       }
+
       .section-block:has(#timeline-svg) {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
       }
+
       #timeline .section-block {
         overflow-x: auto;
       }
 
       /* Footer */
-      .ft-social-row { flex-wrap: wrap; }
+      .ft-social-row {
+        flex-wrap: wrap;
+      }
 
       /* ── CHANGE 5: General mobile polish ─────────────────────────── */
       .section-block {
@@ -4066,7 +4151,9 @@
       }
 
       /* SF performer grid */
-      .sf-performer-grid { grid-template-columns: 1fr; }
+      .sf-performer-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -4787,92 +4874,92 @@
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
       <div class="sf-grid-wrap">
-      <div class="sf-inprogress-overlay">
-        <div class="sf-inprogress-label">IN PROGRESS</div>
-        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-      </div>
-      <div class="sf-performer-grid">
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 01 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
+        <div class="sf-inprogress-overlay">
+          <div class="sf-inprogress-label">IN PROGRESS</div>
+          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+        </div>
+        <div class="sf-performer-grid">
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 01 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 02 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 03 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 04 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 05 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 06 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 07 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 08 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 09 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 10 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
           </div>
         </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 02 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 03 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 04 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 05 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 06 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 07 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 08 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 09 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 10 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-      </div>
       </div><!-- /.sf-grid-wrap day1 -->
       <div class="sf-soon-banner" style="background:#0000ae">
         <div class="sf-soon-left">
@@ -4889,92 +4976,92 @@
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
       <div class="sf-grid-wrap">
-      <div class="sf-inprogress-overlay">
-        <div class="sf-inprogress-label">IN PROGRESS</div>
-        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-      </div>
-      <div class="sf-performer-grid">
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 01 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
+        <div class="sf-inprogress-overlay">
+          <div class="sf-inprogress-label">IN PROGRESS</div>
+          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+        </div>
+        <div class="sf-performer-grid">
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 01 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 02 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 03 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 04 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 05 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 06 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 07 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 08 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 09 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 10 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
           </div>
         </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 02 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 03 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 04 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 05 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 06 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 07 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 08 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 09 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 10 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-      </div>
       </div><!-- /.sf-grid-wrap day2 -->
       <div class="sf-soon-banner" style="background: #47E42E">
         <div class="sf-soon-left">
@@ -4991,92 +5078,92 @@
         <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
       <div class="sf-grid-wrap">
-      <div class="sf-inprogress-overlay">
-        <div class="sf-inprogress-label">IN PROGRESS</div>
-        <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-      </div>
-      <div class="sf-performer-grid">
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 01 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
+        <div class="sf-inprogress-overlay">
+          <div class="sf-inprogress-label">IN PROGRESS</div>
+          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
+        </div>
+        <div class="sf-performer-grid">
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 01 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 02 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 03 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 04 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 05 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 06 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 07 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 08 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 09 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
+          </div>
+          <div class="sf-performer coming">
+            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
+            <div class="sf-performer-info">
+              <span class="sf-performer-slot">SLOT 10 · TBC</span>
+              <span class="sf-performer-name">PARTICIPANT NAME</span>
+              <span class="sf-performer-cat">CATEGORY</span>
+            </div>
           </div>
         </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 02 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 03 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 04 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 05 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 06 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 07 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 08 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 09 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-        <div class="sf-performer coming">
-          <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-          <div class="sf-performer-info">
-            <span class="sf-performer-slot">SLOT 10 · TBC</span>
-            <span class="sf-performer-name">PARTICIPANT NAME</span>
-            <span class="sf-performer-cat">CATEGORY</span>
-          </div>
-        </div>
-      </div>
       </div><!-- /.sf-grid-wrap day3 -->
       <div class="sf-soon-banner" style="background:#FB092F">
         <div class="sf-soon-left">
@@ -5089,9 +5176,11 @@
 
     <div class="sf-bottom-ticker">
       <div class="sf-bottom-ticker-inner">
-        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
+        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span>
+        TOP 30
         SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT TALENT <span>·</span> SEASON 8
-        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW
+        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED
+        <span>·</span> NOW
         ENTERING RE:FORM <span>·</span> TOP 30 SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT
         TALENT <span>·</span> SEASON 8 <span>·</span> RE:VELATION <span>·</span>
       </div>
@@ -5252,31 +5341,31 @@
         <line id="tl-progress" x1="40" y1="88" x2="40" y2="88" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" />
 
         <!-- ── STAGE 01 RE:BOOT ── -->
-        <text x="38" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.2"
+        <text x="38" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.08"
           dominant-baseline="middle" letter-spacing="4">01</text>
         <circle id="dot-1" cx="40" cy="88" r="7" fill="#FFFFFF" />
         <circle cx="40" cy="88" r="4" fill="#0000AE" />
-        <text x="40" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.5)"
-          letter-spacing="2">CURRENTLY ACTIVE</text>
-        <text x="40" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="#FFFFFF"
+        <text x="40" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.2)"
+          letter-spacing="2">COMPLETED</text>
+        <text x="40" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="rgba(255,255,255,0.4)"
           letter-spacing="3" font-weight="bold">RE:BOOT</text>
-        <text x="40" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.35)"
+        <text x="40" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.15)"
           letter-spacing="1">ONLINE AUDITIONS</text>
-        <text x="40" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.3)"
+        <text x="40" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.15)"
           letter-spacing="1">APR 6 – MAY 15</text>
 
         <!-- ── STAGE 02 RE:FORM ── -->
-        <text x="228" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.04"
+        <text x="228" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.2"
           dominant-baseline="middle" letter-spacing="4">02</text>
-        <circle id="dot-2" cx="230" cy="88" r="7" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"
-          stroke-dasharray="3 2" />
-        <text x="230" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.2)"
-          letter-spacing="2">UPCOMING</text>
-        <text x="230" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="rgba(255,255,255,0.28)"
+        <circle id="dot-2" cx="230" cy="88" r="7" fill="#FFFFFF" />
+        <circle cx="230" cy="88" r="4" fill="#0000AE" />
+        <text x="230" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.5)"
+          letter-spacing="2">CURRENTLY ACTIVE</text>
+        <text x="230" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="#FFFFFF"
           letter-spacing="3" font-weight="bold">RE:FORM</text>
-        <text x="230" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.15)"
+        <text x="230" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.35)"
           letter-spacing="1">TOP 30 SEMI-FINALS</text>
-        <text x="230" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.15)"
+        <text x="230" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.3)"
           letter-spacing="1">JUN 2026</text>
 
         <!-- ── STAGE 03 RE:NDER ── -->
