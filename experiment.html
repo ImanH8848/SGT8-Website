@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SGT S8 — RE:VELATION</title>
+  <title>Sunway's Got Talent Season 8: RE:VELATION</title>
+  <link rel="icon" type="image/png" href="../SGT8-Website/SGTS8Web_pictures/sgt8-shortlogo-black.png">
+  <link rel="apple-touch-icon" href="../SGT8-Website/SGTS8Web_pictures/sgt8-shortlogo-black.png">
   <style>
     /* ── FONTS ──────────────────────────────────────────────────────────── */
     @font-face {
@@ -2858,13 +2860,6 @@
       letter-spacing: -1px;
     }
 
-    .sf-dayblock-date {
-      font-family: var(--font-vhs);
-      font-size: clamp(8px, 0.8vw, 10px);
-      color: #888;
-      letter-spacing: 0.16em;
-    }
-
     .sf-performer-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2881,7 +2876,15 @@
       transition: border-color 0.15s;
     }
 
-    .sf-performer:hover {
+    #sf-day1 .sf-performer:hover {
+      border-color: #0000ae;
+    }
+
+    #sf-day2 .sf-performer:hover {
+      border-color: #47E42E;
+    }
+
+    #sf-day3 .sf-performer:hover {
       border-color: #FB092F;
     }
 
@@ -2940,6 +2943,7 @@
       font-size: clamp(8px, 0.8vw, 10px);
       color: #425186;
       letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .sf-performer.coming {
@@ -2960,6 +2964,42 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: filter 0.2s, transform 0.2s;
+    }
+
+    .sf-soon-banner:hover {
+      filter: brightness(1.25);
+      transform: translateX(4px);
+    }
+
+    .sf-soon-banner.locked {
+      opacity: 0.42;
+      filter: grayscale(70%);
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .sf-soon-banner.locked:hover {
+      filter: grayscale(70%);
+      transform: none;
+    }
+
+    .sf-live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #FF1A1A;
+      margin-right: 6px;
+      vertical-align: middle;
+      animation: sfLiveBlink 1s steps(1) infinite;
+    }
+
+    @keyframes sfLiveBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0.15; }
     }
 
     .sf-soon-left {
@@ -2993,12 +3033,42 @@
     .sf-soon-badge {
       font-family: var(--font-vhs);
       font-size: clamp(8px, 0.8vw, 10px);
-      color: #555;
-      border: 1px solid #333;
+      color: #F5F1F2;
+      border: 1px solid #F5F1F2;
       padding: 3px 10px;
       letter-spacing: 0.12em;
       flex-shrink: 0;
     }
+
+    /* ── BANNER TEXT CONTRAST — tuned per day's background colour so the
+       copy never washes out / camouflages against it ────────────────── */
+
+    /* Day 1 — deep blue background → light text */
+    #sf-soon-d1 .sf-soon-icon,
+    #sf-soon-d1 .sf-soon-txt,
+    #sf-soon-d1 .sf-soon-badge {
+      color: #F5F1F2;
+    }
+    #sf-soon-d1 .sf-soon-txt span { color: #AEC0EA; }
+    #sf-soon-d1 .sf-soon-badge { border-color: #F5F1F2; }
+
+    /* Day 2 — bright green background → dark text (white would wash out) */
+    #sf-soon-d2 .sf-soon-icon,
+    #sf-soon-d2 .sf-soon-txt,
+    #sf-soon-d2 .sf-soon-badge {
+      color: #020202;
+    }
+    #sf-soon-d2 .sf-soon-txt span { color: #1A1A1A; }
+    #sf-soon-d2 .sf-soon-badge { border-color: #020202; }
+
+    /* Day 3 — saturated red background → dark text reads better than white */
+    #sf-soon-d3 .sf-soon-icon,
+    #sf-soon-d3 .sf-soon-txt,
+    #sf-soon-d3 .sf-soon-badge {
+      color: #020202;
+    }
+    #sf-soon-d3 .sf-soon-txt span { color: #1A1A1A; }
+    #sf-soon-d3 .sf-soon-badge { border-color: #020202; }
 
     .sf-bottom-ticker {
       background: #F5F1F2;
@@ -4351,45 +4421,6 @@
 
     /* ════════════════════════════════════════════════════════════════════ */
     /* RESPONSIVE                                                          */
-    /* ════════════════════════════════════════════════════════════════════ */
-    /* ════════════════════════════════════════════════════════════════════ */
-    /* PARTICIPANTS GRID — IN PROGRESS BLUR OVERLAY                        */
-    /* ════════════════════════════════════════════════════════════════════ */
-    .sf-grid-wrap {
-      position: relative;
-    }
-
-    .sf-inprogress-overlay {
-      position: absolute;
-      inset: 0;
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
-      background: rgba(245, 241, 242, 0.35);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      z-index: 20;
-      pointer-events: none;
-    }
-
-    .sf-inprogress-label {
-      font-family: var(--font-vhs);
-      font-size: clamp(18px, 3vw, 36px);
-      letter-spacing: 0.22em;
-      color: #020202;
-      text-align: center;
-    }
-
-    .sf-inprogress-sub {
-      font-family: var(--font-vhs);
-      font-size: clamp(8px, 0.85vw, 11px);
-      letter-spacing: 0.2em;
-      color: #555;
-      text-align: center;
-    }
-
     /* ── TABLET (≤ 900px) ────────────────────────────────────────────── */
     @media(max-width:900px) {
 
@@ -5292,8 +5323,8 @@
                 </div>
                 <div class="ytdp-mag-info">
                   <div class="ytdp-mag-badge">CULINARY ARTS</div>
-                  <div class="ytdp-mag-name">ZHI XUAN</div>
-                  <div class="ytdp-mag-fullname">ENG ZHI XUAN</div>
+                  <div class="ytdp-mag-name">ENG ZHI XUAN</div>
+                  <div class="ytdp-mag-fullname">BACHELOR OF SCIENCE (HONOURS) IN CULINARY MANAGEMENT</div>
                 </div>
               </div>
 
@@ -5306,8 +5337,8 @@
                 </div>
                 <div class="ytdp-mag-info">
                   <div class="ytdp-mag-badge">ARTS & DESIGN</div>
-                  <div class="ytdp-mag-name">WEI LIM</div>
-                  <div class="ytdp-mag-fullname">KEE WEI LIM</div>
+                  <div class="ytdp-mag-name">KEE WEI LIM</div>
+                  <div class="ytdp-mag-fullname">BACHELOR OF ARTS (HONOURS) DESIGN COMMUNICATION</div>
                 </div>
               </div>
 
@@ -5320,8 +5351,8 @@
                 </div>
                 <div class="ytdp-mag-info">
                   <div class="ytdp-mag-badge">MUSIC</div>
-                  <div class="ytdp-mag-name">JOHN THIEN</div>
-                  <div class="ytdp-mag-fullname">JOHN THIEN</div>
+                  <div class="ytdp-mag-name">JOHN THIEN HAO EN</div>
+                  <div class="ytdp-mag-fullname">BACHELOR OF ARTS (HONOURS) CONTEMPORARY MUSIC (AUDIO TECHNOLOGY)</div>
                 </div>
               </div>
 
@@ -5506,315 +5537,286 @@
     </div>
 
     <div class="sf-daybar">
-      <button class="sf-daybtn active day1" id="sf-btn-d1" onclick="sfShowDay(1)">DAY 1 · 8 JUN</button>
-      <button class="sf-daybtn day2" id="sf-btn-d2" onclick="sfShowDay(2)">DAY 2 · 9 JUN</button>
-      <button class="sf-daybtn day3" id="sf-btn-d3" onclick="sfShowDay(3)">DAY 3 · 10 JUN</button>
+      <button class="sf-daybtn active day1" id="sf-btn-d1" onclick="sfShowDay(1)">DAY 1 · 8 JUNE</button>
+      <button class="sf-daybtn day2" id="sf-btn-d2" onclick="sfShowDay(2)">DAY 2 · 9 JUNE</button>
+      <button class="sf-daybtn day3" id="sf-btn-d3" onclick="sfShowDay(3)">DAY 3 · 10 JUNE</button>
     </div>
 
     <div id="sf-day1" class="sf-dayblock">
       <div class="sf-dayblock-header">
         <div class="sf-dayblock-title">DAY 1 <span style="color:#FB092F;">·</span> 8 JUNE</div>
-        <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
-      <div class="sf-grid-wrap">
-        <div class="sf-inprogress-overlay">
-          <div class="sf-inprogress-label">IN PROGRESS</div>
-          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-        </div>
-        <div class="sf-performer-grid">
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 01 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 02 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 03 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 04 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 05 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 06 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 07 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 08 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 09 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 10 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
+      <div class="sf-performer-grid">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/1.png" alt="Christabelle" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
+            <span class="sf-performer-name">Christabelle</span>
+            <span class="sf-performer-cat">Singing</span>
           </div>
         </div>
-      </div><!-- /.sf-grid-wrap day1 -->
-      <div class="sf-soon-banner" style="background:#0000ae">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/2.png" alt="Esther" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
+            <span class="sf-performer-name">Esther</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/3.png" alt="Zhi Ling" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
+            <span class="sf-performer-name">Zhi Ling</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/4.png" alt="Isha Cheah Ka Yen" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
+            <span class="sf-performer-name">Isha Cheah Ka Yen</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/5.png" alt="KXin" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
+            <span class="sf-performer-name">KXin</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/6.png" alt="Lim Cindy" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · 1:05 – 1:15 PM</span>
+            <span class="sf-performer-name">Lim Cindy</span>
+            <span class="sf-performer-cat">Musical Instrument</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/7.png" alt="Tatsuki" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · 1:15 – 1:25 PM</span>
+            <span class="sf-performer-name">Tatsuki</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/8.png" alt="Jay" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · 1:25 – 1:35 PM</span>
+            <span class="sf-performer-name">Jay</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/9.png" alt="HUH?!" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · 1:35 – 1:45 PM</span>
+            <span class="sf-performer-name">HUH?!</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+      </div>
+      <a class="sf-soon-banner" id="sf-soon-d1" style="background:#0000ae" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day1" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
-          <div class="sf-soon-txt">RECORDINGS LOADING...<span>SIGNAL WILL APPEAR AFTER RE:FORM · STAY TUNED</span></div>
+          <div class="sf-soon-txt">WATCH DAY 1 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
         </div>
-        <div class="sf-soon-badge">UNDER CONSTRUCTION</div>
-      </div>
+        <div class="sf-soon-badge">VIEW RECORDING →</div>
+      </a>
     </div>
 
     <div id="sf-day2" class="sf-dayblock" style="display:none;">
       <div class="sf-dayblock-header">
         <div class="sf-dayblock-title">DAY 2 <span style="color:#FB092F;">·</span> 9 JUNE</div>
-        <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
-      <div class="sf-grid-wrap">
-        <div class="sf-inprogress-overlay">
-          <div class="sf-inprogress-label">IN PROGRESS</div>
-          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-        </div>
-        <div class="sf-performer-grid">
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 01 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 02 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 03 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 04 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 05 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 06 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 07 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 08 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 09 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 10 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
+      <div class="sf-performer-grid">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/10.png" alt="shazzy" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
+            <span class="sf-performer-name">shazzy</span>
+            <span class="sf-performer-cat">Magic</span>
           </div>
         </div>
-      </div><!-- /.sf-grid-wrap day2 -->
-      <div class="sf-soon-banner" style="background: #47E42E">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/11.png" alt="Chan Phei Jing" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
+            <span class="sf-performer-name">Chan Phei Jing</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/12.png" alt="Mynn Jae" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
+            <span class="sf-performer-name">Mynn Jae</span>
+            <span class="sf-performer-cat">Musical Instrument</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/13.png" alt="Dreams" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
+            <span class="sf-performer-name">Dreams</span>
+            <span class="sf-performer-cat">Singing with Guitar</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/14.png" alt="DCJZ" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
+            <span class="sf-performer-name">DCJZ</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/15.png" alt="Nabil Iskandar bin Khairil Anwar" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · 1:00 – 1:10 PM</span>
+            <span class="sf-performer-name">Nabil Iskandar bin Khairil Anwar</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/16.png" alt="Hulk." loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · 1:10 – 1:20 PM</span>
+            <span class="sf-performer-name">Hulk.</span>
+            <span class="sf-performer-cat">Juggling</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/17.png" alt="Rachel Lee Weng Yen" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · 1:20 – 1:30 PM</span>
+            <span class="sf-performer-name">Rachel Lee Weng Yen</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/18.png" alt="Hermit and Charlie" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · 1:30 – 1:40 PM</span>
+            <span class="sf-performer-name">Hermit and Charlie</span>
+            <span class="sf-performer-cat">Ventriloquism</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/19.png" alt="Tee Hui Yi" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 10 · 1:40 – 1:50 PM</span>
+            <span class="sf-performer-name">Tee Hui Yi</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+      </div>
+      <a class="sf-soon-banner" id="sf-soon-d2" style="background:#47E42E" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day2" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
-          <div class="sf-soon-txt">RECORDINGS LOADING...<span>SIGNAL WILL APPEAR AFTER RE:FORM · STAY TUNED</span></div>
+          <div class="sf-soon-txt">WATCH DAY 2 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
         </div>
-        <div class="sf-soon-badge">UNDER CONSTRUCTION</div>
-      </div>
+        <div class="sf-soon-badge">VIEW RECORDING →</div>
+      </a>
     </div>
 
     <div id="sf-day3" class="sf-dayblock" style="display:none;">
       <div class="sf-dayblock-header">
         <div class="sf-dayblock-title">DAY 3 <span style="color:#FB092F;">·</span> 10 JUNE</div>
-        <div class="sf-dayblock-date">RECORDINGS — COMING SOON</div>
       </div>
-      <div class="sf-grid-wrap">
-        <div class="sf-inprogress-overlay">
-          <div class="sf-inprogress-label">IN PROGRESS</div>
-          <div class="sf-inprogress-sub">PARTICIPANTS TO BE ANNOUNCED</div>
-        </div>
-        <div class="sf-performer-grid">
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 01 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 02 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 03 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 04 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 05 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 06 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 07 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 08 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 09 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
-          </div>
-          <div class="sf-performer coming">
-            <div class="sf-performer-img"><i class="sf-performer-img-placeholder">☻</i></div>
-            <div class="sf-performer-info">
-              <span class="sf-performer-slot">SLOT 10 · TBC</span>
-              <span class="sf-performer-name">PARTICIPANT NAME</span>
-              <span class="sf-performer-cat">CATEGORY</span>
-            </div>
+      <div class="sf-performer-grid">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/20.png" alt="Aaron Moses" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
+            <span class="sf-performer-name">Aaron Moses</span>
+            <span class="sf-performer-cat">Singing</span>
           </div>
         </div>
-      </div><!-- /.sf-grid-wrap day3 -->
-      <div class="sf-soon-banner" style="background:#FB092F">
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/21.png" alt="Amberlyn" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
+            <span class="sf-performer-name">Amberlyn</span>
+            <span class="sf-performer-cat">Singing + Musical Instrument</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/22.png" alt="Lumino" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
+            <span class="sf-performer-name">Lumino</span>
+            <span class="sf-performer-cat">Beatbox</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/23.png" alt="æra" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
+            <span class="sf-performer-name">æra</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/24.png" alt="æxo" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
+            <span class="sf-performer-name">æxo</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/25.png" alt="Shaun" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 06 · 1:00 – 1:10 PM</span>
+            <span class="sf-performer-name">Shaun</span>
+            <span class="sf-performer-cat">Musical Instrument</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/26.png" alt="BUY 3 FREE 2 (B3F2)" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 07 · 1:10 – 1:20 PM</span>
+            <span class="sf-performer-name">BUY 3 FREE 2 (B3F2)</span>
+            <span class="sf-performer-cat">Dancing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/27.png" alt="Rachel" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 08 · 1:20 – 1:30 PM</span>
+            <span class="sf-performer-name">Rachel</span>
+            <span class="sf-performer-cat">Singing</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/28.png" alt="NIC" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 09 · 1:30 – 1:40 PM</span>
+            <span class="sf-performer-name">NIC</span>
+            <span class="sf-performer-cat">Singing and guitar</span>
+          </div>
+        </div>
+        <div class="sf-performer">
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/29.png" alt="Your Lie in May" loading="lazy"></div>
+          <div class="sf-performer-info">
+            <span class="sf-performer-slot">SLOT 10 · 1:40 – 1:50 PM</span>
+            <span class="sf-performer-name">Your Lie in May</span>
+            <span class="sf-performer-cat">Musical Instrument</span>
+          </div>
+        </div>
+      </div>
+      <a class="sf-soon-banner" id="sf-soon-d3" style="background:#FB092F" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day3" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
-          <div class="sf-soon-txt">RECORDINGS LOADING...<span>SIGNAL WILL APPEAR AFTER RE:FORM · STAY TUNED</span></div>
+          <div class="sf-soon-txt">WATCH DAY 3 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
         </div>
-        <div class="sf-soon-badge">UNDER CONSTRUCTION</div>
-      </div>
+        <div class="sf-soon-badge">VIEW RECORDING →</div>
+      </a>
     </div>
 
     <div class="sf-bottom-ticker">
@@ -6355,6 +6357,74 @@
       document.getElementById('prog-pct').textContent = pct + '%';
     }
     tickCountdown(); setInterval(tickCountdown, 1000);
+
+    // ── SEMI-FINALS RECORDING/LIVE BANNERS ──────────────────────────────────
+    (function () {
+      const SF_BANNERS = [
+        { id: 'sf-soon-d1', label: 'DAY 1', dateLabel: '8 JUNE', link: 'https://ssa.plus/SGTS8_Top30SemiFinals_Day1', liveStart: new Date('2026-06-08T11:50:00+08:00'), recStart: new Date('2026-06-08T14:00:00+08:00') },
+        { id: 'sf-soon-d2', label: 'DAY 2', dateLabel: '9 JUNE', link: 'https://ssa.plus/SGTS8_Top30SemiFinals_Day2', liveStart: new Date('2026-06-09T11:50:00+08:00'), recStart: new Date('2026-06-09T14:00:00+08:00') },
+        { id: 'sf-soon-d3', label: 'DAY 3', dateLabel: '10 JUNE', link: 'https://ssa.plus/SGTS8_Top30SemiFinals_Day3', liveStart: new Date('2026-06-10T11:50:00+08:00'), recStart: new Date('2026-06-10T14:00:00+08:00') }
+      ];
+
+      function sfPad(n) { return String(n).padStart(2, '0'); }
+
+      function sfFmtCountdown(ms) {
+        if (ms < 0) ms = 0;
+        const totalSec = Math.floor(ms / 1000);
+        const d = Math.floor(totalSec / 86400);
+        const h = Math.floor((totalSec % 86400) / 3600);
+        const m = Math.floor((totalSec % 3600) / 60);
+        const s = totalSec % 60;
+        return d > 0
+          ? `${d}D ${sfPad(h)}H ${sfPad(m)}M ${sfPad(s)}S`
+          : `${sfPad(h)}H ${sfPad(m)}M ${sfPad(s)}S`;
+      }
+
+      function sfUpdateBanners() {
+        const now = new Date();
+        SF_BANNERS.forEach(b => {
+          const el = document.getElementById(b.id);
+          if (!el) return;
+          const icon = el.querySelector('.sf-soon-icon');
+          const txt = el.querySelector('.sf-soon-txt');
+          const badge = el.querySelector('.sf-soon-badge');
+
+          if (now < b.liveStart) {
+            // ── LOCKED — countdown to 12PM MYT ──
+            el.classList.add('locked');
+            el.removeAttribute('href');
+            el.removeAttribute('target');
+            el.setAttribute('aria-disabled', 'true');
+            icon.textContent = '🔒';
+            txt.innerHTML = `LIVE IN ${sfFmtCountdown(b.liveStart - now)}<span>${b.label} TOP 30 SEMI-FINALS · ${b.dateLabel} · 12:00 PM MYT</span>`;
+            badge.textContent = 'LOCKED';
+          } else if (now < b.recStart) {
+            // ── LIVE NOW ──
+            el.classList.remove('locked');
+            el.setAttribute('href', b.link);
+            el.setAttribute('target', '_blank');
+            el.setAttribute('rel', 'noopener');
+            el.removeAttribute('aria-disabled');
+            icon.innerHTML = '<span class="sf-live-dot"></span>LIVE';
+            txt.innerHTML = `WATCH ${b.label} LIVE STREAM NOW<span>TOP 30 SEMI-FINALS · STREAMING LIVE · TAP TO WATCH</span>`;
+            badge.textContent = 'WATCH LIVE →';
+          } else {
+            // ── RECORDING AVAILABLE ──
+            el.classList.remove('locked');
+            el.setAttribute('href', b.link);
+            el.setAttribute('target', '_blank');
+            el.setAttribute('rel', 'noopener');
+            el.removeAttribute('aria-disabled');
+            icon.textContent = '▣';
+            txt.innerHTML = `WATCH ${b.label}'S RECORDING NOW<span>TOP 30 SEMI-FINALS · FULL RECORDING · TAP TO VIEW</span>`;
+            badge.textContent = 'VIEW RECORDING →';
+          }
+        });
+      }
+
+      sfUpdateBanners();
+      setInterval(sfUpdateBanners, 1000);
+    })();
 
     // ── FILE FOLDER TABS ────────────────────────────────────────────────────
     (function () {
