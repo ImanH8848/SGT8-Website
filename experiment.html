@@ -1910,7 +1910,8 @@
 
     @media(max-width: 700px) {
       .ytdp-mag-grid {
-        display: none; /* hidden on mobile — carousel takes over */
+        display: none;
+        /* hidden on mobile — carousel takes over */
       }
 
       .ytdp-desc-block {
@@ -3161,6 +3162,649 @@
     }
 
     /* ════════════════════════════════════════════════════════════════════ */
+    /* MERCH DROP — RECEIPT                                                 */
+    /* ════════════════════════════════════════════════════════════════════ */
+    #merch {
+      background: #F5F1F2;
+      width: 100%;
+    }
+
+    .merch-ticker-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+      background: #020202;
+      width: 100%;
+      line-height: 1;
+    }
+
+    .merch-ticker-inner {
+      display: inline-block;
+      animation: merch-ticker 26s linear infinite;
+      font-family: var(--font-vhs);
+      font-size: clamp(13px, 1.3vw, 17px);
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.4);
+      padding-top: 4px;
+    }
+
+    .merch-ticker-inner span {
+      color: #0000AE;
+      margin: 0 8px;
+    }
+
+    @keyframes merch-ticker {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .merch-hero {
+      background: linear-gradient(150deg, #a0f080 0%, #66ee33 25%, #47E42E 50%, #229922 75%, #0F5221 100%);
+      padding: clamp(14px, 2vw, 24px) clamp(20px, 4vw, 52px);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #0a3a0a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .merch-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 11px, rgba(255, 255, 255, 0.07) 11px, rgba(255, 255, 255, 0.07) 12px),
+        repeating-linear-gradient(90deg, transparent, transparent 11px, rgba(255, 255, 255, 0.07) 11px, rgba(255, 255, 255, 0.07) 12px);
+    }
+
+    .merch-hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .merch-hero-eyebrow {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.55);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .merch-hero-title {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 900;
+      color: #F5F1F2;
+      letter-spacing: -1px;
+    }
+
+    .merch-hero-title .mh-blue {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .merch-hero-title .mh-dim {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .merch-hero-tag {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .merch-receipt-wrap {
+      background: #F5F1F2;
+      padding: clamp(24px, 3.5vw, 48px) 0;
+      position: relative;
+    }
+
+    .merch-receipt-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.18'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px 180px;
+    }
+
+    .merch-receipt-inner {
+      max-width: 80vw;
+      margin: 0 auto;
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      z-index: 1;
+    }
+
+    .merch-receipt-box {
+      border: 1.5px dashed #888;
+      padding: clamp(20px, 3vw, 36px);
+      max-width: 100%;
+      margin: 0 auto;
+      margin: 0 auto;
+    }
+
+    .merch-receipt-header {
+      text-align: center;
+      border-bottom: 1px dashed var(--rule);
+      padding-bottom: clamp(14px, 2vw, 20px);
+      margin-bottom: clamp(14px, 2vw, 20px);
+    }
+
+    .merch-receipt-title {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 900;
+      color: #020202;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .merch-receipt-sub {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.15em;
+      color: #777;
+      line-height: 1.9;
+    }
+
+    .merch-receipt-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(8px, 1.5vw, 16px);
+      margin-bottom: clamp(14px, 2vw, 20px);
+      padding-bottom: clamp(14px, 2vw, 20px);
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .merch-receipt-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--panel);
+      border: 1px solid var(--rule);
+    }
+
+    .merch-receipt-photo.panel-blue {
+      background: var(--panel-blue);
+      border-color: var(--blue-mid);
+    }
+
+    .merch-receipt-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: grayscale(10%) contrast(1.05);
+      transition: filter 0.3s;
+    }
+
+    .merch-receipt-photo:hover img {
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .merch-receipt-table {
+      font-family: var(--font-vhs);
+      font-size: clamp(9px, 1vw, 13px);
+      letter-spacing: 0.1em;
+    }
+
+    .merch-receipt-table-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #020202;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      color: #666;
+      letter-spacing: 0.18em;
+    }
+
+    .merch-receipt-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--rule);
+      color: #020202;
+    }
+
+    .merch-receipt-row.last {
+      border-bottom: 2px solid #020202;
+    }
+
+    .merch-receipt-price {
+      color: var(--blue);
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+
+    .merch-receipt-spacer {
+      height: 8px;
+    }
+
+    .merch-receipt-cta {
+      margin-top: clamp(16px, 2vw, 24px);
+      border: 1px dashed var(--blue);
+      padding: clamp(14px, 2vw, 20px);
+      text-align: center;
+    }
+
+    .merch-receipt-cta-eyebrow {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.14em;
+      color: #888;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .merch-receipt-cta-url {
+      font-family: var(--font-vhs);
+      font-size: clamp(9px, 0.95vw, 12px);
+      letter-spacing: 0.18em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+
+    .merch-receipt-btn {
+      font-family: var(--font-vhs);
+      font-size: clamp(10px, 1.1vw, 14px);
+      letter-spacing: 0.18em;
+      padding: clamp(9px, 1.2vw, 14px) clamp(24px, 3.5vw, 44px);
+      background: var(--blue);
+      color: #F5F1F2;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 3px 3px 0 #020202;
+      transition: transform 0.08s, box-shadow 0.08s;
+    }
+
+    .merch-receipt-btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 0 0 0;
+    }
+
+    .merch-receipt-foot {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 11px);
+      letter-spacing: 0.14em;
+      color: #ccc;
+      text-align: center;
+      margin-top: clamp(12px, 1.5vw, 18px);
+    }
+
+    .merch-footer-bar {
+      background: #F5F1F2;
+      padding: clamp(8px, 1.2vw, 14px) clamp(20px, 4vw, 52px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #020202;
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .merch-footer-left {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 10px);
+      color: #888;
+      letter-spacing: 0.14em;
+      line-height: 1.8;
+    }
+
+    .merch-footer-left b {
+      color: #020202;
+      font-weight: 400;
+    }
+
+    .merch-footer-right {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 10px);
+      color: var(--rule);
+      letter-spacing: 0.1em;
+    }
+
+    @media(max-width:700px) {
+      .merch-receipt-row {
+        font-size: clamp(8px, 2.5vw, 11px);
+      }
+
+      .merch-footer-bar {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+    }
+
+    /* ══ GRAND FINALE — RE:NDER ════════════════════════════════════ */
+    #grand-finale {
+      background: #010108;
+      width: 100%;
+    }
+
+    .gf-ticker {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #010108;
+      border-top: 1px solid rgba(60, 80, 255, 0.12);
+      border-bottom: 1px solid rgba(60, 80, 255, 0.12);
+      padding: 9px 0;
+    }
+
+    .gf-ticker-inner {
+      display: inline-block;
+      animation: gf-tkr 32s linear infinite;
+      font-family: var(--font-vhs);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: rgba(100, 120, 220, 0.35);
+    }
+
+    .gf-ticker-inner span {
+      color: rgba(80, 100, 220, 0.15);
+      margin: 0 8px;
+    }
+
+    @keyframes gf-tkr {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    .gf-glass {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .gf-bg {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 62% 70% at 20% 92%, rgba(18, 26, 208, 0.74) 0%, rgba(8, 12, 152, 0.38) 48%, transparent 100%),
+        radial-gradient(ellipse 58% 64% at 80% 90%, rgba(14, 20, 202, 0.70) 0%, rgba(6, 10, 146, 0.32) 48%, transparent 100%),
+        radial-gradient(ellipse 66% 54% at 50% 66%, rgba(46, 36, 188, 0.50) 0%, rgba(22, 16, 158, 0.24) 52%, transparent 100%),
+        linear-gradient(168deg, #010210 0%, #040724 28%, #0b0a4a 52%, #070730 72%, #020212 100%),
+        #010108;
+      min-height: 100vh;
+    }
+
+    .gf-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.30'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 140px 140px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gf-sl {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.06) 3px, rgba(0, 0, 0, 0.06) 4px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .gf-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 87vw;
+      margin: 0 auto;
+      padding: clamp(40px, 5vw, 56px) clamp(20px, 4vw, 52px) clamp(44px, 6vw, 72px);
+    }
+
+    .gf-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(140, 155, 255, 0.09);
+    }
+
+    .gf-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.25em;
+      color: rgba(140, 150, 220, 0.45);
+    }
+
+    .gf-tag {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.75vw, 10px);
+      letter-spacing: 0.15em;
+      color: rgba(100, 110, 200, 0.22);
+    }
+
+    .gf-lay {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(24px, 4vw, 52px);
+      align-items: start;
+      margin-bottom: clamp(24px, 3vw, 36px);
+    }
+
+    .gf-datecol {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gf-datebig {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-weight: 900;
+      font-size: clamp(100px, 18vw, 240px);
+      line-height: 0.82;
+      letter-spacing: -5px;
+      color: #F5F1F2;
+    }
+
+    .gf-month {
+      font-family: var(--font-vhs);
+      font-size: clamp(14px, 2vw, 24px);
+      letter-spacing: 0.22em;
+      color: rgba(160, 170, 255, 0.50);
+      margin-top: -4px;
+    }
+
+    .gf-year {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.9vw, 10px);
+      letter-spacing: 0.3em;
+      color: rgba(140, 150, 220, 0.24);
+      margin-top: 6px;
+    }
+
+    .gf-right {
+      padding-top: 8px;
+      min-width: 0;
+    }
+
+    .gf-eyebrow {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.85vw, 9px);
+      letter-spacing: 0.32em;
+      color: rgba(160, 170, 255, 0.48);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .gf-h1 {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-weight: 900;
+      font-size: clamp(52px, 8vw, 108px);
+      line-height: 0.84;
+      letter-spacing: -3px;
+      color: #F5F1F2;
+      margin-bottom: 4px;
+    }
+
+    .gf-h2 {
+      font-family: 'Redaction35Italic', monospace;
+      font-size: clamp(36px, 5.5vw, 72px);
+      line-height: 0.9;
+      letter-spacing: -1px;
+      color: transparent;
+      -webkit-text-stroke: 1.2px rgba(180, 190, 255, 0.24);
+      margin-bottom: clamp(16px, 2.5vw, 28px);
+    }
+
+    .gf-meta {
+      padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2.2vw, 26px);
+    }
+
+    .gf-mrow {
+      display: flex;
+      gap: clamp(16px, 3vw, 32px);
+      flex-wrap: wrap;
+    }
+
+    .gf-ml {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.2em;
+      color: rgba(160, 170, 255, 0.34);
+      margin-bottom: 5px;
+    }
+
+    .gf-mv {
+      font-family: 'HelveticaNowBold', 'HelveticaNowBlack', monospace;
+      font-weight: 700;
+      font-size: clamp(11px, 1.2vw, 14px);
+      color: #F5F1F2;
+      line-height: 1.45;
+    }
+
+    .gf-bot {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: clamp(8px, 1.2vw, 12px);
+      align-items: stretch;
+    }
+
+    .gf-tkt {
+      padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 26px);
+    }
+
+    .gf-tt {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.2em;
+      color: rgba(160, 170, 255, 0.34);
+      margin-bottom: 8px;
+    }
+
+    .gf-tn {
+      font-family: 'HelveticaNowBold', 'HelveticaNowBlack', monospace;
+      font-weight: 800;
+      font-size: clamp(12px, 1.3vw, 14px);
+      color: #F5F1F2;
+      margin-bottom: clamp(10px, 1.5vw, 16px);
+    }
+
+    .gf-tp {
+      display: flex;
+      gap: clamp(14px, 2vw, 20px);
+    }
+
+    .gf-tl {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.12em;
+      color: rgba(160, 170, 255, 0.32);
+      margin-bottom: 3px;
+    }
+
+    .gf-tprice {
+      font-family: 'HelveticaNowBold', 'HelveticaNowBlack', monospace;
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 22px);
+      color: #F5F1F2;
+    }
+
+    .gf-tsub {
+      font-family: var(--font-vhs);
+      font-size: clamp(6px, 0.65vw, 8px);
+      color: rgba(160, 170, 255, 0.26);
+      letter-spacing: 0.1em;
+      margin-top: 2px;
+    }
+
+    .gf-ctac {
+      padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 26px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .gf-ctah {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.12em;
+      color: rgba(160, 170, 255, 0.22);
+    }
+
+    .gf-cta {
+      font-family: var(--font-vhs);
+      font-size: clamp(9px, 0.9vw, 11px);
+      letter-spacing: 0.2em;
+      padding: clamp(10px, 1.2vw, 14px) clamp(16px, 2vw, 20px);
+      background: rgba(240, 242, 255, 0.9);
+      color: #010108;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: all 0.12s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .gf-cta:hover {
+      background: #8090ff;
+      color: #010108;
+    }
+
+    @media(max-width:900px) {
+      .gf-lay {
+        grid-template-columns: 1fr;
+      }
+
+      .gf-bot {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gf-ctac {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media(max-width:700px) {
+      .gf-bot {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ════════════════════════════════════════════════════════════════════ */
     /* BRAND REVEAL                                                        */
     /* ════════════════════════════════════════════════════════════════════ */
     #brand-reveal {
@@ -3779,31 +4423,39 @@
     /* RESPONSIVE                                                          */
     /* ── TABLET (≤ 900px) ────────────────────────────────────────────── */
     @media(max-width:900px) {
+
       /* Nav — hide desktop nav, show hamburger */
       #site-nav {
         display: none;
       }
+
       #hamburger-btn {
         display: flex;
       }
+
       #mobile-nav-panel {
         display: flex;
       }
 
       /* Hero side columns — hide decorative text */
-      #top-left, #top-right,
-      #mid-left, #mid-right {
+      #top-left,
+      #top-right,
+      #mid-left,
+      #mid-right {
         display: none;
       }
+
       #screen {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         justify-items: center;
       }
+
       #center {
         grid-column: 1;
         grid-row: 1;
       }
+
       #bottom {
         grid-column: 1;
         grid-row: 2;
@@ -3818,43 +4470,56 @@
         flex-direction: column;
         min-height: unset;
       }
+
       .stats-bar-side {
         writing-mode: horizontal-tb;
         transform: none;
         padding: 8px 20px;
       }
+
       .stats-bar-stat {
         border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
       }
-      .stats-bar-divider { display: none; }
+
+      .stats-bar-divider {
+        display: none;
+      }
 
       /* Brand reveal file folder */
       .ff-page {
         grid-template-columns: 1fr;
       }
+
       .ff-video-col {
         border-right: none;
         border-bottom: 1px solid var(--rule);
         padding: 14px;
       }
+
       .ff-video-box {
         aspect-ratio: 16/9;
         max-height: 200px;
       }
 
       /* Giving back photos */
-      .gb-title-block { margin-top: 8px; }
+      .gb-title-block {
+        margin-top: 8px;
+      }
 
       /* Semi-finals infobar */
       .sf-infobar {
         grid-template-columns: 1fr;
       }
+
       .sf-info-cell {
         border-right: none;
         border-bottom: 1px solid #1a1a1a;
       }
-      .sf-info-cell:last-child { border-bottom: none; }
+
+      .sf-info-cell:last-child {
+        border-bottom: none;
+      }
     }
 
     /* ── MOBILE (≤ 700px) ────────────────────────────────────────────── */
@@ -3924,37 +4589,55 @@
       }
 
       /* Hero — reduce height */
-      #hero { height: 100svh; }
-      #logo-img { width: 90%; }
+      #hero {
+        height: 100svh;
+      }
+
+      #logo-img {
+        width: 90%;
+      }
 
       /* About section max-width */
-      .about-inner { max-width: 100%; }
+      .about-inner {
+        max-width: 100%;
+      }
 
       /* Bento — full bleed */
-      .five-t-fullbleed { padding: 0; }
+      .five-t-fullbleed {
+        padding: 0;
+      }
 
       /* Stats bar */
       .stats-bar-row {
         flex-direction: column;
         min-height: unset;
       }
+
       .stats-bar-side {
         writing-mode: horizontal-tb;
         transform: none;
         padding: 8px 20px;
       }
+
       .stats-bar-stat {
         border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
         padding: clamp(14px, 2vw, 24px) clamp(16px, 3vw, 36px);
       }
-      .stats-bar-divider { display: none; }
+
+      .stats-bar-divider {
+        display: none;
+      }
 
       /* Giving back popup */
-      .gb-popup { margin: clamp(12px, 2vw, 20px) 16px 0; }
+      .gb-popup {
+        margin: clamp(12px, 2vw, 20px) 16px 0;
+      }
 
       /* YTDP mag grid — already handled at 700px */
-      .ytdp-mag-grid { max-width: 100%; }
+      .ytdp-mag-grid {
+        max-width: 100%;
+      }
 
       /* Countdown bottom bar — stack */
       .cw-bottom-bar {
@@ -3962,22 +4645,49 @@
         gap: 12px;
         align-items: flex-start;
       }
-      .cw-progress-wrap { width: 100%; margin: 0; }
+
+      .cw-progress-wrap {
+        width: 100%;
+        margin: 0;
+      }
 
       /* Semi-finals */
-      .sf-performer-grid { grid-template-columns: 1fr; }
-      .sf-infobar { grid-template-columns: 1fr; }
+      .sf-performer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sf-infobar {
+        grid-template-columns: 1fr;
+      }
+
       .sf-info-cell {
         border-right: none;
         border-bottom: 1px solid #1a1a1a;
       }
-      .sf-info-cell:last-child { border-bottom: none; }
-      .sf-daybar { overflow-x: auto; }
-      .sf-soon-banner { flex-direction: column; gap: 10px; }
-      .sf-footer-bar { flex-direction: column; gap: 8px; }
+
+      .sf-info-cell:last-child {
+        border-bottom: none;
+      }
+
+      .sf-daybar {
+        overflow-x: auto;
+      }
+
+      .sf-soon-banner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .sf-footer-bar {
+        flex-direction: column;
+        gap: 8px;
+      }
 
       /* Brand reveal file folder */
-      .ff-wrap { flex-direction: column; }
+      .ff-wrap {
+        flex-direction: column;
+      }
+
       .ff-rail {
         flex-direction: row;
         width: 100%;
@@ -3986,7 +4696,11 @@
         height: 48px;
         gap: 4px;
       }
-      .ff-rail::-webkit-scrollbar { display: none; }
+
+      .ff-rail::-webkit-scrollbar {
+        display: none;
+      }
+
       .ff-tab {
         clip-path: none;
         flex-direction: row;
@@ -3997,29 +4711,39 @@
         width: auto;
         height: 100%;
       }
+
       .ff-tab-code {
         writing-mode: horizontal-tb;
         transform: none;
       }
+
       .ff-page {
         grid-template-columns: 1fr;
       }
+
       .ff-video-col {
         border-right: none;
         border-bottom: 1px solid var(--rule);
         padding: 12px;
       }
+
       .ff-video-box {
         aspect-ratio: 16/9;
         max-height: 200px;
       }
+
       .ff-info-col {
         padding: 16px;
       }
+
       .ff-cover {
         min-height: 200px;
       }
-      .ff-body { min-height: unset; }
+
+      .ff-body {
+        min-height: unset;
+      }
+
       #brand-reveal .section-block {
         padding-bottom: clamp(24px, 5vw, 48px);
       }
@@ -4028,16 +4752,20 @@
       #timeline-svg {
         min-width: 640px;
       }
+
       .section-block:has(#timeline-svg) {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
       }
+
       #timeline .section-block {
         overflow-x: auto;
       }
 
       /* Footer */
-      .ft-social-row { flex-wrap: wrap; }
+      .ft-social-row {
+        flex-wrap: wrap;
+      }
 
       /* ── CHANGE 5: General mobile polish ─────────────────────────── */
       .section-block {
@@ -4097,7 +4825,9 @@
       }
 
       /* SF performer grid */
-      .sf-performer-grid { grid-template-columns: 1fr; }
+      .sf-performer-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -5091,9 +5821,11 @@
 
     <div class="sf-bottom-ticker">
       <div class="sf-bottom-ticker-inner">
-        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span> TOP 30
+        RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW ENTERING RE:FORM <span>·</span>
+        TOP 30
         SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT TALENT <span>·</span> SEASON 8
-        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED <span>·</span> NOW
+        <span>·</span> RE:VELATION <span>·</span> RE:BOOT COMPLETE <span>·</span> ONLINE AUDITIONS PHASE ENDED
+        <span>·</span> NOW
         ENTERING RE:FORM <span>·</span> TOP 30 SELECTED <span>·</span> SIGNAL ADVANCING <span>·</span> SUNWAY'S GOT
         TALENT <span>·</span> SEASON 8 <span>·</span> RE:VELATION <span>·</span>
       </div>
@@ -5107,6 +5839,194 @@
       <div class="sf-footer-right">BOOT:07</div>
     </div>
 
+  </section>
+
+  <!-- ══ MERCH DROP ═══════════════════════════════════════════════════════════ -->
+  <section id="merch">
+
+    <div class="merch-ticker-wrap">
+      <div class="merch-ticker-inner">
+        /// MERCH_DROP.exe <span>///</span> SGT S8 <span>///</span> RE:VELATION <span>///</span> OVERSIZED T-SHIRT
+        <span>///</span> BLIND BOX KEYCHAINS <span>///</span> BUNDLE SET <span>///</span> OFFICIAL MERCHANDISE
+        <span>///</span> SSA.PLUS/SGTS8_MERCH <span>///</span> /// MERCH_DROP.exe <span>///</span> SGT S8
+        <span>///</span> RE:VELATION <span>///</span> OVERSIZED T-SHIRT <span>///</span> BLIND BOX KEYCHAINS
+        <span>///</span> BUNDLE SET <span>///</span> OFFICIAL MERCHANDISE <span>///</span> SSA.PLUS/SGTS8_MERCH
+        <span>///</span>
+      </div>
+    </div>
+
+    <div class="merch-hero">
+      <div>
+        <span class="merch-hero-eyebrow">// 08 — MERCHANDISE · RE:VELATION OFFICIAL MERCH</span>
+        <div class="merch-hero-title">MERCH<span class="mh-blue">_DROP</span><span class="mh-dim">.exe</span></div>
+      </div>
+      <div class="merch-hero-tag">BOOT:08</div>
+    </div>
+
+    <div class="merch-receipt-wrap">
+      <div class="merch-receipt-inner">
+        <div class="merch-receipt-box">
+
+          <div class="merch-receipt-header">
+            <div class="merch-receipt-title">MERCH_DROP.exe</div>
+            <div class="merch-receipt-sub">
+              RE:VELATION 2026 · SGT S8 OFFICIAL MERCHANDISE<br>
+              SUNWAY STUDENT AMBASSADORS
+            </div>
+          </div>
+
+          <div class="merch-receipt-photos">
+            <div class="merch-receipt-photo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/1.png" alt="SGT S8 Oversized T-Shirt">
+            </div>
+            <div class="merch-receipt-photo panel-blue">
+              <img src="../SGT8-Website/SGTS8Web_pictures/2.png" alt="SGT S8 Blind Box Keychains">
+            </div>
+            <div class="merch-receipt-photo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/3.png" alt="SGT S8 Bundle Set">
+            </div>
+          </div>
+
+          <div class="merch-receipt-table">
+            <div class="merch-receipt-table-header">
+              <span>ITEM</span>
+              <span>PRICE</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>OVERSIZED T-SHIRT (1 PC)</span>
+              <span class="merch-receipt-price">RM 35.00</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>OVERSIZED T-SHIRT (2 PCS)</span>
+              <span class="merch-receipt-price">RM 65.00</span>
+            </div>
+            <div class="merch-receipt-spacer"></div>
+            <div class="merch-receipt-row">
+              <span>BLIND BOX KEYCHAIN (1 BOX)</span>
+              <span class="merch-receipt-price">RM 5.00</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>KEYCHAIN (3 BOXES + 1 FREE)</span>
+              <span class="merch-receipt-price">RM 15.00</span>
+            </div>
+            <div class="merch-receipt-spacer"></div>
+            <div class="merch-receipt-row last">
+              <span>BUNDLE SET (1 BOX + 1 T-SHIRT)</span>
+              <span class="merch-receipt-price">RM 38.00</span>
+            </div>
+          </div>
+
+          <div class="merch-receipt-cta">
+            <span class="merch-receipt-cta-eyebrow">ORDER AT:</span>
+            <a href="https://ssa.plus/SGTS8_Merch" target="_blank"
+              class="merch-receipt-cta-url">SSA.PLUS/SGTS8_MERCH</a>
+            <a href="https://ssa.plus/SGTS8_Merch" target="_blank" class="merch-receipt-btn">[ ORDER NOW ]</a>
+          </div>
+
+        </div>
+        <div class="merch-receipt-foot">MERCH_DROP.exe · BOOT:08 · SGT S8 RE:VELATION 2026</div>
+      </div>
+    </div>
+
+    <div class="merch-footer-bar">
+      <div class="merch-footer-left">
+        <b>MERCH_DROP.exe · SGT S8 RE:VELATION</b><br>
+        OFFICIAL MERCHANDISE — SUNWAY STUDENT AMBASSADORS · 2026
+      </div>
+      <div class="merch-footer-right">BOOT:08</div>
+    </div>
+
+  </section>
+
+  <!-- ══ GRAND FINALE — RE:NDER ════════════════════════════════════════════ -->
+  <section id="grand-finale">
+
+    <div class="gf-ticker">
+      <div class="gf-ticker-inner">
+        /// GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH HALL
+        · LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE <span>///</span>
+        GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH HALL ·
+        LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE <span>///</span>
+      </div>
+    </div>
+
+    <div class="gf-bg">
+      <div class="gf-noise"></div>
+      <div class="gf-sl"></div>
+      <div class="gf-inner">
+
+        <div class="gf-topbar">
+          <span class="gf-label">// 09 — RE:NDER · GRAND FINALE</span>
+          <span class="gf-tag">BOOT:09</span>
+        </div>
+
+        <div class="gf-lay">
+          <!-- Date column -->
+          <div class="gf-datecol">
+            <div class="gf-datebig">07</div>
+            <div class="gf-month">JULY</div>
+            <div class="gf-year">2026</div>
+          </div>
+
+          <!-- Heading + meta column -->
+          <div class="gf-right">
+            <span class="gf-eyebrow">// THE FINAL STAGE — SIGNAL COMPLETE</span>
+            <div class="gf-h1">GRAND<br>FINALE</div>
+            <div class="gf-h2">RE:NDER</div>
+            <div class="gf-meta gf-glass">
+              <div class="gf-mrow">
+                <div>
+                  <div class="gf-ml">TIME</div>
+                  <div class="gf-mv">6:00 PM — 10:30 PM</div>
+                </div>
+                <div>
+                  <div class="gf-ml">VENUE</div>
+                  <div class="gf-mv">Sir Jeffrey Cheah Hall</div>
+                </div>
+                <div>
+                  <div class="gf-ml">CAMPUS</div>
+                  <div class="gf-mv">Level 4, Sunway College</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticket + CTA row -->
+        <div class="gf-bot">
+          <div class="gf-tkt gf-glass">
+            <div class="gf-tt">TIER 01</div>
+            <div class="gf-tn">NORMAL '26</div>
+            <div class="gf-tp">
+              <div>
+                <div class="gf-tl">SINGLE (1)</div>
+                <div class="gf-tprice">RM 20</div>
+              </div>
+              <div>
+                <div class="gf-tl">TWIN (2)</div>
+                <div class="gf-tprice">RM 36</div>
+              </div>
+            </div>
+          </div>
+          <div class="gf-tkt gf-glass">
+            <div class="gf-tt">TIER 02</div>
+            <div class="gf-tn">ALL TIME '26</div>
+            <div class="gf-tp">
+              <div>
+                <div class="gf-tl">QUINTUPLET (5 PAX)</div>
+                <div class="gf-tprice">RM 85</div>
+                <div class="gf-tsub">RM 17 / PAX</div>
+              </div>
+            </div>
+          </div>
+          <div class="gf-ctac gf-glass">
+            <span class="gf-ctah">SSA.PLUS/SGTS8_TICKETS</span>
+            <a href="https://ssa.plus/SGTS8_Tickets" target="_blank" class="gf-cta">[ GET TICKETS ]</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- ══ BRAND REVEAL ════════════════════════════════════════════════════════ -->
@@ -5254,31 +6174,31 @@
         <line id="tl-progress" x1="40" y1="88" x2="40" y2="88" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" />
 
         <!-- ── STAGE 01 RE:BOOT ── -->
-        <text x="38" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.2"
+        <text x="38" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.08"
           dominant-baseline="middle" letter-spacing="4">01</text>
         <circle id="dot-1" cx="40" cy="88" r="7" fill="#FFFFFF" />
         <circle cx="40" cy="88" r="4" fill="#0000AE" />
-        <text x="40" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.5)"
-          letter-spacing="2">CURRENTLY ACTIVE</text>
-        <text x="40" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="#FFFFFF"
+        <text x="40" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.2)"
+          letter-spacing="2">COMPLETED</text>
+        <text x="40" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="rgba(255,255,255,0.4)"
           letter-spacing="3" font-weight="bold">RE:BOOT</text>
-        <text x="40" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.35)"
+        <text x="40" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.15)"
           letter-spacing="1">ONLINE AUDITIONS</text>
-        <text x="40" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.3)"
+        <text x="40" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.15)"
           letter-spacing="1">APR 6 – MAY 15</text>
 
         <!-- ── STAGE 02 RE:FORM ── -->
-        <text x="228" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.04"
+        <text x="228" y="88" font-family="Redaction35Italic" font-size="70" fill="#FFFFFF" opacity="0.2"
           dominant-baseline="middle" letter-spacing="4">02</text>
-        <circle id="dot-2" cx="230" cy="88" r="7" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"
-          stroke-dasharray="3 2" />
-        <text x="230" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.2)"
-          letter-spacing="2">UPCOMING</text>
-        <text x="230" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="rgba(255,255,255,0.28)"
+        <circle id="dot-2" cx="230" cy="88" r="7" fill="#FFFFFF" />
+        <circle cx="230" cy="88" r="4" fill="#0000AE" />
+        <text x="230" y="44" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.5)"
+          letter-spacing="2">CURRENTLY ACTIVE</text>
+        <text x="230" y="64" font-family="'EASVHS','Courier New',monospace" font-size="19" fill="#FFFFFF"
           letter-spacing="3" font-weight="bold">RE:FORM</text>
-        <text x="230" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.15)"
+        <text x="230" y="78" font-family="'EASVHS','Courier New',monospace" font-size="8" fill="rgba(255,255,255,0.35)"
           letter-spacing="1">TOP 30 SEMI-FINALS</text>
-        <text x="230" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.15)"
+        <text x="230" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.3)"
           letter-spacing="1">JUN 2026</text>
 
         <!-- ── STAGE 03 RE:NDER ── -->
