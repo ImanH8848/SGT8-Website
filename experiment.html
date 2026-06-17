@@ -3092,6 +3092,334 @@
     }
 
     /* ════════════════════════════════════════════════════════════════════ */
+    /* MERCH DROP — RECEIPT                                                 */
+    /* ════════════════════════════════════════════════════════════════════ */
+    #merch {
+      background: #F5F1F2;
+      width: 100%;
+    }
+
+    .merch-ticker-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 9px 0;
+      background: #020202;
+      width: 100%;
+      line-height: 1;
+    }
+
+    .merch-ticker-inner {
+      display: inline-block;
+      animation: merch-ticker 26s linear infinite;
+      font-family: var(--font-vhs);
+      font-size: clamp(13px, 1.3vw, 17px);
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.4);
+      padding-top: 4px;
+    }
+
+    .merch-ticker-inner span {
+      color: #0000AE;
+      margin: 0 8px;
+    }
+
+    @keyframes merch-ticker {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .merch-hero {
+      background: linear-gradient(150deg, #a0f080 0%, #66ee33 25%, #47E42E 50%, #229922 75%, #0F5221 100%);
+      padding: clamp(14px, 2vw, 24px) clamp(20px, 4vw, 52px);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #0a3a0a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .merch-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 11px, rgba(255, 255, 255, 0.07) 11px, rgba(255, 255, 255, 0.07) 12px),
+        repeating-linear-gradient(90deg, transparent, transparent 11px, rgba(255, 255, 255, 0.07) 11px, rgba(255, 255, 255, 0.07) 12px);
+    }
+
+    .merch-hero>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .merch-hero-eyebrow {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.55);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .merch-hero-title {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 900;
+      color: #F5F1F2;
+      letter-spacing: -1px;
+    }
+
+    .merch-hero-title .mh-blue {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .merch-hero-title .mh-dim {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .merch-hero-tag {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.7vw, 9px);
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .merch-receipt-wrap {
+      background: #F5F1F2;
+      padding: clamp(24px, 3.5vw, 48px) 0;
+      position: relative;
+    }
+
+    .merch-receipt-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.18'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px 180px;
+    }
+
+    .merch-receipt-inner {
+      max-width: 80vw;
+      margin: 0 auto;
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      z-index: 1;
+    }
+
+    .merch-receipt-box {
+      border: 1.5px dashed #888;
+      padding: clamp(20px, 3vw, 36px);
+      max-width: 100%;
+      margin: 0 auto;
+      margin: 0 auto;
+    }
+
+    .merch-receipt-header {
+      text-align: center;
+      border-bottom: 1px dashed var(--rule);
+      padding-bottom: clamp(14px, 2vw, 20px);
+      margin-bottom: clamp(14px, 2vw, 20px);
+    }
+
+    .merch-receipt-title {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 900;
+      color: #020202;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .merch-receipt-sub {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.15em;
+      color: #777;
+      line-height: 1.9;
+    }
+
+    .merch-receipt-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(8px, 1.5vw, 16px);
+      margin-bottom: clamp(14px, 2vw, 20px);
+      padding-bottom: clamp(14px, 2vw, 20px);
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .merch-receipt-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--panel);
+      border: 1px solid var(--rule);
+    }
+
+    .merch-receipt-photo.panel-blue {
+      background: var(--panel-blue);
+      border-color: var(--blue-mid);
+    }
+
+    .merch-receipt-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: grayscale(10%) contrast(1.05);
+      transition: filter 0.3s;
+    }
+
+    .merch-receipt-photo:hover img {
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .merch-receipt-table {
+      font-family: var(--font-vhs);
+      font-size: clamp(9px, 1vw, 13px);
+      letter-spacing: 0.1em;
+    }
+
+    .merch-receipt-table-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #020202;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      color: #666;
+      letter-spacing: 0.18em;
+    }
+
+    .merch-receipt-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--rule);
+      color: #020202;
+    }
+
+    .merch-receipt-row.last {
+      border-bottom: 2px solid #020202;
+    }
+
+    .merch-receipt-price {
+      color: var(--blue);
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+
+    .merch-receipt-spacer {
+      height: 8px;
+    }
+
+    .merch-receipt-cta {
+      margin-top: clamp(16px, 2vw, 24px);
+      border: 1px dashed var(--blue);
+      padding: clamp(14px, 2vw, 20px);
+      text-align: center;
+    }
+
+    .merch-receipt-cta-eyebrow {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.14em;
+      color: #888;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .merch-receipt-cta-url {
+      font-family: var(--font-vhs);
+      font-size: clamp(9px, 0.95vw, 12px);
+      letter-spacing: 0.18em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+
+    .merch-receipt-btn {
+      font-family: var(--font-vhs);
+      font-size: clamp(10px, 1.1vw, 14px);
+      letter-spacing: 0.18em;
+      padding: clamp(9px, 1.2vw, 14px) clamp(24px, 3.5vw, 44px);
+      background: var(--blue);
+      color: #F5F1F2;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 3px 3px 0 #020202;
+      transition: transform 0.08s, box-shadow 0.08s;
+    }
+
+    .merch-receipt-btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 0 0 0;
+    }
+
+    .merch-receipt-foot {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 11px);
+      letter-spacing: 0.14em;
+      color: #ccc;
+      text-align: center;
+      margin-top: clamp(12px, 1.5vw, 18px);
+    }
+
+    .merch-footer-bar {
+      background: #F5F1F2;
+      padding: clamp(8px, 1.2vw, 14px) clamp(20px, 4vw, 52px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #020202;
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .merch-footer-left {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 10px);
+      color: #888;
+      letter-spacing: 0.14em;
+      line-height: 1.8;
+    }
+
+    .merch-footer-left b {
+      color: #020202;
+      font-weight: 400;
+    }
+
+    .merch-footer-right {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.8vw, 10px);
+      color: var(--rule);
+      letter-spacing: 0.1em;
+    }
+
+    @media(max-width:700px) {
+      .merch-receipt-row {
+        font-size: clamp(8px, 2.5vw, 11px);
+      }
+
+      .merch-footer-bar {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+    }
+
+    /* ════════════════════════════════════════════════════════════════════ */
     /* BRAND REVEAL                                                        */
     /* ════════════════════════════════════════════════════════════════════ */
     #brand-reveal {
@@ -5192,6 +5520,103 @@
         8 – 10 JUNE 2026 · MAIN CONCOURSE, L1, SUNWAY SQUARE MALL
       </div>
       <div class="sf-footer-right">BOOT:07</div>
+    </div>
+
+  </section>
+
+  <!-- ══ MERCH DROP ═══════════════════════════════════════════════════════════ -->
+  <section id="merch">
+
+    <div class="merch-ticker-wrap">
+      <div class="merch-ticker-inner">
+        /// MERCH_DROP.exe <span>///</span> SGT S8 <span>///</span> RE:VELATION <span>///</span> OVERSIZED T-SHIRT
+        <span>///</span> BLIND BOX KEYCHAINS <span>///</span> BUNDLE SET <span>///</span> OFFICIAL MERCHANDISE
+        <span>///</span> SSA.PLUS/SGTS8_MERCH <span>///</span> /// MERCH_DROP.exe <span>///</span> SGT S8
+        <span>///</span> RE:VELATION <span>///</span> OVERSIZED T-SHIRT <span>///</span> BLIND BOX KEYCHAINS
+        <span>///</span> BUNDLE SET <span>///</span> OFFICIAL MERCHANDISE <span>///</span> SSA.PLUS/SGTS8_MERCH
+        <span>///</span>
+      </div>
+    </div>
+
+    <div class="merch-hero">
+      <div>
+        <span class="merch-hero-eyebrow">// 08 — MERCHANDISE · RE:VELATION OFFICIAL MERCH</span>
+        <div class="merch-hero-title">MERCH<span class="mh-blue">_DROP</span><span class="mh-dim">.exe</span></div>
+      </div>
+      <div class="merch-hero-tag">BOOT:08</div>
+    </div>
+
+    <div class="merch-receipt-wrap">
+      <div class="merch-receipt-inner">
+        <div class="merch-receipt-box">
+
+          <div class="merch-receipt-header">
+            <div class="merch-receipt-title">MERCH_DROP.exe</div>
+            <div class="merch-receipt-sub">
+              RE:VELATION 2026 · SGT S8 OFFICIAL MERCHANDISE<br>
+              SUNWAY STUDENT AMBASSADORS
+            </div>
+          </div>
+
+          <div class="merch-receipt-photos">
+            <div class="merch-receipt-photo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/1.png" alt="SGT S8 Oversized T-Shirt">
+            </div>
+            <div class="merch-receipt-photo panel-blue">
+              <img src="../SGT8-Website/SGTS8Web_pictures/2.png" alt="SGT S8 Blind Box Keychains">
+            </div>
+            <div class="merch-receipt-photo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/3.png" alt="SGT S8 Bundle Set">
+            </div>
+          </div>
+
+          <div class="merch-receipt-table">
+            <div class="merch-receipt-table-header">
+              <span>ITEM</span>
+              <span>PRICE</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>OVERSIZED T-SHIRT (1 PC)</span>
+              <span class="merch-receipt-price">RM 35.00</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>OVERSIZED T-SHIRT (2 PCS)</span>
+              <span class="merch-receipt-price">RM 65.00</span>
+            </div>
+            <div class="merch-receipt-spacer"></div>
+            <div class="merch-receipt-row">
+              <span>BLIND BOX KEYCHAIN (1 BOX)</span>
+              <span class="merch-receipt-price">RM 5.00</span>
+            </div>
+            <div class="merch-receipt-row">
+              <span>KEYCHAIN (3 BOXES + 1 FREE)</span>
+              <span class="merch-receipt-price">RM 15.00</span>
+            </div>
+            <div class="merch-receipt-spacer"></div>
+            <div class="merch-receipt-row last">
+              <span>BUNDLE SET (1 BOX + 1 T-SHIRT)</span>
+              <span class="merch-receipt-price">RM 38.00</span>
+            </div>
+          </div>
+
+          <div class="merch-receipt-cta">
+            <span class="merch-receipt-cta-eyebrow">ORDER AT:</span>
+            <a href="https://ssa.plus/SGTS8_Merch" target="_blank"
+              class="merch-receipt-cta-url">SSA.PLUS/SGTS8_MERCH</a>
+            <a href="https://ssa.plus/SGTS8_Merch" target="_blank" class="merch-receipt-btn">[ ORDER NOW ]</a>
+          </div>
+
+        </div>
+        <div class="merch-receipt-foot">MERCH_DROP.exe · BOOT:08 · SGT S8 RE:VELATION 2026</div>
+      </div>
+    </div>
+
+    <div class="merch-footer-bar">
+      <div class="merch-footer-left">
+        <b>MERCH_DROP.exe · SGT S8 RE:VELATION</b><br>
+        OFFICIAL MERCHANDISE — SUNWAY STUDENT AMBASSADORS · 2026
+      </div>
+      <div class="merch-footer-right">BOOT:08</div>
     </div>
 
   </section>
