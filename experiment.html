@@ -2998,8 +2998,16 @@
     }
 
     @keyframes sfLiveBlink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0.15; }
+
+      0%,
+      49% {
+        opacity: 1;
+      }
+
+      50%,
+      100% {
+        opacity: 0.15;
+      }
     }
 
     .sf-soon-left {
@@ -3049,8 +3057,14 @@
     #sf-soon-d1 .sf-soon-badge {
       color: #F5F1F2;
     }
-    #sf-soon-d1 .sf-soon-txt span { color: #AEC0EA; }
-    #sf-soon-d1 .sf-soon-badge { border-color: #F5F1F2; }
+
+    #sf-soon-d1 .sf-soon-txt span {
+      color: #AEC0EA;
+    }
+
+    #sf-soon-d1 .sf-soon-badge {
+      border-color: #F5F1F2;
+    }
 
     /* Day 2 — bright green background → dark text (white would wash out) */
     #sf-soon-d2 .sf-soon-icon,
@@ -3058,8 +3072,14 @@
     #sf-soon-d2 .sf-soon-badge {
       color: #020202;
     }
-    #sf-soon-d2 .sf-soon-txt span { color: #1A1A1A; }
-    #sf-soon-d2 .sf-soon-badge { border-color: #020202; }
+
+    #sf-soon-d2 .sf-soon-txt span {
+      color: #1A1A1A;
+    }
+
+    #sf-soon-d2 .sf-soon-badge {
+      border-color: #020202;
+    }
 
     /* Day 3 — saturated red background → dark text reads better than white */
     #sf-soon-d3 .sf-soon-icon,
@@ -3067,8 +3087,14 @@
     #sf-soon-d3 .sf-soon-badge {
       color: #020202;
     }
-    #sf-soon-d3 .sf-soon-txt span { color: #1A1A1A; }
-    #sf-soon-d3 .sf-soon-badge { border-color: #020202; }
+
+    #sf-soon-d3 .sf-soon-txt span {
+      color: #1A1A1A;
+    }
+
+    #sf-soon-d3 .sf-soon-badge {
+      border-color: #020202;
+    }
 
     .sf-bottom-ticker {
       background: #F5F1F2;
@@ -3204,7 +3230,7 @@
     }
 
     .merch-hero {
-      background: linear-gradient(150deg, #a0f080 0%, #66ee33 25%, #47E42E 50%, #229922 75%, #0F5221 100%);
+      background: linear-gradient(150deg, #6677ff 0%, #032bff 25%, #0000ae 50%, #02024a 75%, #020202 100%);
       padding: clamp(14px, 2vw, 24px) clamp(20px, 4vw, 52px);
       display: flex;
       justify-content: space-between;
@@ -3539,11 +3565,11 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(ellipse 62% 70% at 20% 92%, rgba(18, 26, 208, 0.74) 0%, rgba(8, 12, 152, 0.38) 48%, transparent 100%),
-        radial-gradient(ellipse 58% 64% at 80% 90%, rgba(14, 20, 202, 0.70) 0%, rgba(6, 10, 146, 0.32) 48%, transparent 100%),
-        radial-gradient(ellipse 66% 54% at 50% 66%, rgba(46, 36, 188, 0.50) 0%, rgba(22, 16, 158, 0.24) 52%, transparent 100%),
-        linear-gradient(168deg, #010210 0%, #040724 28%, #0b0a4a 52%, #070730 72%, #020212 100%),
-        #010108;
+        radial-gradient(ellipse 62% 70% at 20% 92%, rgba(71, 228, 46, 0.55) 0%, rgba(15, 82, 33, 0.34) 48%, transparent 100%),
+        radial-gradient(ellipse 58% 64% at 80% 90%, rgba(71, 228, 46, 0.50) 0%, rgba(15, 82, 33, 0.28) 48%, transparent 100%),
+        radial-gradient(ellipse 66% 54% at 50% 66%, rgba(71, 228, 46, 0.38) 0%, rgba(15, 82, 33, 0.20) 52%, transparent 100%),
+        linear-gradient(168deg, #020202 0%, #04150a 28%, #0a3018 52%, #06200f 72%, #020202 100%),
+        #020202;
       min-height: 100vh;
     }
 
@@ -4216,6 +4242,170 @@
       pointer-events: none;
       user-select: none;
       z-index: 1;
+    }
+
+    /* ════════════════════════════════════════════════════════════════════ */
+    /* SPONSORS                                                            */
+    /* ════════════════════════════════════════════════════════════════════ */
+    #sponsors {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(40px, 6vw, 64px) 6vw;
+    }
+    #sponsors .sp-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../SGT8-Website/SGTS8Web_pictures/sponsors-bg-gradient.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.92) brightness(1.04);
+    }
+    #sponsors .sp-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      opacity: 0.55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+    }
+    #sponsors .sp-inner {
+      max-width: 87vw;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    #sponsors .sp-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    #sponsors .sp-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.22em;
+      color: var(--ink);
+    }
+    #sponsors .sp-tag {
+      font-family: var(--font-vhs);
+      font-size: clamp(7px, 0.75vw, 10px);
+      color: rgba(2, 2, 2, 0.35);
+      letter-spacing: 0.1em;
+    }
+    #sponsors h2.sp-title {
+      font-family: 'HelveticaNowBlack', 'HelveticaNowBold', monospace;
+      font-weight: 900;
+      font-size: clamp(36px, 6vw, 64px);
+      letter-spacing: -2px;
+      color: var(--ink);
+      margin: 4px 0 28px;
+      text-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+    }
+    #sponsors h2.sp-title span { color: #0F5221; }
+    #sponsors .sp-tier-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.18em;
+      color: #0F5221;
+      margin: 0 0 12px;
+      background: rgba(255, 255, 255, 0.55);
+      display: inline-block;
+      padding: 3px 8px;
+    }
+    #sponsors .sp-tier-label.plat { color: var(--mid); }
+    #sponsors .sp-dgrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    #sponsors .sp-dcard {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(2, 2, 2, 0.18);
+      position: relative;
+    }
+    #sponsors .sp-dcard::before,
+    #sponsors .sp-dcard::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+    }
+    #sponsors .sp-dcard::before { top: 6px; left: 6px; border-top: 2px solid var(--ink); border-left: 2px solid var(--ink); }
+    #sponsors .sp-dcard::after { bottom: 6px; right: 6px; border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); }
+    #sponsors .sp-vid {
+      aspect-ratio: 16/9;
+      background: rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(2, 2, 2, 0.18);
+      cursor: pointer;
+    }
+    #sponsors .sp-play { font-size: 18px; color: #0F5221; }
+    #sponsors .sp-body { padding: 14px; }
+    #sponsors .sp-badge {
+      font-family: var(--font-vhs);
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      color: #fff;
+      background: #0F5221;
+      padding: 2px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    #sponsors .sp-logo {
+      width: 60px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(2, 2, 2, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-vhs);
+      font-size: 8px;
+      color: var(--dim);
+      margin-bottom: 8px;
+    }
+    #sponsors .sp-name {
+      font-family: var(--font-vhs);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    #sponsors .sp-desc {
+      font-size: 11px;
+      color: var(--mid);
+      line-height: 1.6;
+      font-family: 'Helvetica', sans-serif;
+    }
+    #sponsors .sp-pgrid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+    #sponsors .sp-pcard {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px dashed rgba(2, 2, 2, 0.18);
+      padding: 10px;
+      text-align: center;
+    }
+    #sponsors .sp-pcard .sp-logo {
+      width: 100%;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.85);
+      margin-bottom: 6px;
+    }
+    #sponsors .sp-pcard .sp-name { font-size: 9px; }
+
+    @media(max-width: 700px) {
+      #sponsors .sp-dgrid { grid-template-columns: 1fr; }
+      #sponsors .sp-pgrid { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* ════════════════════════════════════════════════════════════════════ */
@@ -5548,7 +5738,8 @@
       </div>
       <div class="sf-performer-grid">
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/1.png" alt="Christabelle" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/1.png"
+              alt="Christabelle" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
             <span class="sf-performer-name">Christabelle</span>
@@ -5556,7 +5747,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/2.png" alt="Esther" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/2.png"
+              alt="Esther" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
             <span class="sf-performer-name">Esther</span>
@@ -5564,7 +5756,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/3.png" alt="Zhi Ling" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/3.png"
+              alt="Zhi Ling" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
             <span class="sf-performer-name">Zhi Ling</span>
@@ -5572,7 +5765,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/4.png" alt="Isha Cheah Ka Yen" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/4.png"
+              alt="Isha Cheah Ka Yen" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
             <span class="sf-performer-name">Isha Cheah Ka Yen</span>
@@ -5580,7 +5774,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/5.png" alt="KXin" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/5.png" alt="KXin"
+              loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
             <span class="sf-performer-name">KXin</span>
@@ -5588,7 +5783,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/6.png" alt="Lim Cindy" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/6.png"
+              alt="Lim Cindy" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 06 · 1:05 – 1:15 PM</span>
             <span class="sf-performer-name">Lim Cindy</span>
@@ -5596,7 +5792,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/7.png" alt="Tatsuki" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/7.png"
+              alt="Tatsuki" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 07 · 1:15 – 1:25 PM</span>
             <span class="sf-performer-name">Tatsuki</span>
@@ -5604,7 +5801,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/8.png" alt="Jay" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/8.png" alt="Jay"
+              loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 08 · 1:25 – 1:35 PM</span>
             <span class="sf-performer-name">Jay</span>
@@ -5612,7 +5810,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/9.png" alt="HUH?!" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/9.png"
+              alt="HUH?!" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 09 · 1:35 – 1:45 PM</span>
             <span class="sf-performer-name">HUH?!</span>
@@ -5620,7 +5819,8 @@
           </div>
         </div>
       </div>
-      <a class="sf-soon-banner" id="sf-soon-d1" style="background:#0000ae" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day1" target="_blank" rel="noopener">
+      <a class="sf-soon-banner" id="sf-soon-d1" style="background:#0000ae"
+        href="https://ssa.plus/SGTS8_Top30SemiFinals_Day1" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
           <div class="sf-soon-txt">WATCH DAY 1 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
@@ -5635,7 +5835,8 @@
       </div>
       <div class="sf-performer-grid">
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/10.png" alt="shazzy" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/10.png"
+              alt="shazzy" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
             <span class="sf-performer-name">shazzy</span>
@@ -5643,7 +5844,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/11.png" alt="Chan Phei Jing" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/11.png"
+              alt="Chan Phei Jing" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
             <span class="sf-performer-name">Chan Phei Jing</span>
@@ -5651,7 +5853,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/12.png" alt="Mynn Jae" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/12.png"
+              alt="Mynn Jae" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
             <span class="sf-performer-name">Mynn Jae</span>
@@ -5659,7 +5862,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/13.png" alt="Dreams" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/13.png"
+              alt="Dreams" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
             <span class="sf-performer-name">Dreams</span>
@@ -5667,7 +5871,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/14.png" alt="DCJZ" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/14.png"
+              alt="DCJZ" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
             <span class="sf-performer-name">DCJZ</span>
@@ -5675,7 +5880,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/15.png" alt="Nabil Iskandar bin Khairil Anwar" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/15.png"
+              alt="Nabil Iskandar bin Khairil Anwar" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 06 · 1:00 – 1:10 PM</span>
             <span class="sf-performer-name">Nabil Iskandar bin Khairil Anwar</span>
@@ -5683,7 +5889,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/16.png" alt="Hulk." loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/16.png"
+              alt="Hulk." loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 07 · 1:10 – 1:20 PM</span>
             <span class="sf-performer-name">Hulk.</span>
@@ -5691,7 +5898,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/17.png" alt="Rachel Lee Weng Yen" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/17.png"
+              alt="Rachel Lee Weng Yen" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 08 · 1:20 – 1:30 PM</span>
             <span class="sf-performer-name">Rachel Lee Weng Yen</span>
@@ -5699,7 +5907,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/18.png" alt="Hermit and Charlie" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/18.png"
+              alt="Hermit and Charlie" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 09 · 1:30 – 1:40 PM</span>
             <span class="sf-performer-name">Hermit and Charlie</span>
@@ -5707,7 +5916,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/19.png" alt="Tee Hui Yi" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/19.png"
+              alt="Tee Hui Yi" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 10 · 1:40 – 1:50 PM</span>
             <span class="sf-performer-name">Tee Hui Yi</span>
@@ -5715,7 +5925,8 @@
           </div>
         </div>
       </div>
-      <a class="sf-soon-banner" id="sf-soon-d2" style="background:#47E42E" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day2" target="_blank" rel="noopener">
+      <a class="sf-soon-banner" id="sf-soon-d2" style="background:#47E42E"
+        href="https://ssa.plus/SGTS8_Top30SemiFinals_Day2" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
           <div class="sf-soon-txt">WATCH DAY 2 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
@@ -5730,7 +5941,8 @@
       </div>
       <div class="sf-performer-grid">
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/20.png" alt="Aaron Moses" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/20.png"
+              alt="Aaron Moses" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 01 · 12:05 – 12:15 PM</span>
             <span class="sf-performer-name">Aaron Moses</span>
@@ -5738,7 +5950,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/21.png" alt="Amberlyn" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/21.png"
+              alt="Amberlyn" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 02 · 12:15 – 12:25 PM</span>
             <span class="sf-performer-name">Amberlyn</span>
@@ -5746,7 +5959,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/22.png" alt="Lumino" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/22.png"
+              alt="Lumino" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 03 · 12:25 – 12:35 PM</span>
             <span class="sf-performer-name">Lumino</span>
@@ -5754,7 +5968,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/23.png" alt="æra" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/23.png" alt="æra"
+              loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 04 · 12:35 – 12:45 PM</span>
             <span class="sf-performer-name">æra</span>
@@ -5762,7 +5977,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/24.png" alt="æxo" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/24.png" alt="æxo"
+              loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 05 · 12:45 – 12:55 PM</span>
             <span class="sf-performer-name">æxo</span>
@@ -5770,7 +5986,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/25.png" alt="Shaun" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/25.png"
+              alt="Shaun" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 06 · 1:00 – 1:10 PM</span>
             <span class="sf-performer-name">Shaun</span>
@@ -5778,7 +5995,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/26.png" alt="BUY 3 FREE 2 (B3F2)" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/26.png"
+              alt="BUY 3 FREE 2 (B3F2)" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 07 · 1:10 – 1:20 PM</span>
             <span class="sf-performer-name">BUY 3 FREE 2 (B3F2)</span>
@@ -5786,7 +6004,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/27.png" alt="Rachel" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/27.png"
+              alt="Rachel" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 08 · 1:20 – 1:30 PM</span>
             <span class="sf-performer-name">Rachel</span>
@@ -5794,7 +6013,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/28.png" alt="NIC" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/28.png" alt="NIC"
+              loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 09 · 1:30 – 1:40 PM</span>
             <span class="sf-performer-name">NIC</span>
@@ -5802,7 +6022,8 @@
           </div>
         </div>
         <div class="sf-performer">
-          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/29.png" alt="Your Lie in May" loading="lazy"></div>
+          <div class="sf-performer-img"><img src="../SGT8-Website/SGTS8Web_pictures/semifinalists pics/29.png"
+              alt="Your Lie in May" loading="lazy"></div>
           <div class="sf-performer-info">
             <span class="sf-performer-slot">SLOT 10 · 1:40 – 1:50 PM</span>
             <span class="sf-performer-name">Your Lie in May</span>
@@ -5810,7 +6031,8 @@
           </div>
         </div>
       </div>
-      <a class="sf-soon-banner" id="sf-soon-d3" style="background:#FB092F" href="https://ssa.plus/SGTS8_Top30SemiFinals_Day3" target="_blank" rel="noopener">
+      <a class="sf-soon-banner" id="sf-soon-d3" style="background:#FB092F"
+        href="https://ssa.plus/SGTS8_Top30SemiFinals_Day3" target="_blank" rel="noopener">
         <div class="sf-soon-left">
           <span class="sf-soon-icon">▣</span>
           <div class="sf-soon-txt">WATCH DAY 3 SEMI-FINALS<span>TOP 30 · LIVE RECORDING · TAP TO VIEW</span></div>
@@ -6215,6 +6437,42 @@
         <text x="420" y="108" font-family="'EASVHS','Courier New',monospace" font-size="7" fill="rgba(255,255,255,0.15)"
           letter-spacing="1">JUL 2026</text>
       </svg>
+    </div>
+  </section>
+
+  <!-- ══ SPONSORS ════════════════════════════════════════════════════════════ -->
+  <section id="sponsors">
+    <div class="sp-bg"></div>
+    <div class="sp-grain"></div>
+    <div class="sp-inner">
+      <div class="sp-hdr">
+        <span class="sp-label">// 10 — SPONSORS</span>
+        <span class="sp-tag">BOOT:10</span>
+      </div>
+      <h2 class="sp-title">OUR <span>SPONSORS</span></h2>
+
+      <div class="sp-tier-label">◆ DIAMOND TIER — 13 SPONSORS</div>
+      <div class="sp-dgrid">
+        <div class="sp-dcard">
+          <div class="sp-vid"><span class="sp-play">▶</span></div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">LOGO</div>
+            <div class="sp-name">SPONSOR NAME</div>
+            <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+          </div>
+        </div>
+        <!-- ▲▲▲ duplicate the .sp-dcard block above 13 times total, one per Diamond sponsor ▲▲▲ -->
+      </div>
+
+      <div class="sp-tier-label plat">◇ PLATINUM TIER — 12 SPONSORS</div>
+      <div class="sp-pgrid">
+        <div class="sp-pcard">
+          <div class="sp-logo">LOGO</div>
+          <div class="sp-name">SPONSOR</div>
+        </div>
+        <!-- ▲▲▲ duplicate the .sp-pcard block above 12 times total, one per Platinum sponsor ▲▲▲ -->
+      </div>
     </div>
   </section>
 
