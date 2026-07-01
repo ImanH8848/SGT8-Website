@@ -4435,6 +4435,29 @@
       font-family: 'Helvetica', sans-serif;
     }
 
+    #sponsors .sp-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    #sponsors .sp-link {
+      font-family: var(--font-vhs);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: #0F5221;
+      border: 1px solid rgba(15, 82, 33, 0.4);
+      padding: 3px 8px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    #sponsors .sp-link:hover {
+      background: #0F5221;
+      color: #fff;
+    }
+
     /* carousel nav */
     #sponsors .sp-nav {
       display: flex;
@@ -6609,195 +6632,361 @@
         <div class="sp-carousel-track" id="sp-track">
 
           <div class="sp-dcard is-active">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 01</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+            <div class="sp-vid"
+              style="background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-vhs);font-size:10px;color:rgba(2,2,2,0.3);letter-spacing:0.15em;">NO
+                VIDEO</span>
             </div>
-          </div>
-
-          <div class="sp-dcard is-next">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
             <div class="sp-body">
               <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 02</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
-            </div>
-          </div>
-
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 03</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+              <div class="sp-logo">
+                <img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/Chirpybird.jpg" alt="Chirpybird logo"
+                  style="width:100%;height:100%;object-fit:contain;display:block;">
+              </div>
+              <div class="sp-name">Chirpybird</div>
+              <div class="sp-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production solutions,
+                specialising in the rental, installation of sound, stage lighting, LED screen, visual and stage effect
+                equipment. We are committed to transforming your vision into a captivating reality, ensuring your event
+                leaves a lasting impression.</div>
             </div>
           </div>
 
           <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 04</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+            <div class="sp-vid"
+              style="background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-vhs);font-size:10px;color:rgba(2,2,2,0.3);letter-spacing:0.15em;">NO
+                VIDEO</span>
             </div>
           </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/Prostage.jpeg" alt="ProStage"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">ProStage</div>
+            <div class="sp-desc">ProStage desc</div>
+          </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 05</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid"
+              style="background:rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-vhs);font-size:10px;color:rgba(2,2,2,0.3);letter-spacing:0.15em;">NO
+                VIDEO</span>
+            </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/LGE_Logo_HeritageRed_Grey_CMYK.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">LG Malaysia</div>
+            <div class="sp-desc">LG Malaysia desc</div>
+          </div>
+        </div>
+
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 06</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 07</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 08</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 09</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 10</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 11</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 12</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-          <div class="sp-dcard">
-            <div class="sp-vid"><span class="sp-play">▶</span></div>
-            <div class="sp-body">
-              <span class="sp-badge">DIAMOND</span>
-              <div class="sp-logo">LOGO</div>
-              <div class="sp-name">SPONSOR NAME 13</div>
-              <div class="sp-desc">Short description of the sponsor's support for this season.</div>
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">La Gourmet</div>
+            <div class="sp-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+              premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+              cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+            <div class="sp-links">
+              <a href="https://www.lagourmet.com" target="_blank" rel="noopener" class="sp-link">🌐 Website</a>
+              <a href="https://www.instagram.com/lagourmet" target="_blank" rel="noopener" class="sp-link">Instagram</a>
             </div>
           </div>
+        </div>
 
-        </div><!-- /sp-carousel-track -->
+        <div class="sp-dcard">
+          <div class="sp-vid">
+            <video src="../SGT8-Website/SGTS8Web_videos/sponsors/lagourmet-promo.mp4" controls preload="none"
+              poster="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-thumb.jpg"
+              style="width:100%;height:100%;object-fit:cover;display:block;">
+            </video>
+          </div>
+          <div class="sp-body">
+            <span class="sp-badge">DIAMOND</span>
+            <div class="sp-logo">
+              <img src="../SGT8-Website/SGTS8Web_pictures/sponsors/lagourmet-logo.png" alt="La Gourmet logo"
+                style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="sp-name">Le Classic Academy</div>
+            <div class="sp-desc">"Le Classic Academy is Malaysia’s leading and largest hairdressing academy, founded by Damon Cher, CEO of the LE CLASSIC group.
+              The academy focuses on modern, industry-relevant hairstyling education designed to prepare students for real career success. 
+              What makes it different is its strong emphasis on hands-on learning. Students don’t just study theory — they train in a real salon environment, 
+              working with real clients under professional guidance. They are exposed to both contemporary and classic hairstyling techniques, while also being 
+              trained in essential soft skills such as communication and client handling. With small-class training and structured guidance, students develop technical 
+              skills in haircutting, coloring, styling, perming, and even content creation for today’s digital industry. Students are also able to obtain 
+              SKM Government Skills Certification, along with a certified technical qualification from University Malaya. Through this approach, students are equipped 
+              not only with skills, but with real industry confidence and career readiness"</div>
+          </div>
+        </div>
 
-        <div class="sp-nav">
-          <button class="sp-arr" id="sp-prev">&#8249;</button>
-          <div class="sp-dots" id="sp-dots"></div>
-          <button class="sp-arr" id="sp-next">&#8250;</button>
-        </div>
-      </div><!-- /sp-carousel-wrap -->
+      </div><!-- /sp-carousel-track -->
 
-      <div class="sp-tier-label plat">◇ PLATINUM TIER — 12 SPONSORS</div>
-      <div class="sp-pgrid">
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 01</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 02</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 03</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 04</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 05</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 06</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 07</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 08</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 09</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 10</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 11</div>
-        </div>
-        <div class="sp-pcard">
-          <div class="sp-logo">LOGO</div>
-          <div class="sp-name">SPONSOR 12</div>
-        </div>
+      <div class="sp-nav">
+        <button class="sp-arr" id="sp-prev">&#8249;</button>
+        <div class="sp-dots" id="sp-dots"></div>
+        <button class="sp-arr" id="sp-next">&#8250;</button>
       </div>
+    </div><!-- /sp-carousel-wrap -->
+
+    <div class="sp-tier-label plat">◇ PLATINUM TIER — 12 SPONSORS</div>
+    <div class="sp-pgrid">
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 01</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 02</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 03</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 04</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 05</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 06</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 07</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 08</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 09</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 10</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 11</div>
+      </div>
+      <div class="sp-pcard">
+        <div class="sp-logo">LOGO</div>
+        <div class="sp-name">SPONSOR 12</div>
+      </div>
+    </div>
     </div>
   </section>
 
