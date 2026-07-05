@@ -3516,8 +3516,16 @@
     }
 
     /* ══ GRAND FINALE — RE:NDER ════════════════════════════════════ */
+    #gf-t10-wrapper {
+      position: relative;
+      background-image: url('../SGT8-Website/SGTS8Web_pictures/top10 bg3.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
     #grand-finale {
-      background: #010108;
+      background: transparent;
       width: 100%;
     }
 
@@ -3564,12 +3572,18 @@
     .gf-bg {
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse 60% 55% at 15% 90%, rgba(71, 228, 46, 0.32) 0%, rgba(15, 82, 33, 0.14) 55%, transparent 100%),
-        radial-gradient(ellipse 55% 50% at 88% 85%, rgba(71, 228, 46, 0.26) 0%, rgba(15, 82, 33, 0.10) 55%, transparent 100%),
-        radial-gradient(ellipse 50% 40% at 50% 45%, rgba(71, 228, 46, 0.12) 0%, transparent 70%),
-        #F5F1F2;
+      background: transparent;
       min-height: 100vh;
+    }
+
+    #grand-finale .gf-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      opacity: 0.1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
     }
 
     .gf-noise {
@@ -4236,6 +4250,203 @@
     }
 
     /* ════════════════════════════════════════════════════════════════════ */
+    /* TOP-10 FINALISTS                                                     */
+    /* ════════════════════════════════════════════════════════════════════ */
+    #top10 {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(40px, 6vw, 64px) 6vw;
+    }
+
+    #top10 .t10-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px 160px;
+    }
+
+    #top10 .t10-inner {
+      max-width: 87vw;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    #top10 .t10-topbar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    #top10 .t10-heading-wrap {}
+
+    #top10 .t10-label {
+      font-family: var(--font-vhs);
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.22em;
+      color: rgba(2, 2, 2, 0.45);
+      margin-bottom: 4px;
+    }
+
+    #top10 .t10-h1 {
+      font-family: 'HelveticaNowBlack', monospace;
+      font-weight: 900;
+      font-size: clamp(36px, 6vw, 64px);
+      letter-spacing: -2px;
+      color: #020202;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    #top10 .t10-h2 {
+      font-family: 'Redaction', 'Redaction-Italic', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(22px, 3.5vw, 40px);
+      color: rgba(2, 2, 2, 0.45);
+      letter-spacing: -0.5px;
+    }
+
+    #top10 .t10-live-btn {
+      font-family: var(--font-vhs);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(2, 2, 2, 0.4);
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(2, 2, 2, 0.14);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    #top10 .t10-live-btn.is-live {
+      color: #0F5221;
+      border-color: #0F5221;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    #top10 .t10-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(2, 2, 2, 0.25);
+      flex-shrink: 0;
+    }
+
+    #top10 .t10-live-btn.is-live .t10-live-dot {
+      background: #0F5221;
+    }
+
+    /* grid */
+    #top10 .t10-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    #top10 .t10-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    #top10 .t10-card-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    #top10 .t10-card-img-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: rgba(2, 2, 2, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-vhs);
+      font-size: 9px;
+      color: rgba(2, 2, 2, 0.25);
+      letter-spacing: 0.12em;
+    }
+
+    #top10 .t10-card-num {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: var(--font-vhs);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: #020202;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 2px 7px;
+    }
+
+    #top10 .t10-card-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 10px 12px;
+    }
+
+    #top10 .t10-card-name {
+      font-family: var(--font-vhs);
+      font-size: 11px;
+      font-weight: 700;
+      color: #020202;
+      letter-spacing: 0.04em;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #top10 .t10-card-talent {
+      font-family: var(--font-vhs);
+      font-size: 8px;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: #0F5221;
+      padding: 2px 7px;
+      display: inline-block;
+    }
+
+    @media(max-width: 900px) {
+      #top10 .t10-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #top10 .t10-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    /* ════════════════════════════════════════════════════════════════════ */
     /* ADVERTISEMENT                                                        */
     /* ════════════════════════════════════════════════════════════════════ */
     #ad-sp-wrapper {
@@ -4371,7 +4582,7 @@
     }
 
     #advertisement .ad-info-name {
-      font-family: var(--font-vhs);
+      font-family: 'Redaction10';
       font-size: 14px;
       font-weight: 700;
       color: #020202;
@@ -4379,7 +4590,7 @@
     }
 
     #advertisement .ad-info-count {
-      font-family: var(--font-vhs);
+      font-family: 'Redaction10';
       font-size: 10px;
       color: rgba(2, 2, 2, 0.35);
       letter-spacing: 0.12em;
@@ -4467,7 +4678,7 @@
     }
 
     #advertisement .ad-thumb-name {
-      font-family: var(--font-vhs);
+      font-family: 'Redaction10';
       font-size: 9px;
       color: #020202;
       letter-spacing: 0.04em;
@@ -4629,7 +4840,7 @@
     #sponsors .sp-card-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -4660,7 +4871,7 @@
     #sponsors .sp-card-desc {
       font-family: 'Redaction10';
       font-size: 10px;
-      color: rgba(2,2,2,0.75);
+      color: rgba(2, 2, 2, 0.75);
       line-height: 1.55;
       overflow: hidden;
       display: -webkit-box;
@@ -6415,13 +6626,13 @@
 
           <div class="merch-receipt-photos">
             <div class="merch-receipt-photo">
-              <img src="../SGT8-Website/SGTS8Web_pictures/1.png" alt="SGT S8 Oversized T-Shirt">
+              <img src="../SGT8-Website/SGTS8Web_pictures/merch1.png" alt="SGT S8 Oversized T-Shirt">
             </div>
             <div class="merch-receipt-photo panel-blue">
-              <img src="../SGT8-Website/SGTS8Web_pictures/2.png" alt="SGT S8 Blind Box Keychains">
+              <img src="../SGT8-Website/SGTS8Web_pictures/merch2.png" alt="SGT S8 Blind Box Keychains">
             </div>
             <div class="merch-receipt-photo">
-              <img src="../SGT8-Website/SGTS8Web_pictures/3.png" alt="SGT S8 Bundle Set">
+              <img src="../SGT8-Website/SGTS8Web_pictures/merch3.png" alt="SGT S8 Bundle Set">
             </div>
           </div>
 
@@ -6476,8 +6687,10 @@
 
   </section>
 
+  <div id="gf-t10-wrapper">
   <!-- ══ GRAND FINALE — RE:NDER ════════════════════════════════════════════ -->
   <section id="grand-finale">
+    
 
     <div class="gf-ticker">
       <div class="gf-ticker-inner">
@@ -6489,13 +6702,14 @@
     </div>
 
     <div class="gf-bg">
+      <div class="gf-grain"></div>
       <div class="gf-noise"></div>
       <div class="gf-sl"></div>
       <div class="gf-inner">
 
         <div class="gf-topbar">
           <span class="gf-label">// 09 — RE:NDER · GRAND FINALE</span>
-          <span class="gf-tag">BOOT:09</span>
+          <span class="gf-tag">BOOT:10</span>
         </div>
 
         <div class="gf-lay">
@@ -6553,13 +6767,128 @@
           </div>
           <div class="gf-ctac gf-glass">
             <span class="gf-ctah">SSA.PLUS/SGTS8_TICKETS</span>
-            <a href="https://ssa.plus/SGTS8_Tickets" target="_blank" class="gf-cta">[ GET TICKETS ]</a>
+            <a href="http://ssa.plus/SGTS8_TicketPurchaseWaitlist" target="_blank" class="gf-cta">[ GET TICKETS ]</a>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- ══ TOP-10 FINALISTS ════════════════════════════════════════════════ -->
+  <section id="top10">
+    <div class="t10-grain"></div>
+    <div class="t10-inner">
+
+      <div class="t10-topbar">
+        <div class="t10-heading-wrap">
+          <div class="t10-label">// 09 — TOP-10 FINALISTS</div>
+          <div class="t10-h1">TOP-10 FINALISTS</div>
+          <div class="t10-h2">RE:NDER</div>
+        </div>
+        <a class="t10-live-btn" id="t10-live-btn" href="#" target="_blank">
+          <span class="t10-live-dot"></span>
+          LIVESTREAM COMING SOON
+        </a>
+      </div>
+
+      <div class="t10-grid">
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aera.png" alt="aera">
+          <div class="t10-card-num">#01</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">aera</div>
+            <span class="t10-card-talent">dacing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aexo.png" alt="aexo">
+          <div class="t10-card-num">#02</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">aexo</div>
+            <span class="t10-card-talent">dancing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/buy3free2.png" alt="buy 3 free 2">
+          <div class="t10-card-num">#03</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">buy 3 free 2</div>
+            <span class="t10-card-talent">dancing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/mynnjae.png" alt="mynn jae">
+          <div class="t10-card-num">#04</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">mynn jae</div>
+            <span class="t10-card-talent">musical instrument act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/hermitncharlie.png"
+            alt="hermit & charlie">
+          <div class="t10-card-num">#05</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">hermit & charlie</div>
+            <span class="t10-card-talent">ventriloquism act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/ishacheah.png" alt="isha cheah">
+          <div class="t10-card-num">#06</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">isha cheah</div>
+            <span class="t10-card-talent">singing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/kxin.png" alt="kxin">
+          <div class="t10-card-num">#07</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">kxin</div>
+            <span class="t10-card-talent">singing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/limcindy.png" alt="lim cindy">
+          <div class="t10-card-num">#08</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">lim cindy</div>
+            <span class="t10-card-talent">musical instrument act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/nic.png" alt="nic">
+          <div class="t10-card-num">#09</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">nic</div>
+            <span class="t10-card-talent">singing act.</span>
+          </div>
+        </div>
+
+        <div class="t10-card">
+          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/shazzy.png" alt="shazzy">
+          <div class="t10-card-num">#10</div>
+          <div class="t10-card-footer">
+            <div class="t10-card-name">shazzy</div>
+            <span class="t10-card-talent">magic act.</span>
+          </div>
+        </div>
+
+      </div><!-- /t10-grid -->
+    </div><!-- /t10-inner -->
+  </section>
+  </div><!-- /gf-t10-wrapper -->
 
   <!-- ══ BRAND REVEAL ════════════════════════════════════════════════════════ -->
   <section id="brand-reveal">
@@ -6689,13 +7018,15 @@
       <div class="ad-grain"></div>
       <div class="ad-inner">
         <div class="ad-hdr">
-          <span class="ad-label">// 09 — ADVERTISEMENT</span>
+          <span class="ad-label">// 10 — ADVERTISEMENT</span>
           <span class="ad-tag">BOOT:09</span>
         </div>
         <h2 class="ad-title">FROM OUR <span>SPONSORS</span></h2>
 
         <div class="ad-player-screen">
-          <video id="ad-video" muted playsinline></video>
+          <iframe id="ad-video" src="" frameborder="0" allow="autoplay" allowfullscreen
+            style="width:100%;height:100%;display:block;">
+          </iframe>
           <div class="ad-no-video" id="ad-no-video" style="display:none;">NO VIDEO AVAILABLE</div>
         </div>
 
@@ -6721,8 +7052,8 @@
       <div class="sp-grain"></div>
       <div class="sp-inner">
         <div class="sp-hdr">
-          <span class="sp-label">// 10 — SPONSORS</span>
-          <span class="sp-tag">BOOT:10</span>
+          <span class="sp-label">// 11 — SPONSORS</span>
+          <span class="sp-tag">BOOT:11</span>
         </div>
         <h2 class="sp-title">OUR <span>SPONSORS</span></h2>
 
@@ -6730,8 +7061,8 @@
         <div class="sp-dgrid">
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/8. La Gourmet_Coloured.png"
-                alt="La Gourmet"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/8. La Gourmet_Coloured.png" alt="La Gourmet"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">La Gourmet</div>
               <div class="sp-card-desc">La Gourmet is a leading US-Singapore incorporated brand recognized for its
@@ -7475,7 +7806,7 @@
     // ── ADVERTISEMENT FILMSTRIP ─────────────────────────────────────────
     (function () {
       const sponsors = [
-        { name: 'La Gourmet', logo: '../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/lagourmet-logo.png', video: '../SGT8-Website/SGTS8Web_videos/Sponsors/lagourmet.mp4' },
+        { name: 'ProStage', logo: '../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/Prostage.jpeg', video: 'https://drive.google.com/file/d/1ICoXa9G8xOXjCe1pLKuglu2JboRsIELO/preview' },
         { name: 'Chirpybird', logo: '../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/chirpybird-logo.png', video: '../SGT8-Website/SGTS8Web_videos/Sponsors/chirpybird.mp4' },
         { name: 'SPONSOR NAME 03', logo: '../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/sponsor3-logo.png', video: '../SGT8-Website/SGTS8Web_videos/Sponsors/sponsor3.mp4' },
         { name: 'SPONSOR NAME 04', logo: '../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/sponsor4-logo.png', video: '../SGT8-Website/SGTS8Web_videos/Sponsors/sponsor4.mp4' },
@@ -7519,8 +7850,7 @@
         const thumbs = filmstrip.querySelectorAll('.ad-thumb');
         thumbs[current].classList.remove('is-active');
 
-        // pause outgoing video
-        if (videoEl.src) { videoEl.pause(); videoEl.src = ''; }
+        videoEl.src = '';
 
         current = (idx + sponsors.length) % sponsors.length;
         thumbs[current].classList.add('is-active');
@@ -7536,8 +7866,8 @@
           videoEl.style.display = 'block';
           if (noVideoEl) noVideoEl.style.display = 'none';
           videoEl.src = sp.video;
-          videoEl.play();
         } else {
+          videoEl.src = '';
           videoEl.style.display = 'none';
           if (noVideoEl) noVideoEl.style.display = 'flex';
         }
