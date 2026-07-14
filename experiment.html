@@ -3800,7 +3800,7 @@
       font-size: clamp(9px, 0.9vw, 11px);
       letter-spacing: 0.2em;
       padding: clamp(10px, 1.2vw, 14px) clamp(16px, 2vw, 20px);
-      background: #020202;
+      background: #434343;
       color: #F5F1F2;
       text-decoration: none;
       display: block;
@@ -4582,11 +4582,11 @@
     }
 
     #advertisement .ad-info-name {
-      font-family: 'Redaction10';
-      font-size: 14px;
-      font-weight: 700;
+      font-family: 'Helvetica';
+      font-size: 16px;
+      font-weight: 600;
       color: #020202;
-      letter-spacing: 0.04em;
+      letter-spacing: -1px;
     }
 
     #advertisement .ad-info-count {
@@ -4678,10 +4678,10 @@
     }
 
     #advertisement .ad-thumb-name {
-      font-family: 'Redaction10';
-      font-size: 9px;
+      font-family: 'Helvetica';
+      font-size: 11px;
       color: #020202;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.002em;
       line-height: 1.4;
       overflow: hidden;
       display: -webkit-box;
@@ -4861,16 +4861,16 @@
 
     #sponsors .sp-card-name {
       font-family: 'HelveticaNowBold';
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       color: #020202;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.002em;
       margin-bottom: 6px;
     }
 
     #sponsors .sp-card-desc {
       font-family: 'Redaction10';
-      font-size: 10px;
+      font-size: 13px;
       color: rgba(2, 2, 2, 0.75);
       line-height: 1.55;
       overflow: hidden;
@@ -4885,11 +4885,12 @@
     }
 
     #sponsors .sp-pgrid .sp-card-name {
-      font-size: 10px;
+      font-size: 14px;
+      letter-spacing: -0.5px;
     }
 
     #sponsors .sp-pgrid .sp-card-desc {
-      font-size: 9px;
+      font-size: 13px;
       -webkit-line-clamp: 3;
     }
 
@@ -4923,6 +4924,159 @@
       line-height: 1.7;
       max-width: 520px;
       margin: 0 auto;
+    }
+
+    /* ── SPONSOR DESCRIPTION MODAL ────────────────────────────────────────── */
+    .sp-card {
+      cursor: pointer;
+    }
+
+    /* shorten the hover teaser + add a hint instead of relying on truncation */
+    #sponsors .sp-card-desc {
+      -webkit-line-clamp: 3;
+    }
+
+    #sponsors .sp-pgrid .sp-card-desc {
+      -webkit-line-clamp: 2;
+    }
+
+    .sp-card-hint {
+      font-family: var(--font-vhs);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: #0F5221;
+      margin-top: 8px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .sp-card:hover .sp-card-hint {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sp-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 2, 2, 0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .sp-modal-overlay.open {
+      display: flex;
+    }
+
+    .sp-modal-overlay.show {
+      opacity: 1;
+    }
+
+    .sp-modal {
+      width: 100%;
+      max-width: 560px;
+      max-height: 82vh;
+      background: rgba(245, 241, 236, 0.97);
+      border: 1px solid rgba(2, 2, 2, 0.15);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      transform: translateY(12px) scale(0.98);
+      transition: transform 0.2s ease;
+    }
+
+    .sp-modal-overlay.show .sp-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .sp-modal-titlebar {
+      background: #020202;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .sp-modal-title {
+      font-family: var(--font-vhs);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #F5F1F2;
+    }
+
+    .sp-modal-close {
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(245, 241, 242, 0.3);
+      background: transparent;
+      color: #F5F1F2;
+      font-family: var(--font-vhs);
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .sp-modal-close:hover {
+      background: rgba(245, 241, 242, 0.15);
+    }
+
+    .sp-modal-body {
+      padding: clamp(24px, 4vw, 36px);
+      overflow-y: auto;
+    }
+
+    .sp-modal-logo {
+      width: 100%;
+      max-width: 160px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .sp-modal-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .sp-modal-badge {
+      font-family: var(--font-vhs);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: #fff;
+      background: #0F5221;
+      padding: 3px 9px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .sp-modal-name {
+      font-family: 'HelveticaNowBold', 'HelveticaNowBlack', monospace;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      color: #020202;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+
+    .sp-modal-desc {
+      font-family: 'Redaction10', monospace;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(2, 2, 2, 0.8);
+      white-space: pre-line;
     }
 
     @media(max-width:900px) {
@@ -5569,7 +5723,7 @@
       <a href="#hero" class="active">HOME</a>
       <a href="#about">ABOUT</a>
       <a href="#merch">MERCH DROP</a>
-      <a href="#grand-finale">GRAND FINAL</a>
+      <a href="#grand-finale">GRAND FINALE</a>
       <a href="#brand-reveal">BRAND REVEAL</a>
       <a href="#timeline">TIMELINE</a>
     </nav>
@@ -5585,7 +5739,7 @@
     <a href="#hero">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#merch">MERCH DROP</a>
-    <a href="#grand-finale">GRAND FINAL</a>
+    <a href="#grand-finale">GRAND FINALE</a>
     <a href="#brand-reveal">BRAND REVEAL</a>
     <a href="#timeline">TIMELINE</a>
   </nav>
@@ -5644,7 +5798,7 @@
           <div id="logo-space"><img id="logo-img" src="../SGT8-Website/SGTS8Web_pictures/SGT 8 BIG LOGO (1).png"
               alt="SGT S8 Logo"></div>
           <div id="hero-btns">
-            <a class="hero-btn hero-btn-secondary" href="#grand-finale">[ GRAND FINAL ]</a>
+            <a class="hero-btn hero-btn-secondary" href="#grand-finale">[ GRAND FINALE ]</a>
             <a class="hero-btn hero-btn-primary" href="https://ssa.plus/SGTS8_OARegistration" target="_blank">[ REGISTER
               ]</a>
           </div>
@@ -6688,206 +6842,209 @@
   </section>
 
   <div id="gf-t10-wrapper">
-  <!-- ══ GRAND FINALE — RE:NDER ════════════════════════════════════════════ -->
-  <section id="grand-finale">
-    
+    <!-- ══ GRAND FINALE — RE:NDER ════════════════════════════════════════════ -->
+    <section id="grand-finale">
 
-    <div class="gf-ticker">
-      <div class="gf-ticker-inner">
-        /// GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH HALL
-        · LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE <span>///</span>
-        GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH HALL ·
-        LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE <span>///</span>
-      </div>
-    </div>
 
-    <div class="gf-bg">
-      <div class="gf-grain"></div>
-      <div class="gf-noise"></div>
-      <div class="gf-sl"></div>
-      <div class="gf-inner">
-
-        <div class="gf-topbar">
-          <span class="gf-label">// 09 — RE:NDER · GRAND FINALE</span>
-          <span class="gf-tag">BOOT:10</span>
+      <div class="gf-ticker">
+        <div class="gf-ticker-inner">
+          /// GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH
+          HALL
+          · LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE
+          <span>///</span>
+          GRAND FINALE <span>///</span> RE:NDER <span>///</span> 07 JULY 2026 <span>///</span> SIR JEFFREY CHEAH HALL ·
+          LEVEL 4, SUNWAY COLLEGE <span>///</span> 6:00 PM — 10:30 PM <span>///</span> TICKETS NOW LIVE <span>///</span>
         </div>
+      </div>
 
-        <div class="gf-lay">
-          <!-- Date column -->
-          <div class="gf-datecol">
-            <div class="gf-datebig">07</div>
-            <div class="gf-month">JULY</div>
-            <div class="gf-year">2026</div>
+      <div class="gf-bg">
+        <div class="gf-grain"></div>
+        <div class="gf-noise"></div>
+        <div class="gf-sl"></div>
+        <div class="gf-inner">
+
+          <div class="gf-topbar">
+            <span class="gf-label">// 09 — RE:NDER · GRAND FINALE</span>
+            <span class="gf-tag">BOOT:10</span>
           </div>
 
-          <!-- Heading + meta column -->
-          <div class="gf-right">
-            <span class="gf-eyebrow">// THE FINAL STAGE — SIGNAL COMPLETE</span>
-            <div class="gf-h1">GRAND<br>FINALE</div>
-            <div class="gf-h2">RE:NDER</div>
-            <div class="gf-meta gf-glass">
-              <div class="gf-mrow">
-                <div>
-                  <div class="gf-ml">TIME</div>
-                  <div class="gf-mv">6:00 PM — 10:30 PM</div>
-                </div>
-                <div>
-                  <div class="gf-ml">VENUE</div>
-                  <div class="gf-mv">Sir Jeffrey Cheah Hall</div>
-                </div>
-                <div>
-                  <div class="gf-ml">CAMPUS</div>
-                  <div class="gf-mv">Level 4, Sunway College</div>
+          <div class="gf-lay">
+            <!-- Date column -->
+            <div class="gf-datecol">
+              <div class="gf-datebig">07</div>
+              <div class="gf-month">JULY</div>
+              <div class="gf-year">2026</div>
+            </div>
+
+            <!-- Heading + meta column -->
+            <div class="gf-right">
+              <span class="gf-eyebrow">// THE FINAL STAGE — SIGNAL COMPLETE</span>
+              <div class="gf-h1">GRAND<br>FINALE</div>
+              <div class="gf-h2">RE:NDER</div>
+              <div class="gf-meta gf-glass">
+                <div class="gf-mrow">
+                  <div>
+                    <div class="gf-ml">TIME</div>
+                    <div class="gf-mv">6:00 PM — 10:30 PM</div>
+                  </div>
+                  <div>
+                    <div class="gf-ml">VENUE</div>
+                    <div class="gf-mv">Sir Jeffrey Cheah Hall</div>
+                  </div>
+                  <div>
+                    <div class="gf-ml">CAMPUS</div>
+                    <div class="gf-mv">Level 4, Sunway College</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Ticket + CTA row -->
-        <div class="gf-bot">
-          <div class="gf-tkt gf-glass" style="grid-column: span 2;">
-            <div class="gf-tt">TICKETS</div>
-            <div class="gf-tn">RE:NDER '26</div>
-            <div class="gf-tp">
-              <div>
-                <div class="gf-tl">SINGLE (1 PAX)</div>
-                <div class="gf-tprice">RM 20</div>
-              </div>
-              <div>
-                <div class="gf-tl">TWIN (2 PAX)</div>
-                <div class="gf-tprice">RM 36</div>
-              </div>
-              <div>
-                <div class="gf-tl">QUINTUPLET (5 PAX)</div>
-                <div class="gf-tprice">RM 85</div>
-                <div class="gf-tsub">RM 17 / PAX</div>
+          <!-- Ticket + CTA row -->
+          <div class="gf-bot">
+            <div class="gf-tkt gf-glass" style="grid-column: span 2;">
+              <div class="gf-tt">TICKETS</div>
+              <div class="gf-tn">RE:NDER '26</div>
+              <div class="gf-tp">
+                <div>
+                  <div class="gf-tl">SINGLE (1 PAX)</div>
+                  <div class="gf-tprice">RM 20</div>
+                </div>
+                <div>
+                  <div class="gf-tl">TWIN (2 PAX)</div>
+                  <div class="gf-tprice">RM 36</div>
+                </div>
+                <div>
+                  <div class="gf-tl">QUINTUPLET (5 PAX)</div>
+                  <div class="gf-tprice">RM 85</div>
+                  <div class="gf-tsub">RM 17 / PAX</div>
+                </div>
               </div>
             </div>
+            <div class="gf-ctac gf-glass">
+              <span class="gf-ctah">TICKETS SOLD OUT! Join the waitlist for a chance to secure your seat.</span>
+              <a href="#grand-finale" target="_blank" class="gf-cta">[ EVENT ENDED ]</a>
+            </div>
           </div>
-          <div class="gf-ctac gf-glass">
-            <span class="gf-ctah">TICKETS SOLD OUT! Join the waitlist for a chance to secure your seat.</span>
-            <a href="http://ssa.plus/SGTS8_TicketPurchaseWaitlist" target="_blank" class="gf-cta">[ JOIN WAITLIST ]</a>
-          </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══ TOP-10 FINALISTS ════════════════════════════════════════════════ -->
-  <section id="top10">
-    <div class="t10-grain"></div>
-    <div class="t10-inner">
+    <!-- ══ TOP-10 FINALISTS ════════════════════════════════════════════════ -->
+    <section id="top10">
+      <div class="t10-grain"></div>
+      <div class="t10-inner">
 
-      <div class="t10-topbar">
-        <div class="t10-heading-wrap">
-          <div class="t10-label">// 09 — TOP-10 FINALISTS</div>
-          <div class="t10-h1">TOP-10 FINALISTS</div>
-          <div class="t10-h2">RE:NDER</div>
-        </div>
-        <a class="t10-live-btn" id="t10-live-btn" href="#" target="_blank">
+        <div class="t10-topbar">
+          <div class="t10-heading-wrap">
+            <div class="t10-label">// 09 — TOP 10 FINALISTS</div>
+            <div class="t10-h1">TOP 10 FINALISTS</div>
+            <div class="t10-h2">RE:NDER</div>
+          </div>
+          <!-- <a class="t10-live-btn" id="t10-live-btn" href="#" target="_blank">
           <span class="t10-live-dot"></span>
           LIVESTREAM COMING SOON
-        </a>
-      </div>
-
-      <div class="t10-grid">
-
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aera.png" alt="aera">
-          <div class="t10-card-num">#01</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">aera</div>
-            <span class="t10-card-talent">dacing act.</span>
-          </div>
+        </a> -->
         </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aexo.png" alt="aexo">
-          <div class="t10-card-num">#02</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">aexo</div>
-            <span class="t10-card-talent">dancing act.</span>
-          </div>
-        </div>
+        <div class="t10-grid">
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/buy3free2.png" alt="buy 3 free 2">
-          <div class="t10-card-num">#03</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">buy 3 free 2</div>
-            <span class="t10-card-talent">dancing act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aera.png" alt="aera">
+            <div class="t10-card-num">#01</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">aera</div>
+              <span class="t10-card-talent">dacing act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/mynnjae.png" alt="mynn jae">
-          <div class="t10-card-num">#04</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">mynn jae</div>
-            <span class="t10-card-talent">musical instrument act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/aexo.png" alt="aexo">
+            <div class="t10-card-num">#02</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">aexo</div>
+              <span class="t10-card-talent">dancing act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/hermitncharlie.png"
-            alt="hermit & charlie">
-          <div class="t10-card-num">#05</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">hermit & charlie</div>
-            <span class="t10-card-talent">ventriloquism act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/buy3free2.png"
+              alt="buy 3 free 2">
+            <div class="t10-card-num">#03</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">buy 3 free 2</div>
+              <span class="t10-card-talent">dancing act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/ishacheah.png" alt="isha cheah">
-          <div class="t10-card-num">#06</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">isha cheah</div>
-            <span class="t10-card-talent">singing act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/mynnjae.png" alt="mynn jae">
+            <div class="t10-card-num">#04</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">mynn jae</div>
+              <span class="t10-card-talent">musical instrument act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/kxin.png" alt="kxin">
-          <div class="t10-card-num">#07</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">kxin</div>
-            <span class="t10-card-talent">singing act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/hermitncharlie.png"
+              alt="hermit & charlie">
+            <div class="t10-card-num">#05</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">hermit & charlie</div>
+              <span class="t10-card-talent">ventriloquism act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/limcindy.png" alt="lim cindy">
-          <div class="t10-card-num">#08</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">lim cindy</div>
-            <span class="t10-card-talent">musical instrument act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/ishacheah.png" alt="isha cheah">
+            <div class="t10-card-num">#06</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">isha cheah</div>
+              <span class="t10-card-talent">singing act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/nic.png" alt="nic">
-          <div class="t10-card-num">#09</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">nic</div>
-            <span class="t10-card-talent">singing act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/kxin.png" alt="kxin">
+            <div class="t10-card-num">#07</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">kxin</div>
+              <span class="t10-card-talent">singing act.</span>
+            </div>
           </div>
-        </div>
 
-        <div class="t10-card">
-          <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/shazzy.png" alt="shazzy">
-          <div class="t10-card-num">#10</div>
-          <div class="t10-card-footer">
-            <div class="t10-card-name">shazzy</div>
-            <span class="t10-card-talent">magic act.</span>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/limcindy.png" alt="lim cindy">
+            <div class="t10-card-num">#08</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">lim cindy</div>
+              <span class="t10-card-talent">musical instrument act.</span>
+            </div>
           </div>
-        </div>
 
-      </div><!-- /t10-grid -->
-    </div><!-- /t10-inner -->
-  </section>
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/nic.png" alt="nic">
+            <div class="t10-card-num">#09</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">nic</div>
+              <span class="t10-card-talent">singing act.</span>
+            </div>
+          </div>
+
+          <div class="t10-card">
+            <img class="t10-card-img" src="../SGT8-Website/SGTS8Web_pictures/top10 pics/shazzy.png" alt="shazzy">
+            <div class="t10-card-num">#10</div>
+            <div class="t10-card-footer">
+              <div class="t10-card-name">shazzy</div>
+              <span class="t10-card-talent">magic act.</span>
+            </div>
+          </div>
+
+        </div><!-- /t10-grid -->
+      </div><!-- /t10-inner -->
+    </section>
   </div><!-- /gf-t10-wrapper -->
 
   <!-- ══ BRAND REVEAL ════════════════════════════════════════════════════════ -->
@@ -7055,14 +7212,14 @@
           <span class="sp-label">// 11 — SPONSORS</span>
           <span class="sp-tag">BOOT:11</span>
         </div>
-        <h2 class="sp-title">THANKS TO OUR <span>SPONSORS</span></h2>
+        <h2 class="sp-title">THANK YOU TO OUR <span>SPONSORS</span></h2>
 
         <div class="sp-tier-label">◆ DIAMOND TIER</div>
         <div class="sp-dgrid">
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/Prostage.jpeg" alt="ProStage"></div>
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/Prostage.jpeg"
+                alt="ProStage"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">ProStage</div>
               <div class="sp-card-desc">ProStage</div>
@@ -7074,15 +7231,16 @@
                 alt="Chirpybird"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Chirpybird</div>
-              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production 
-                solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual 
-                and stage effect equipment. We are committed to transforming your vision into a captivating reality, 
+              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production
+                solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual and
+                stage effect equipment. We are committed to transforming your vision into a captivating reality,
                 ensuring your event leaves a lasting impression.</div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/LGE_Logo_HeritageRed_Grey_CMYK.png"
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/LGE_Logo_HeritageRed_Grey_CMYK.png"
                 alt="LG Malaysia"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">LG Malaysia</div>
@@ -7091,13 +7249,13 @@
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/8. La Gourmet_Coloured.png"
-                alt="La Gourmet"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/8. La Gourmet_Coloured.png" alt="La Gourmet"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">La Gourmet</div>
-              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its premium-quality
-                 lifestyle and kitchenware products, offering an extensive range of thermalware, cookware, glassware, and food storage 
-                 containers designed to enhance everyday living.</div>
+              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+                premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+                cookware, glassware, and food storage containers designed to enhance everyday living.</div>
             </div>
           </div>
 
@@ -7112,11 +7270,51 @@
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/10. Tokyo2U_Coloured Logo.PNG"
-                alt="Tokyo2U"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/10. Tokyo2U_Coloured Logo.PNG" alt="Tokyo2U"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Tokyo2U</div>
               <div class="sp-card-desc">Tokyo2U.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Mars Food_SNICKERS_General Logo.png"
+                alt="SNICKERS"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods SNICKERS</div>
+              <div class="sp-card-desc">Mars Foods SNICKERS.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Mars Food_Eclipse_General Logo.png"
+                alt="Eclipse"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods Eclipse</div>
+              <div class="sp-card-desc">Mars Foods Eclipse.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Mars Food_Doublemint_General Logo.Png"
+                alt="Doublemint"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods Doublemint</div>
+              <div class="sp-card-desc">Mars Foods Doublemint.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Mars Food_M&M's_General Logo.png" alt="M&M">
+            </div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods M&M</div>
+              <div class="sp-card-desc">Mars Foods M&M.</div>
             </div>
           </div>
 
@@ -7125,9 +7323,9 @@
                 alt="Laneige"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">LANEIGE</div>
-              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its 
-                pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE 
-                continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful 
+              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its
+                pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE
+                continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful
                 campaigns that make beauty feel fun again.</div>
             </div>
           </div>
@@ -7137,11 +7335,20 @@
                 alt="SILKYGIRL"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">SILKYGIRL</div>
-              <div class="sp-card-desc">SILKYGIRL is a proudly Malaysian beauty brand that celebrates confidence, 
-                creativity, and self-expression through fun and affordable beauty. Their newest Ribbon Charm Collection 
-                combines style and practicality with cute, bag charm-inspired beauty essentials. Whether you're shopping 
-                for the latest collection or everyday favourites, SILKYGIRL products are available at major drugstores 
+              <div class="sp-card-desc">SILKYGIRL is a proudly Malaysian beauty brand that celebrates confidence,
+                creativity, and self-expression through fun and affordable beauty. Their newest Ribbon Charm Collection
+                combines style and practicality with cute, bag charm-inspired beauty essentials. Whether you're shopping
+                for the latest collection or everyday favourites, SILKYGIRL products are available at major drugstores
                 and leading e-commerce platforms nationwide.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/5. EVOLCARE_Black.png"
+                alt="EVOLCARE"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">EVOLCARE</div>
+              <div class="sp-card-desc">EVOLCARE.</div>
             </div>
           </div>
 
@@ -7150,19 +7357,33 @@
                 alt="Le Classic Academy"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Le Classic Academy</div>
-              <div class="sp-card-desc">"Le Classic Academy is Malaysia’s leading and largest hairdressing academy, founded by Damon Cher, CEO of the LE CLASSIC group.
-                The academy focuses on modern, industry-relevant hairstyling education designed to prepare students for real career success.
+              <div class="sp-card-desc">Le Classic Academy is Malaysia’s leading and largest hairdressing academy,
+                founded by Damon Cher, CEO of the LE CLASSIC group.
+
+                The academy focuses on modern, industry-relevant hairstyling education designed to prepare students for
+                real career success.
+
                 What makes it different is its strong emphasis on hands-on learning.
-                Students don’t just study theory — they train in a real salon environment, working with real clients under professional guidance.
-                They are exposed to both contemporary and classic hairstyling techniques, while also being trained in essential soft skills such as communication and client handling.
-                With small-class training and structured guidance, students develop technical skills in haircutting, coloring, styling, perming, and even content creation for today’s digital industry.
-                Students are also able to obtain SKM Government Skills Certification, along with a certified technical qualification from University Malaya.
-                Through this approach, students are equipped not only with skills, but with real industry confidence and career readiness"</div>
+                Students don’t just study theory — they train in a real salon environment, working with real clients
+                under professional guidance.
+
+                They are exposed to both contemporary and classic hairstyling techniques, while also being trained in
+                essential soft skills such as communication and client handling.
+
+                With small-class training and structured guidance, students develop technical skills in haircutting,
+                coloring, styling, perming, and even content creation for today’s digital industry.
+
+                Students are also able to obtain SKM Government Skills Certification, along with a certified technical
+                qualification from University Malaya.
+
+                Through this approach, students are equipped not only with skills, but with real industry confidence and
+                career readiness</div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/11. Nasi Lemak Shop_Original.jpg"
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/11. Nasi Lemak Shop_Original.jpg"
                 alt="Nasi Lemak Shop"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Nasi Lemak Shop</div>
@@ -7193,9 +7414,9 @@
                 alt="HURIX'S"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">HURIX'S</div>
-              <div class="sp-card-desc">"HURIX'S 600 Fluaway Capsule Improved is traditionally used 
+              <div class="sp-card-desc">HURIX'S 600 Fluaway Capsule Improved is traditionally used
                 for the relief of flu and common cold, runny nose, and nasal congestion.
-                Stay ready whenever you need it."</div>
+                Stay ready whenever you need it.</div>
             </div>
           </div>
 
@@ -7205,8 +7426,9 @@
         <div class="sp-pgrid">
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/1. SNS Network_Blue Logo.png"
-                alt="SNS Network"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/1. SNS Network_Blue Logo.png" alt="SNS Network">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">SNS Network</div>
               <div class="sp-card-desc">SNS Network</div>
@@ -7214,14 +7436,15 @@
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/2. Luckin Coffee_Coloured.png"
-                alt="Luckin Coffee"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/2. Luckin Coffee_Coloured.png" alt="Luckin Coffee">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Luckin Coffee</div>
-              <div class="sp-card-desc">Luckin Coffee is a technology-driven global coffee retail brand that provides high quality, 
-                high convenience and high affordability products to customers. Proudly operated by Global Aroma Sdn Bhd, a subsidiary 
-                of Hextar Industries Berhad, Luckin Coffee Malaysia is committed to its vision of building a world-class coffee brand 
-                and becoming part of everyday life in Malaysia.</div>
+              <div class="sp-card-desc">Luckin Coffee is a technology-driven global coffee retail brand that provides
+                high quality, high convenience and high affordability products to customers. Proudly operated by Global
+                Aroma Sdn Bhd, a subsidiary of Hextar Industries Berhad, Luckin Coffee Malaysia is committed to its
+                vision of building a world-class coffee brand and becoming part of everyday life in Malaysia.</div>
             </div>
           </div>
 
@@ -7230,16 +7453,18 @@
                 alt="Sunway TES"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Sunway TES</div>
-              <div class="sp-card-desc">Sunway TES Centre for Accountancy Excellence (STES CAE), A world-class provider of professional 
-                accounting and financial programmes including ACCA FIA/ACCA, CFAB/ICAEW, MICPA, CPAA and CFA in the region.  STES CAE has 
-                been awarded the prestigious ACCA Platinum Award for 23 consecutive years and the ICAEW Regional Centre of Accountancy 
-                Training Excellence for ASEAN and China.</div>
+              <div class="sp-card-desc">Sunway TES Centre for Accountancy Excellence (STES CAE), A world-class provider
+                of professional accounting and financial programmes including ACCA FIA/ACCA, CFAB/ICAEW, MICPA, CPAA and
+                CFA in the region. STES CAE has been awarded the prestigious ACCA Platinum Award for 23 consecutive
+                years and the ICAEW Regional Centre of Accountancy Training Excellence for ASEAN and China.
+              </div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/4. Gigabyte Auros_Black.png"
-                alt="Gigabyte Aorus"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/4. Gigabyte Auros_Black.png" alt="Gigabyte Aorus">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Gigabyte Aorus</div>
               <div class="sp-card-desc">Gigabyte Aorus</div>
@@ -7251,28 +7476,46 @@
                 alt="Case Valker"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Case Valker</div>
-              <div class="sp-card-desc">Case Valker is a top Malaysian direct-to-consumer e-commerce luggage and 
-                travel gear brand. Known for blending durable hardshell materials with affordable pricing, they 
-                specialize in travel bags suited for the unique demands of travelers in Southeast Asia</div>
+              <div class="sp-card-desc">Case Valker is a top Malaysian direct-to-consumer e-commerce luggage and travel
+                gear brand. Known for blending durable hardshell materials with affordable pricing, they specialize in
+                travel bags suited for the unique demands of travelers in Southeast Asia</div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/plat6-logo.png"
-                alt="Tohtonku (The Overthink Co, Base Up, APLB)"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/6. Tohtonku_The Overthink Co.png"
+                alt="Tohtonku (The Overthink Co)"></div>
             <div class="sp-card-overlay">
-              <div class="sp-card-name">Tohtonku (The Overthink Co, Base Up, APLB)</div>
-              <div class="sp-card-desc">"APLB is a global South Korean derma-skincare brand renowned for its 
-                pioneering barrier-repair science and gentle, high-efficacy formulas. 
-                The Overthink Co. is a contemporary lifestyle and wellness brand renowned for its mindful personal 
-                care and sensorial daily essentials. 
-                BaseUp is an innovative health and wellness brand under Tohtonku, renowned for its pioneering functional 
-                nutrition and Halal-certified liquid supplements. "</div>
+              <div class="sp-card-name">Tohtonku (The Overthink Co)</div>
+              <div class="sp-card-desc">The Overthink Co. is a contemporary lifestyle and wellness brand renowned for
+                its mindful personal care and sensorial daily essentials.</div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/7. Boulder Story Climbing Gym_Coloured + Words.png"
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/base up.jpg"
+                alt="Tohtonku (Base Up)"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Tohtonku (Base Up)</div>
+              <div class="sp-card-desc">BaseUp is an innovative health and wellness brand under Tohtonku, renowned for
+                its pioneering functional nutrition and Halal-certified liquid supplements.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/APLB.png"
+                alt="Tohtonku (APLB)"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Tohtonku (APLB)</div>
+              <div class="sp-card-desc">APLB is a global South Korean derma-skincare brand renowned for its pioneering
+                barrier-repair science and gentle, high-efficacy formulas.</div>
+            </div>
+          </div>
+
+          <div class="sp-card">
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/7. Boulder Story Climbing Gym_Coloured + Words.png"
                 alt="Boulder Story Climbing Gym"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Boulder Story Climbing Gym</div>
@@ -7285,14 +7528,15 @@
                 alt="Beauty Edge (Bioderma)"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Beauty Edge (Bioderma)</div>
-              <div class="sp-card-desc">Bioderma is an iconic French dermatological skincare brand pioneering skin biology research to develop innovative, 
-                effective, and respectful skincare solutions trusted worldwide.</div>
+              <div class="sp-card-desc">Bioderma is an iconic French dermatological skincare brand pioneering skin
+                biology research to develop innovative, effective, and respectful skincare solutions trusted worldwide.
+              </div>
             </div>
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Kiehl's_No Word_White.png"
-                alt="Kiehl's"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/9. Kiehl's_No Word_White.png" alt="Kiehl's"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Kiehl's</div>
               <div class="sp-card-desc">Kiehl's</div>
@@ -7300,14 +7544,17 @@
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/10. Being Studio_Black.png"
-                alt="Being Studio"></div>
+            <div class="sp-card-logo"><img
+                src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/10. Being Studio_Black.png" alt="Being Studio">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Being Studio</div>
-              <div class="sp-card-desc">"Being Studio is a private, tailored portrait photography studio dedicated to creating 
-                natural, authentic, and timeless portraits. Guided by the belief that ""Being Yourself Shouldn't Be Defined"", 
-                we offer personalised photography experiences that celebrate each individual's unique personality and story. 
-                Graduation photography, makeup, and styling services are also available to complement selected sessions."</div>
+              <div class="sp-card-desc">Being Studio is a private, tailored portrait photography studio dedicated to
+                creating natural, authentic, and timeless portraits. Guided by the belief that ""Being Yourself
+                Shouldn't Be Defined"", we offer personalised photography experiences that celebrate each individual's
+                unique personality and story.
+                Graduation photography, makeup, and styling services are also available to complement selected sessions.
+              </div>
             </div>
           </div>
 
@@ -7316,8 +7563,10 @@
                 alt="Bomb Battle"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Bomb Battle</div>
-              <div class="sp-card-desc">Leave reality behind and step into a real-life video game! Bomb Battle delivers unforgettable, 
-                high-octane team experiences where adrenaline, high-tech excitement, and core memories are made.</div>
+              <div class="sp-card-desc">Leave reality behind and step into a real-life video game! Bomb Battle delivers
+                unforgettable, high-octane team experiences where adrenaline, high-tech excitement, and core memories
+                are made.
+              </div>
             </div>
           </div>
 
@@ -7326,14 +7575,35 @@
                 alt="Golden Drops"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Golden Drops</div>
-              <div class="sp-card-desc">"🌿 A Refreshing Herbal Experience for Your Throat 🌿
-                Wherever life takes you at work, in class, or on stage, Golden Drops Herbal Candy is your everyday companion.
-                Golden Drops Herbal Candy is Halal-certified and made with a blend of natural herbal ingredients, providing a refreshing and soothing throat experience to help you stay comfortable and confident throughout the day. 🌿
-                Golden Drops. Your Voice, Your Confidence. 💛"</div>
+              <div class="sp-card-desc">🌿 A Refreshing Herbal Experience for Your Throat 🌿
+
+                Wherever life takes you at work, in class, or on stage, Golden Drops Herbal Candy is your everyday
+                companion.
+
+                Golden Drops Herbal Candy is Halal-certified and made with a blend of natural herbal ingredients,
+                providing a refreshing and soothing throat experience to help you stay comfortable and confident
+                throughout the day. 🌿
+
+                Golden Drops. Your Voice, Your Confidence. 💛</div>
             </div>
           </div>
 
         </div><!-- /sp-pgrid -->
+        <!-- SPONSOR MODAL (single reusable popup) -->
+        <div class="sp-modal-overlay" id="sp-modal-overlay">
+          <div class="sp-modal">
+            <div class="sp-modal-titlebar">
+              <span class="sp-modal-title">SPONSOR_INFO.exe</span>
+              <button class="sp-modal-close" id="sp-modal-close" aria-label="Close">✕</button>
+            </div>
+            <div class="sp-modal-body">
+              <div class="sp-modal-logo" id="sp-modal-logo"></div>
+              <span class="sp-modal-badge" id="sp-modal-badge"></span>
+              <div class="sp-modal-name" id="sp-modal-name"></div>
+              <div class="sp-modal-desc" id="sp-modal-desc"></div>
+            </div>
+          </div>
+        </div>
 
       </div><!-- /sp-inner -->
     </section>
@@ -7907,6 +8177,76 @@
       if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
 
       goTo(0);
+    })();
+
+    // ── SPONSOR MODAL ────────────────────────────────────────────────────
+    (function () {
+      const overlay = document.getElementById('sp-modal-overlay');
+      const closeBtn = document.getElementById('sp-modal-close');
+      const modalLogo = document.getElementById('sp-modal-logo');
+      const modalBadge = document.getElementById('sp-modal-badge');
+      const modalName = document.getElementById('sp-modal-name');
+      const modalDesc = document.getElementById('sp-modal-desc');
+      if (!overlay) return;
+
+      const cards = document.querySelectorAll('#sponsors .sp-card');
+
+      cards.forEach(function (card) {
+        // add "click to view" hint into the hover overlay
+        const overlayEl = card.querySelector('.sp-card-overlay');
+        if (overlayEl && !overlayEl.querySelector('.sp-card-hint')) {
+          const hint = document.createElement('div');
+          hint.className = 'sp-card-hint';
+          hint.textContent = '▸ CLICK TO READ MORE';
+          overlayEl.appendChild(hint);
+        }
+
+        // accessibility
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+
+        function openModal() {
+          const name = card.querySelector('.sp-card-name');
+          const desc = card.querySelector('.sp-card-desc');
+          const logoImg = card.querySelector('.sp-card-logo img');
+          const isDiamond = card.closest('.sp-dgrid') !== null;
+
+          modalName.textContent = name ? name.textContent : '';
+          modalDesc.textContent = desc ? desc.textContent : '';
+          modalBadge.textContent = isDiamond ? '◆ DIAMOND SPONSOR' : '◇ PLATINUM SPONSOR';
+
+          modalLogo.innerHTML = '';
+          if (logoImg) {
+            const img = document.createElement('img');
+            img.src = logoImg.src;
+            img.alt = logoImg.alt;
+            modalLogo.appendChild(img);
+          }
+
+          overlay.classList.add('open');
+          requestAnimationFrame(function () { overlay.classList.add('show'); });
+          document.body.style.overflow = 'hidden';
+        }
+
+        card.addEventListener('click', openModal);
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+        });
+      });
+
+      function closeModal() {
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+        setTimeout(function () { overlay.classList.remove('open'); }, 200);
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+      });
     })();
   </script>
 </body>
