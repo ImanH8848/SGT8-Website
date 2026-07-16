@@ -4787,8 +4787,8 @@
 
     #sponsors .sp-pgrid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       margin-bottom: 48px;
     }
 
@@ -4869,7 +4869,7 @@
     }
 
     #sponsors .sp-card-desc {
-      font-family: 'Redaction10';
+      font-family: 'Helvetica';
       font-size: 13px;
       color: rgba(2, 2, 2, 0.75);
       line-height: 1.55;
@@ -4877,21 +4877,6 @@
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
-    }
-
-    /* platinum cards are smaller — tighten text */
-    #sponsors .sp-pgrid .sp-card {
-      aspect-ratio: 1.5;
-    }
-
-    #sponsors .sp-pgrid .sp-card-name {
-      font-size: 14px;
-      letter-spacing: -0.5px;
-    }
-
-    #sponsors .sp-pgrid .sp-card-desc {
-      font-size: 13px;
-      -webkit-line-clamp: 3;
     }
 
     /* thank you */
@@ -4938,22 +4923,6 @@
 
     #sponsors .sp-pgrid .sp-card-desc {
       -webkit-line-clamp: 2;
-    }
-
-    .sp-card-hint {
-      font-family: var(--font-vhs);
-      font-size: 9px;
-      letter-spacing: 0.14em;
-      color: #0F5221;
-      margin-top: 8px;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .sp-card:hover .sp-card-hint {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .sp-modal-overlay {
@@ -5072,7 +5041,7 @@
     }
 
     .sp-modal-desc {
-      font-family: 'Redaction10', monospace;
+      font-family: 'Helvetica', monospace;
       font-size: 15px;
       line-height: 1.7;
       color: rgba(2, 2, 2, 0.8);
@@ -5085,7 +5054,7 @@
       }
 
       #sponsors .sp-pgrid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -7212,7 +7181,7 @@
           <span class="sp-label">// 11 — SPONSORS</span>
           <span class="sp-tag">BOOT:11</span>
         </div>
-        <h2 class="sp-title">THANK YOU TO OUR <span>SPONSORS</span></h2>
+        <h2 class="sp-title">THANK YOU TO OUR <span>SPONSORS</span> !</h2>
 
         <div class="sp-tier-label">◆ DIAMOND TIER</div>
         <div class="sp-dgrid">
@@ -7231,10 +7200,7 @@
                 alt="Chirpybird"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Chirpybird</div>
-              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production
-                solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual and
-                stage effect equipment. We are committed to transforming your vision into a captivating reality,
-                ensuring your event leaves a lasting impression.</div>
+              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual and stage effect equipment. We are committed to transforming your vision into a captivating reality, ensuring your event leaves a lasting impression.</div>
             </div>
           </div>
 
@@ -7253,9 +7219,7 @@
                 src="../SGT8-Website/SGTS8Web_pictures/Sponsors Logo/8. La Gourmet_Coloured.png" alt="La Gourmet"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">La Gourmet</div>
-              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
-                premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
-                cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware, cookware, glassware, and food storage containers designed to enhance everyday living.</div>
             </div>
           </div>
 
@@ -7323,10 +7287,7 @@
                 alt="Laneige"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">LANEIGE</div>
-              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its
-                pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE
-                continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful
-                campaigns that make beauty feel fun again.</div>
+              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful campaigns that make beauty feel fun again.</div>
             </div>
           </div>
 
@@ -8192,15 +8153,6 @@
       const cards = document.querySelectorAll('#sponsors .sp-card');
 
       cards.forEach(function (card) {
-        // add "click to view" hint into the hover overlay
-        const overlayEl = card.querySelector('.sp-card-overlay');
-        if (overlayEl && !overlayEl.querySelector('.sp-card-hint')) {
-          const hint = document.createElement('div');
-          hint.className = 'sp-card-hint';
-          hint.textContent = '▸ CLICK TO READ MORE';
-          overlayEl.appendChild(hint);
-        }
-
         // accessibility
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
