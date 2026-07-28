@@ -5048,6 +5048,38 @@
       white-space: pre-line;
     }
 
+    .sp-modal-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--rule);
+    }
+
+    .sp-modal-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(2, 2, 2, 0.15);
+      background: rgba(255, 255, 255, 0.5);
+      color: #020202;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .sp-modal-link:hover {
+      border-color: #0F5221;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .sp-modal-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
     @media(max-width:900px) {
       #sponsors .sp-dgrid {
         grid-template-columns: repeat(2, 1fr);
@@ -7186,114 +7218,167 @@
         <div class="sp-tier-label">◆ DIAMOND TIER</div>
         <div class="sp-dgrid">
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/prostage.png"
-                alt="ProStage"></div>
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.prostage.com.my/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/prostage.png" alt="ProStage">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">ProStage</div>
-              <div class="sp-card-desc">ProStage</div>
+              <div class="sp-card-desc">ProStage Entertainment is a total event planning company that organizes and
+                executes all types of events, from corporate functions, private parties, red carpet events, school
+                functions, gala fundraisers, weddings, and product launches to many more. Combining unique creativity,
+                total attention to detail, professionalism, and an excellent track record, ProStage Entertainment is
+                committed to planning memorable events and delivering exceptional experiences for clients across
+                Malaysia.</div>
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.mars.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/snickers.png" alt="SNICKERS">
+            </div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods SNICKERS</div>
+              <div class="sp-card-desc">Mars Wrigley, a segment of Mars, is a global leader in confectionery, creating
+                some of the world's most iconic brands, including M&M'S®, SNICKERS®, Doublemint®, and ECLIPSE®. Driven
+                by a commitment to quality, innovation, and creating moments of everyday happiness, Mars Wrigley
+                continues to delight consumers through its diverse portfolio of chocolates, gum, mints, and
+                confectionery products enjoyed around the world.</div>
+            </div>
+          </div>
+
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.mars.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/eclipse.png" alt="Eclipse">
+            </div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods Eclipse</div>
+              <div class="sp-card-desc">Mars Wrigley, a segment of Mars, is a global leader in confectionery, creating
+                some of the world's most iconic brands, including M&M'S®, SNICKERS®, Doublemint®, and ECLIPSE®. Driven
+                by a commitment to quality, innovation, and creating moments of everyday happiness, Mars Wrigley
+                continues to delight consumers through its diverse portfolio of chocolates, gum, mints, and
+                confectionery products enjoyed around the world.</div>
+            </div>
+          </div>
+
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.mars.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/doublemint.png"
+                alt="Doublemint"></div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods Doublemint</div>
+              <div class="sp-card-desc">Mars Wrigley, a segment of Mars, is a global leader in confectionery, creating
+                some of the world's most iconic brands, including M&M'S®, SNICKERS®, Doublemint®, and ECLIPSE®. Driven
+                by a commitment to quality, innovation, and creating moments of everyday happiness, Mars Wrigley
+                continues to delight consumers through its diverse portfolio of chocolates, gum, mints, and
+                confectionery products enjoyed around the world.</div>
+            </div>
+          </div>
+
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.mars.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/mnms.png" alt="M&M">
+            </div>
+            <div class="sp-card-overlay">
+              <div class="sp-card-name">Mars Foods M&M</div>
+              <div class="sp-card-desc">Mars Wrigley, a segment of Mars, is a global leader in confectionery, creating
+                some of the world's most iconic brands, including M&M'S®, SNICKERS®, Doublemint®, and ECLIPSE®. Driven
+                by a commitment to quality, innovation, and creating moments of everyday happiness, Mars Wrigley
+                continues to delight consumers through its diverse portfolio of chocolates, gum, mints, and
+                confectionery products enjoyed around the world.</div>
+            </div>
+          </div>
+
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://chirpybird.com.my/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/chirpybird.png"
                 alt="Chirpybird"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Chirpybird</div>
-              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual and stage effect equipment. We are committed to transforming your vision into a captivating reality, ensuring your event leaves a lasting impression.</div>
+              <div class="sp-card-desc">Chirpybird Sdn Bhd is a leading provider of comprehensive event production
+                solutions, specialising in the rental, installation of sound, stage lighting, LED screen, visual and
+                stage effect equipment. We are committed to transforming your vision into a captivating reality,
+                ensuring your event leaves a lasting impression.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/lg.png"
-                alt="LG Malaysia"></div>
+          <div class="sp-card" data-link1-type="website"
+            data-link1-url="https://www.lg.com/my/lg-subscribe/all/?ec_model_status_code=ACTIVE&utm_source=google-ads&utm_medium=cpc&utm_campaign=MY_HS_ALL_MY_26_Q3_IB_LG-Subscribe-SEM-AO-branded-core-260483_lg.com_consideration_20260703_sa_PSE_PRO_CPC_CLK_AO&utm_content=branded-core&gclsrc=aw.ds&gad_source=1&gad_campaignid=24037043410&gbraid=0AAAAA_O8M9JSbxmJg5TCpB-t5YRDFDXMM&gclid=CjwKCAjw1IHTBhAaEiwA4AYNFkfEbAkq2pqEAKrqIsjQOT04vJ3fuR77Aa-62uCZ4iVpLizPc-pZBRoCFvkQAvD_BwE">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/lg.png" alt="LG Malaysia">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">LG Malaysia</div>
-              <div class="sp-card-desc">LG Malaysia</div>
+              <div class="sp-card-desc">LG Electronics Malaysia is a leading consumer electronics and home appliance
+                company committed to creating a better life through innovative technology. With a diverse portfolio of
+                products, including televisions, home entertainment systems, home appliances, air solutions, and IT
+                products, LG combines cutting-edge innovation, premium quality, and user-centric design to deliver
+                smarter, more connected lifestyles for consumers across Malaysia.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/lagourmet.png" alt="La Gourmet"></div>
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.lagourmet.com.my/"
+            data-link2-type="instagram"
+            data-link2-url="https://www.instagram.com/lagourmetmy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/lagourmet.png"
+                alt="La Gourmet"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">La Gourmet</div>
-              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware, cookware, glassware, and food storage containers designed to enhance everyday living.</div>
+              <div class="sp-card-desc">La gourmet is a leading US-Singapore incorporated brand recognized for its
+                premium-quality lifestyle and kitchenware products, offering an extensive range of thermalware,
+                cookware, glassware, and food storage containers designed to enhance everyday living.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/ssq.png"
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.sunwaysquare.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/ssq.png"
                 alt="Sunway Square Mall"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Sunway Square Mall</div>
-              <div class="sp-card-desc">Sunway Square Mall.</div>
+              <div class="sp-card-desc">Sunway Square Mall is more than a shopping centre, it's a vibrant community hub
+                where people gather, connect, and vibe. Offering a unique place to shop, dine, play, and learn, the mall
+                is home to exciting lifestyle experiences, including The Library by BookXcess and the scenic Sunway
+                South Quay Lake. With a strong commitment to community, creativity, and connection, Sunway Square Mall
+                provides a welcoming space for visitors to create meaningful experiences together.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/tokyo2u.PNG" alt="Tokyo2U"></div>
+          <div class="sp-card" data-link1-type="website" data-link1-url="http://www.tokyo2u.my/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/tokyo2u.PNG" alt="Tokyo2U">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Tokyo2U</div>
-              <div class="sp-card-desc">Tokyo2U.</div>
+              <div class="sp-card-desc">Tokyo2U is a cross-merchant lifestyle rewards platform that helps businesses
+                build long-term customer loyalty through a shared rewards ecosystem. Customers earn Tokyo2U Gold Coins
+                when they dine at participating merchants and can redeem them across a network of restaurants, cafés,
+                lifestyle, beauty, and shopping brands. By encouraging direct customer visits, Tokyo2U helps merchants
+                reduce reliance on high-commission third-party platforms while offering a seamless and rewarding
+                experience, all at no cost to participating businesses.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/snickers.png"
-                alt="SNICKERS"></div>
+          <div class="sp-card" data-link1-type="instagram" data-link1-url="https://www.instagram.com/liuzhouboy/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/liuzhouboy.png"
+                alt="LIUZHOUBOY"></div>
             <div class="sp-card-overlay">
-              <div class="sp-card-name">Mars Foods SNICKERS</div>
-              <div class="sp-card-desc">Mars Foods SNICKERS.</div>
+              <div class="sp-card-name">LIUZHOUBOY</div>
+              <div class="sp-card-desc">LIUZHOUBOY is a Malaysian restaurant dedicated to serving authentic
+                Liuzhou-style luosifen (river snail rice noodles), bringing the bold and distinctive flavours of this
+                beloved Chinese specialty to local diners. Committed to quality ingredients and traditional recipes,
+                LIUZHOUBOY offers a rich, flavourful dining experience that celebrates the unique taste and heritage of
+                Liuzhou cuisine.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/eclipse.png"
-                alt="Eclipse"></div>
-            <div class="sp-card-overlay">
-              <div class="sp-card-name">Mars Foods Eclipse</div>
-              <div class="sp-card-desc">Mars Foods Eclipse.</div>
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://my.laneige.com">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/laneige.png" alt="Laneige">
             </div>
-          </div>
-
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/doublemint.png"
-                alt="Doublemint"></div>
-            <div class="sp-card-overlay">
-              <div class="sp-card-name">Mars Foods Doublemint</div>
-              <div class="sp-card-desc">Mars Foods Doublemint.</div>
-            </div>
-          </div>
-
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/mnms.png" alt="M&M">
-            </div>
-            <div class="sp-card-overlay">
-              <div class="sp-card-name">Mars Foods M&M</div>
-              <div class="sp-card-desc">Mars Foods M&M.</div>
-            </div>
-          </div>
-
-          <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/laneige.png"
-                alt="Laneige"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">LANEIGE</div>
-              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful campaigns that make beauty feel fun again.</div>
+              <div class="sp-card-desc">LANEIGE is a global K-beauty brand under Amorepacific, renowned for its
+                pioneering hydration science and sensorial skincare. With the philosophy of OPEN TO WONDER, LANEIGE
+                continues to inspire curiosity, playfulness, and confidence through innovative products and meaningful
+                campaigns that make beauty feel fun again.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/silkygirl.png"
-                alt="SILKYGIRL"></div>
+          <div class="sp-card" data-link1-type="instagram"
+            data-link1-url="https://www.instagram.com/silkygirlcosmetics/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/silkygirl.png" alt="SILKYGIRL">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">SILKYGIRL</div>
               <div class="sp-card-desc">SILKYGIRL is a proudly Malaysian beauty brand that celebrates confidence,
@@ -7305,15 +7390,16 @@
           </div>
 
           <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/evolcare.png"
-                alt="EVOLCARE"></div>
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/evolcare.png" alt="EVOLCARE">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">EVOLCARE</div>
               <div class="sp-card-desc">EVOLCARE.</div>
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website"
+            data-link1-url="https://leclassichairstudio.com/?gad_source=1&gad_campaignid=23227344198&gbraid=0AAAAA-gGzNmEiyVr3R_Xko6p6agnELDyy&gclid=CjwKCAjw1IHTBhAaEiwA4AYNFmgSNjC5svVJX2DBx6K0BJqWHGUQyePe-8eDXXedERd_IBYTRt3VuhoCq4oQAvD_BwE">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/leclassic.png"
                 alt="Le Classic Academy"></div>
             <div class="sp-card-overlay">
@@ -7342,37 +7428,48 @@
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/nasilemakshop.png"
+          <div class="sp-card" data-link1-type="instagram" data-link1-url="https://www.instagram.com/nasilemakshop.my/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/nasilemakshop.png"
                 alt="Nasi Lemak Shop"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Nasi Lemak Shop</div>
-              <div class="sp-card-desc">Nasi Lemak Shop</div>
+              <div class="sp-card-desc">"Nasi Lemak Shop reimagines Malaysia’s iconic comfort food with a modern dining
+                experience. Serving fragrant coconut rice, signature sambal, and crispy ayam goreng, every plate is
+                crafted to celebrate authentic local flavours in a fresh and contemporary setting.
+                "</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/mypiano.png"
-                alt="My Piano"></div>
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.mypiano.store/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/mypiano.png" alt="My Piano">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">My Piano</div>
-              <div class="sp-card-desc">My Piano</div>
+              <div class="sp-card-desc">MyPiano is a piano subscription service dedicated to making piano ownership
+                simple, accessible, and affordable. With flexible, upgrade-ready plans, MyPiano provides access to
+                high-quality acoustic pianos without the burden of a large upfront cost or long-term commitment. Driven
+                by the belief that everyone deserves to discover the joy of music, MyPiano empowers learners and
+                musicians to grow through a convenient, rewarding, and hassle-free piano experience.</div>
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://redsrevenge.com/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/redsrevenge.png"
                 alt="Red's Revenge"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Red's Revenge</div>
-              <div class="sp-card-desc">Red's Revenge</div>
+              <div class="sp-card-desc">Red's Revenge is a Malaysian fashion accessories brand offering a curated
+                collection of jewellery, bags, and statement accessories designed to elevate everyday style. Inspired by
+                contemporary fashion trends, Red's Revenge combines bold designs, quality craftsmanship, and versatile
+                pieces that empower individuals to express their unique style with confidence and effortless glamour.
+              </div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/hurixs.png"
-                alt="HURIX'S"></div>
+          <div class="sp-card" data-link1-type="shopee"
+            data-link1-url="https://shopee.com.my/HURIX'S-600-Fluaway-Capsule-Improved-Selesema-Hidung-Berair-Hidung-Tersumbat-Ubat-Tradisional-i.17268512.2132811873">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/hurixs.png" alt="HURIX'S">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">HURIX'S</div>
               <div class="sp-card-desc">HURIX'S 600 Fluaway Capsule Improved is traditionally used
@@ -7386,19 +7483,23 @@
         <div class="sp-tier-label plat">◇ PLATINUM TIER</div>
         <div class="sp-pgrid">
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/sns.png" alt="SNS Network">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.sns.com.my/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/sns.png" alt="SNS Network">
             </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">SNS Network</div>
-              <div class="sp-card-desc">SNS Network</div>
+              <div class="sp-card-desc">SNS Network is one of Malaysia's leading Information and Communication
+                Technology (ICT) solution providers, delivering innovative technology solutions to consumers,
+                businesses, educational institutions, and government organisations. Guided by its mission to "Make Life
+                Easy with Technology," SNS Network offers a comprehensive range of ICT products, services, and digital
+                solutions while remaining committed to innovation, quality, and empowering communities through
+                technology.</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/luckin.png" alt="Luckin Coffee">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.luckincoffee.com.my/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/luckin.png"
+                alt="Luckin Coffee">
             </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Luckin Coffee</div>
@@ -7409,7 +7510,7 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="instagram" data-link1-url="https://www.instagram.com/sunwaytes">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/sunwaytes.png"
                 alt="Sunway TES"></div>
             <div class="sp-card-overlay">
@@ -7422,17 +7523,21 @@
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/gigabyte.png" alt="Gigabyte Aorus">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.aorus.com/en-my">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/gigabyte.png"
+                alt="Gigabyte Aorus">
             </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Gigabyte Aorus</div>
-              <div class="sp-card-desc">Gigabyte Aorus</div>
+              <div class="sp-card-desc">AORUS, the premium gaming brand powered by GIGABYTE, delivers a comprehensive
+                range of high-performance gaming products, including laptops, motherboards, graphics cards, monitors,
+                and gaming peripherals. Driven by a passion for gaming and innovation, AORUS is committed to pushing the
+                limits of PC performance while creating cutting-edge products that empower gamers to achieve the
+                ultimate gaming experience.</div>
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://casevalker.com/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/casevalker.png"
                 alt="Case Valker"></div>
             <div class="sp-card-overlay">
@@ -7443,9 +7548,8 @@
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/theoverthink.png"
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://theoverthinkco.com/">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/theoverthink.png"
                 alt="Tohtonku (The Overthink Co)"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Tohtonku (The Overthink Co)</div>
@@ -7454,7 +7558,7 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.baseup.com.my/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/baseup.png"
                 alt="Tohtonku (Base Up)"></div>
             <div class="sp-card-overlay">
@@ -7464,7 +7568,7 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://my-aplb.com/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/aplb.png"
                 alt="Tohtonku (APLB)"></div>
             <div class="sp-card-overlay">
@@ -7474,9 +7578,8 @@
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/boulderstory.png"
+          <div class="sp-card" data-link1-type="instagram" data-link1-url="">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/boulderstory.png"
                 alt="Boulder Story Climbing Gym"></div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Boulder Story Climbing Gym</div>
@@ -7484,7 +7587,8 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website"
+            data-link1-url="https://linktr.ee/biodermaMY?utm_source=linktree_profile_share&ltsid=03aa3300-44bc-4fc2-b58e-6bc582519db8">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/bioderma.png"
                 alt="Beauty Edge (Bioderma)"></div>
             <div class="sp-card-overlay">
@@ -7495,18 +7599,20 @@
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/kiehls.png" alt="Kiehl's"></div>
+          <div class="sp-card" data-link1-type="website"
+            data-link1-url="https://www.kiehls.com.my/?srsltid=AfmBOoqeW9-sP3bTOhDfQ4ceNgRuCM4oYUceXCJ6uQgoLxhy1QWorvOs">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/kiehls.png" alt="Kiehl's">
+            </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Kiehl's</div>
               <div class="sp-card-desc">Kiehl's</div>
             </div>
           </div>
 
-          <div class="sp-card">
-            <div class="sp-card-logo"><img
-                src="../SGT8-Website/SGTS8Web_pictures/sslogo/beingstudio.png" alt="Being Studio">
+          <div class="sp-card" data-link1-type="instagram"
+            data-link1-url="https://www.instagram.com/being.studio.my?igsh=bDU5cnQ4eGNjdTZu">
+            <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/beingstudio.png"
+                alt="Being Studio">
             </div>
             <div class="sp-card-overlay">
               <div class="sp-card-name">Being Studio</div>
@@ -7519,7 +7625,7 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="website" data-link1-url="https://www.thebombbattle.com/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/bombbattle.png"
                 alt="Bomb Battle"></div>
             <div class="sp-card-overlay">
@@ -7531,7 +7637,8 @@
             </div>
           </div>
 
-          <div class="sp-card">
+          <div class="sp-card" data-link1-type="instagram"
+            data-link1-url="https://www.instagram.com/goldendrops_malaysia/">
             <div class="sp-card-logo"><img src="../SGT8-Website/SGTS8Web_pictures/sslogo/goldendrops.png"
                 alt="Golden Drops"></div>
             <div class="sp-card-overlay">
@@ -7562,6 +7669,7 @@
               <span class="sp-modal-badge" id="sp-modal-badge"></span>
               <div class="sp-modal-name" id="sp-modal-name"></div>
               <div class="sp-modal-desc" id="sp-modal-desc"></div>
+              <div class="sp-modal-links" id="sp-modal-links"></div>
             </div>
           </div>
         </div>
@@ -8144,7 +8252,11 @@
       const modalBadge = document.getElementById('sp-modal-badge');
       const modalName = document.getElementById('sp-modal-name');
       const modalDesc = document.getElementById('sp-modal-desc');
+      const modalLinks = document.getElementById('sp-modal-links');
       if (!overlay) return;
+
+      const SP_ICON_WEBSITE = `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 8h-3.1a15.4 15.4 0 0 0-1.3-5.4A8 8 0 0 1 18.9 10zM12 4c.9 1.3 1.7 3.3 2 6H10c.3-2.7 1.1-4.7 2-6zM4 12c0-.7.1-1.4.2-2h3.6c-.1.7-.1 1.3-.1 2s0 1.3.1 2H4.2c-.1-.6-.2-1.3-.2-2zm1.1 4h3.1a15.4 15.4 0 0 0 1.3 5.4A8 8 0 0 1 5.1 16zm3.1-8H5.1a8 8 0 0 1 4.4-5.4A15.4 15.4 0 0 0 8.2 8zM12 20c-.9-1.3-1.7-3.3-2-6h4c-.3 2.7-1.1 4.7-2 6zm2.4-8H9.6c-.1-.7-.1-1.3-.1-2s0-1.3.1-2h4.8c.1.7.1 1.3.1 2s0 1.3-.1 2zm.2 7.4a15.4 15.4 0 0 0 1.3-5.4h3.1a8 8 0 0 1-4.4 5.4zM16.3 14c.1-.7.1-1.3.1-2s0-1.3-.1-2h3.6c.1.6.2 1.3.2 2s-.1 1.4-.2 2h-3.6z"/></svg>`;
+      const SP_ICON_INSTAGRAM = `<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1.1-.4-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.3 2.3-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1c-1.3.1-2.2.2-3 .5-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2c-.3.8-.5 1.7-.5 3C0 8.7 0 9.1 0 12s0 3.3.1 4.6c.1 1.3.2 2.2.5 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .5C8.3 24 8.7 24 12 24s3.3 0 4.6-.1c1.3-.1 2.2-.2 3-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.5-3 .1-1.3.1-1.7.1-4.6s0-3.3-.1-4.6c-.1-1.3-.2-2.2-.5-3-.3-.8-.7-1.5-1.4-2.2C21.3 1.1 20.6.7 19.8.4c-.8-.3-1.7-.5-3-.5C15.3 0 14.9 0 12 0zm0 5.8A6.2 6.2 0 1 0 12 18.2 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm7.9-10.5a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg>`;
 
       const cards = document.querySelectorAll('#sponsors .sp-card');
 
@@ -8162,6 +8274,21 @@
           modalName.textContent = name ? name.textContent : '';
           modalDesc.textContent = desc ? desc.textContent : '';
           modalBadge.textContent = isDiamond ? '◆ DIAMOND SPONSOR' : '◇ PLATINUM SPONSOR';
+
+          modalLinks.innerHTML = '';
+          [1, 2].forEach(function (n) {
+            const url = card.dataset['link' + n + 'Url'];
+            const type = card.dataset['link' + n + 'Type'];
+            if (!url) return;
+            const a = document.createElement('a');
+            a.className = 'sp-modal-link';
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.setAttribute('aria-label', type === 'instagram' ? 'Instagram' : 'Website');
+            a.innerHTML = type === 'instagram' ? SP_ICON_INSTAGRAM : SP_ICON_WEBSITE;
+            modalLinks.appendChild(a);
+          });
 
           modalLogo.innerHTML = '';
           if (logoImg) {
